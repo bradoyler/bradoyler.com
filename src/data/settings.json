@@ -1,0 +1,35 @@
+{
+  "name": "{ Brad Oyler }",
+  "sitetitle": "Developer",
+  "slogan": "Build software for Humans...",
+  "avatarurl": "https://pbs.twimg.com/profile_images/616269341240102912/1Hu_WEB7.jpg",
+  "title": "Software Engineer",
+  "url": "http://bradoyler.com",
+  "description": "Planning to change the world with software built for humans. Blog",
+  "keywords": "Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript",
+  "domain": "bradoyler.com",
+  "sourceurl": "https://github.com/bradoyler/bradoyler.com",
+  "author": {
+    "name": "Brad Oyler",
+    "email": "bradoyler@gmail.com",
+    "bio": "builds things, get stuff done",
+    "role": "Developer",
+    "twitter": "bradoyler",
+    "github": "bradoyler",
+    "linkedin": "bradoyler"
+  },
+  "service": {
+    "analytics": "UA-123456",
+    "service": "example",
+    "googlefonts": null,
+    "googleverification": null,
+    "fontscom": null,
+    "typekit": null,
+    "facebookid": null,
+    "socialimage": null,
+    "appleid": null,
+    "twitter": "bradoyler",
+    "disqus": "bradoyler"
+  },
+  "domains": []
+}

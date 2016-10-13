@@ -1,0 +1,18 @@
+{{> start}}
+<p class="heading heading--page heading--home">{{settings.slogan}}</p>
+{{#each collections}}
+<div class="row">
+  <div class="section--posts section--posts-{{add @index 1}}">
+    <div class="meta--container">
+      <h2 class="meta--txt meta--primary meta--heading"><a href="/{{@key}}">{{capitalize @key}}</a></h2>
+    </div>
+    <div class="row">
+      {{#each this}}
+        {{> entry isHome=true}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+{{/each}}
+{{> backgroundgrid}}
+{{> end}}

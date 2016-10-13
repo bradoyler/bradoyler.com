@@ -1,0 +1,12 @@
+.site-header {
+  font-family: $font-sans;
+  display: flex;
+  align-items: center;
+
+  @media (min-width: $screen-sm-min) {
+    min-height: $site-header-height;
+    display: block;
+    margin-bottom: 0;
+    margin-top: $gutter * 2;
+  }
+}

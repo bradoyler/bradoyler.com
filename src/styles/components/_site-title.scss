@@ -1,0 +1,44 @@
+.site-title {
+  font-family: $font-sans;
+  margin-right: $base-vertical-unit;
+  margin-bottom: 0;
+
+  @include setType($base-line-multi, $ms-down1);
+
+  @media (min-width: $screen-sm-min) {
+    margin-right: 0;
+  }
+}
+
+.site-title--name {
+  text-align: center;
+
+  @media (min-width: $screen-sm-min) {
+    margin-bottom: emRhythm(-1, $ms-down1);
+  }
+}
+
+.site-title--name a {
+  font-weight: 800;
+  font-size: 1.5em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: $nav-text-color;
+
+  @media (min-width: $screen-sm-min) {
+    vertical-align: baseline;
+  }
+
+  @media (max-width: $screen-sm-min) {
+    font-size: 1.3em;
+  }
+}
+
+.site-title--sub {
+  color: $light-grey;
+  text-align: center;
+
+  @media (min-width: $screen-sm-min) {
+    border-bottom: $border-width-narrow solid $text-color;
+  }
+}

@@ -1,0 +1,3 @@
+/blog/:slug                                                        /post/:slug
+/maps                                                              http://mapshaper.org
+bradoyler.github.io                                                bradoyler.com
