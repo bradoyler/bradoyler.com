@@ -5,5 +5,4 @@ node_modules/
 .deploy/
 .idea
 .deploy_git
-www
 .tmp
