@@ -1,4 +1,4 @@
-$meta-size: $ms-down1;
+$meta-size: $ms-up1;
 
 .meta--link {
   text-transform: capitalize;
@@ -34,7 +34,7 @@ $meta-size: $ms-down1;
 }
 
 .section--posts .meta--heading {
-  margin-bottom: emRhythm(6, $ms-down1);
+  margin-bottom: emRhythm(6, $ms-up1);
 }
 
 .meta--container-post {
