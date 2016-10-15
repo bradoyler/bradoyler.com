@@ -1174,6 +1174,14 @@ input[type="button"]:focus {
           order: 1;
 }
 
+.footer--nav a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+  vertical-align: text-top;
+  font-size: 0.75019em;
+  line-height: 1.49962;
+}
+
 .footer--nav--l {
   -ms-flex-preferred-size: 28.57143%;
       flex-basis: 28.57143%;
@@ -1481,9 +1489,9 @@ input[type="button"]:focus {
 
 .meta--txt {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  margin-bottom: 0.74981em;
-  font-size: 0.75019em;
-  line-height: 1.49962;
+  margin-bottom: 0.42198em;
+  font-size: 1.333em;
+  line-height: 0.84396;
 }
 
 .meta--heading {
@@ -1498,7 +1506,7 @@ input[type="button"]:focus {
 }
 
 .section--posts .meta--heading {
-  margin-bottom: 4.49887em;
+  margin-bottom: 2.53188em;
 }
 
 .meta--container-post {
@@ -1529,6 +1537,12 @@ input[type="button"]:focus {
 .meta--alt {
   font-weight: 400;
   color: #767676;
+}
+
+time.meta {
+  color: #767676;
+  font-size: 0.75019em;
+  line-height: 1.49962;
 }
 
 .meta--post--l .row {
