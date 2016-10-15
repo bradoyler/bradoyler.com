@@ -51,7 +51,7 @@ var ms = Metalsmith(__dirname)
       reverse: true
     },
     blog: {
-      pattern: 'post/**/!(index.md)',
+      pattern: 'blog/**/!(index.md)',
       sortBy: 'date',
       reverse: true
     }

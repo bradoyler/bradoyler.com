@@ -2,6 +2,13 @@
   order: 1;
 }
 
+.footer--nav a {
+  font-family: $font-sans;
+  text-decoration: none;
+  vertical-align: text-top;
+  @include setType(2, $ms-down1);
+}
+
 .footer--nav--l {
   flex-basis: $span-2;
   padding-left: $gutter;

@@ -66,6 +66,11 @@ $meta-size: $ms-up1;
   color: $light-grey;
 }
 
+time.meta {
+  color: $light-grey;
+  @include setType(2, $ms-down1);
+}
+
 .meta--post--l {
 
   .row {
