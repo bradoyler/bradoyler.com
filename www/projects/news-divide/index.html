@@ -8,22 +8,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Planning to change the world with software built for humans. Blog">
   <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="http://www.bradoyler.com/blog/the-future-of-news-according-to-facebook-google/" />
+  <meta name="standout" content="http://www.bradoyler.com/projects/news-divide/" />
   <meta property="og:site_name" content="{ Brad Oyler }" />
   <meta property="og:description" content="Planning to change the world with software built for humans. Blog" />
-  <meta property="og:title" content="The Future of News according to Facebook &amp; Google - Brad Oyler" />
-  <meta property="og:url" content="http://www.bradoyler.com/blog/the-future-of-news-according-to-facebook-google/" />
+  <meta property="og:title" content="The News Divide - Brad Oyler" />
+  <meta property="og:url" content="http://www.bradoyler.com/projects/news-divide/" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://pbs.twimg.com/profile_images/616269341240102912/1Hu_WEB7.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Brad Oyler" />
-  <meta name="twitter:title" content="The Future of News according to Facebook &amp; Google - Brad Oyler" />
-  <meta name="twitter:description" content="Caching middleware for Express (w/ expiration)" />
+  <meta name="twitter:title" content="The News Divide - Brad Oyler" />
+  <meta name="twitter:description" content="Snapshots of the Left, Right &amp; Center of News" />
   <meta name="twitter:creator" content="Brad Oyler" />
   <meta name="twitter:domain" content="http://www.bradoyler.com>" />
   <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/616269341240102912/1Hu_WEB7.jpg" />
-  <title>The Future of News according to Facebook &amp; Google - Brad Oyler</title>
+  <title>The News Divide - Brad Oyler</title>
   <link rel="author" href="humans.txt" />
+  <link rel="icon" href="/assets/images/avatar.png">
   <link rel="stylesheet" href="/styles/main.css">
   <!-- dev v0.0.1 -->
 </head>
@@ -72,43 +73,42 @@
     <div class="row">
       <div class="meta--container meta--container-post">
         <div class="meta--txt meta--heading">
-          <span class="meta meta--primary"><a class="meta--link" href="/blog">blog</a></span>
+          <span class="meta meta--primary"><a class="meta--link" href="/projects">projects</a></span>
         </div>
       </div>
       <div class="meta--container meta--container-post">
         <div class="meta--txt meta--heading">
-          <time class="meta meta--primary" datetime="2014-06-23T00:00:00.000Z" itemprop="datePublished">Jun 22, 2014</time>
+          <time class="meta meta--primary" datetime="2016-11-25T00:00:00.000Z" itemprop="datePublished">Nov 24, 2016</time>
         </div>
       </div>
     </div>
   </div>
     <header class="article--header">
-      <h1 itemprop="headline">The Future of News according to Facebook &amp; Google</h1>
-      <p class="dek dek--lg">Caching middleware for Express (w/ expiration)</p>
+      <h1 itemprop="headline">The News Divide</h1>
+      <p class="dek dek--lg">Snapshots of the Left, Right &amp; Center of News</p>
     </header>
     <div class="article--body" itemprop="articleBody">
-      <p>Two of today’s largest “media giants”  have made some recent strides into the News world over the past month or so. </p>
-<p>May 12th, Facebook launched “Instant articles” with several large news publishers: The New York Times, National Geographic, BuzzFeed, <span class="caps">NBC</span> News, The Atlantic, The Guardian, <span class="caps">BBC</span> News, Spiegel and Bild. More info.</p>
-<p>June 22nd, Google launches “News Lab” with a handful of lesser known partners. Read the write up on Techcrunch </p>
-<p><a href="http://68.media.tumblr.com/eaa422b785387fe90a850b135852cc5d/tumblr_inline_nqekrtEGe21qzitrw_500.png">!img</a></p>
-<p>The part I find most interesting is how fundamentally different the approaches are for these two “competitors”, really. </p>
-<p>Facebook is really trying to solve a very specific problem with news publishing:  “News sites are slow”. Although I do applaud them for being super focused, I think it’s a bit short-sighted as the problem could shift overnight. Devices\browsers are changing. I’m not saying this won’t be an improvement to their platform, I just don’t see how it warrants all the fanfare.</p>
-<p>Google, on the other hand, is taking a more long-term, strategic approach of “We don’t really know which problems we need to solve first, but we’re focusing on the discovery process”. Sorry for putting words in Google’s mouth, but I hope that made sense.</p>
-<p>Regardless, I think these two approaches are big “tells” into the culture of these companies and I have my obvious opinion of which one will pan out in the long-term. </p>
-<p>My other observation is that Facebook obviously sees “Apps” as the more viable future for publishing, while Google is taking publishing on the web more seriously and also getting real when it comes to tools for publishers and making “Data Journalism” something news consumers can finally start experiencing. In my experience, never bet against the Web, just go ask Microsoft…</p>
-<p>However, having been involved in the work to make our articles (NBCNews) available to Facebook through a “data feed”, I do appreciate the possibility that this could spawn a new format for “news content syndication”. But I may have already said too much…</p>
-<p>I should also mention that Apple announced their “News” app on June 8th, so we’ll have to wait for that one to hit the App Store (meh). More on that via Wired</p>
-<p>Would love to hear what you think…</p>
+      <figure class="media-full">
+  <a href="http://bradoyler.github.io/newsdivide.html"><img src="/assets/images/newsdivide_screen.png" alt="Homepage on Desktop"></a>
+  <figcaption> screenshot of ‘The News Divide’ </figcaption>
+</figure>
+
+<h3 id="concept">Concept</h3>
+<p>Take Snapshots on an hourly basis to compare home pages of the top news sites</p>
+<h3 id="execution">Execution</h3>
+<p>Used NodeJs &amp; PhantomJs to screen capture a collection of sites and save images to Amazon S3</p>
+<h3 id="try-it">Try it</h3>
+<p><a href="http://bradoyler.github.io/newsdivide.html">-&gt; bradoyler.github.io/newsdivide</a></p>
 
     </div>
   </article>
   <nav class="nav nav--post row is-first">
       <div class="nav--next">
-        <h2 class="nav--post-heading">My “Key Management Principles” (KMP)</h2>
-        <p class="dek dek--sm">YAGNI, KISS, Occam’s razor &amp; Agile ar my best lessons learned.</p>
+        <h2 class="nav--post-heading">Atlas-Make</h2>
+        <p class="dek dek--sm">Makefile toolbelt for building geojson, topojson &amp; csv from public Shape files</p>
       </div>
       <div class="nav--post-button">
-        <a class="button--link" href="/blog/my-key-management-principles-kmp">Next</a>
+        <a class="button--link" href="/projects/atlas-make">Next</a>
       </div>
   </nav>    </main>
   <footer class="row">
