@@ -3,6 +3,9 @@
   width: 100%; //FF image overflow fix
   filter: grayscale(100%);
   mix-blend-mode: exclusion;
+  &:hover {
+    filter: grayscale(30%);
+  }
 }
 
 .media-full {
