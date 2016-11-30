@@ -36,7 +36,7 @@ var config = {
   devBuild: devBuild,
   domain: "bradoyler.com",
   url: "http://www.bradoyler.com",
-  dest: "./www/"
+  dest: "./docs/"
 };
 
 var ms = Metalsmith(__dirname)
