@@ -8,21 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Planning to change the world with software built for humans. Blog">
   <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="http://www.bradoyler.com/blog/future-of-news-according-to-facebook-google/" />
+  <meta name="standout" content="http://www.bradoyler.com/blog/bounce-rate-optimization-for-publishers-exit-intent/" />
   <meta property="og:site_name" content="{ Brad Oyler }" />
   <meta property="og:description" content="Planning to change the world with software built for humans. Blog" />
-  <meta property="og:title" content="Future of News, according to Facebook &amp; Google - Brad Oyler" />
-  <meta property="og:url" content="http://www.bradoyler.com/blog/future-of-news-according-to-facebook-google/" />
+  <meta property="og:title" content="Bounce Rate optimization for publishers (exit intent) - Brad Oyler" />
+  <meta property="og:url" content="http://www.bradoyler.com/blog/bounce-rate-optimization-for-publishers-exit-intent/" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://pbs.twimg.com/profile_images/616269341240102912/1Hu_WEB7.jpg" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:site" content="Brad Oyler" />
-  <meta name="twitter:title" content="Future of News, according to Facebook &amp; Google - Brad Oyler" />
-  <meta name="twitter:description" content="how &#x27;new media&#x27; is approaching the news industry" />
+  <meta name="twitter:title" content="Bounce Rate optimization for publishers (exit intent) - Brad Oyler" />
+  <meta name="twitter:description" content="how understanding &#x27;exit intent&#x27; can optimize a news site" />
   <meta name="twitter:creator" content="Brad Oyler" />
   <meta name="twitter:domain" content="http://www.bradoyler.com>" />
   <meta name="twitter:image" content="https://pbs.twimg.com/profile_images/616269341240102912/1Hu_WEB7.jpg" />
-  <title>Future of News, according to Facebook &amp; Google - Brad Oyler</title>
+  <title>Bounce Rate optimization for publishers (exit intent) - Brad Oyler</title>
   <link rel="author" href="humans.txt" />
   <link rel="icon" href="/assets/images/avatar.png">
   <link rel="stylesheet" href="/styles/main.css">
@@ -78,45 +78,46 @@
       </div>
       <div class="meta--container meta--container-post">
         <div class="meta--txt meta--heading">
-          <time class="meta meta--primary" datetime="2014-06-23T00:00:00.000Z" itemprop="datePublished">Jun 22, 2014</time>
+          <time class="meta meta--primary" datetime="2014-10-05T00:00:00.000Z" itemprop="datePublished">Oct 04, 2014</time>
         </div>
       </div>
     </div>
   </div>
     <header class="article--header">
-      <h1 itemprop="headline">Future of News, according to Facebook &amp; Google</h1>
-      <p class="dek dek--lg">how &#x27;new media&#x27; is approaching the news industry</p>
+      <h1 itemprop="headline">Bounce Rate optimization for publishers (exit intent)</h1>
+      <p class="dek dek--lg">how understanding &#x27;exit intent&#x27; can optimize a news site</p>
     </header>
     <div class="article--body" itemprop="articleBody">
-      <p>Two of today’s largest “media giants”  have made some recent strides into the News world over the past month or so.</p>
-<p>May 12th, Facebook launched “Instant articles” with several large news publishers: The New York Times, National Geographic, BuzzFeed, <span class="caps">NBC</span> News, The Atlantic, The Guardian, <span class="caps">BBC</span> News, Spiegel and Bild. More info.</p>
-<p>June 22nd, Google launches “News Lab” with a handful of lesser known partners. Read the write up on Techcrunch</p>
-<p><img src="http://68.media.tumblr.com/eaa422b785387fe90a850b135852cc5d/tumblr_inline_nqekrtEGe21qzitrw_500.png" alt="img"></p>
-<p>The part I find most interesting is how fundamentally different the approaches are for these two “competitors”, really.</p>
-<p>Facebook is really trying to solve a very specific problem with news publishing:  “News sites are slow”. Although I do applaud them for being super focused, I think it’s a bit short-sighted as the problem could shift overnight. Devices/browsers are changing. I’m not saying this won’t be an improvement to their platform, I just don’t see how it warrants all the fanfare.</p>
-<p>Google, on the other hand, is taking a more long-term, strategic approach of “We don’t really know which problems we need to solve first, but we’re focusing on the discovery process”. Sorry for putting words in Google’s mouth, but I hope that made sense.</p>
-<p>Regardless, I think these two approaches are big “tells” into the culture of these companies and I have my obvious opinion of which one will pan out in the long-term.</p>
-<p>My other observation is that Facebook obviously sees “Apps” as the more viable future for publishing, while Google is taking publishing on the web more seriously and also getting real when it comes to tools for publishers and making “Data Journalism” something news consumers can finally start experiencing. In my experience, never bet against the Web, just go ask Microsoft…</p>
-<p>However, having been involved in the work to make our articles (NBCNews) available to Facebook through a “data feed”, I do appreciate the possibility that this could spawn a new format for “news content syndication”. But I may have already said too much…</p>
-<p>I should also mention that Apple announced their “News” app on June 8th, so we’ll have to wait for that one to hit the App Store (meh). More on that via Wired</p>
-<p>Would love to hear what you think…</p>
+      <h3 id="understanding-bounce-rate">Understanding Bounce rate</h3>
+<p>First off, <a href="https://support.google.com/analytics/answer/1009409">according to Google Analytics</a>:</p>
+<blockquote>
+<p>“Bounce Rate is the percentage of single-page sessions (i.e. sessions in which the person left your site from the entrance page without interacting with the page).”</p>
+</blockquote>
+<p>Important caveat: Bounce rate in <span class="caps">GA</span> is actually calculated as a single “pixel download” (_utm.gif) per session. So if you trigger a subsequent custom event, you could be inadvertently disguising an actual bounce since events also trigger pixel downloads by default. You can override this behavior  by using <a href="https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#non-interaction">“non-interaction” events</a> .</p>
+<p>On a news site, blog, or any site where Ad impressions are a revenue producing goal,  Bounce Rate can be a key indicator. If you haven’t really dug into how Exit Rates differ, you should give <a href="https://support.google.com/analytics/answer/2525491">Exit Rate vs Bounce Rate</a> a read.
+Why do we care? Because by simply reducing bounce rate (without decreasing user sessions) we would directly increase overall <a href="https://support.google.com/analytics/answer/2525491">Pageviews</a>. Yay Goals!</p>
+<h3 id="what-is-exit-intent-">What is Exit Intent?</h3>
+<p><img src="http://68.media.tumblr.com/6b5e8097ed06bd4d268f2f872e5015b8/tumblr_inline_ncy78dFXy41qzitrw.png" alt="img"></p>
+<p>Exit Intent is just a way to detect a user navigating towards the top of the browser in a way that suggests they are about to leave your website. Pretty simple actually.
+Targeting users with “Exit Intent”</p>
+<p>“Exit Intent Targeting” is definitely not a new concept… a lot of e-commerce sites have been using this tactic for many years by displaying a popup or overlay window to offer some discount right before you “bounce”. More info at <a href="http://exitintentpopup.com">http://exitintentpopup.com</a>
+There are even quite a few services on how to implement this concept on your site, like <a href="http://optkit.com">OptKit</a>, <a href="http://www.optimonk.com">OptiMonk</a>, <a href="http://bounceexchange.com">Bounce Exchange</a> &amp; <a href="http://exitintent.io">ExitIntent</a>
+Personally, I like having control/understanding of the javascript, so a really nice implementation is available on Github @ <a href="https://github.com/carlsednaoui/ouibounce">https://github.com/carlsednaoui/ouibounce</a></p>
+<p><span class="caps">DEMO</span>:
+<img src="http://68.media.tumblr.com/0a37f5226af2b2a12ce7c2ac5ff61ba3/tumblr_inline_nczh2yCg1a1qzitrw.gif" alt="demo"></p>
+<h3 id="good-idea-for-publishers-">Good idea for publishers?</h3>
+<p>So this is all cool stuff that <span class="caps">COULD</span> be easily tested on your site in a non-invasive way, but the real question (for me) is how this tactic should be used on a news site or blog and whether the impact would be worth the effort.
+Either way, I plan to test out this technique in a few different ways to entice visitors to click “one more time”. Possible techniques could use; ‘Breaking News’, related stories, or a targeted newsletter signup.</p>
 
     </div>
   </article>
-  <nav class="nav nav--post row">
-      <div class="nav--prev">
+  <nav class="nav nav--post row is-first">
+      <div class="nav--next">
         <h2 class="nav--post-heading">Timeline that Google Calendar with gcal-timeline</h2>
         <p class="dek dek--sm">how understanding &#x27;exit intent&#x27; can optimize a news site</p>
       </div>
       <div class="nav--post-button">
-        <a class="button--link" href="/blog/timeline-that-google-calendar-with-gcal-timeline">Previous</a>
-      </div>
-      <div class="nav--next">
-        <h2 class="nav--post-heading">My “Key Management Principles” (KMP)</h2>
-        <p class="dek dek--sm">YAGNI, KISS, Occam’s razor &amp; Agile ar my best lessons learned.</p>
-      </div>
-      <div class="nav--post-button">
-        <a class="button--link" href="/blog/my-key-management-principles-kmp">Next</a>
+        <a class="button--link" href="/blog/timeline-that-google-calendar-with-gcal-timeline">Next</a>
       </div>
   </nav>    </main>
   <footer class="row">

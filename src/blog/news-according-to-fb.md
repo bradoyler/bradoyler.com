@@ -13,11 +13,11 @@ May 12th, Facebook launched “Instant articles” with several large news publi
 
 June 22nd, Google launches “News Lab” with a handful of lesser known partners. Read the write up on Techcrunch
 
-[!img](http://68.media.tumblr.com/eaa422b785387fe90a850b135852cc5d/tumblr_inline_nqekrtEGe21qzitrw_500.png)
+![img](http://68.media.tumblr.com/eaa422b785387fe90a850b135852cc5d/tumblr_inline_nqekrtEGe21qzitrw_500.png)
 
 The part I find most interesting is how fundamentally different the approaches are for these two “competitors”, really.
 
-Facebook is really trying to solve a very specific problem with news publishing:  “News sites are slow”. Although I do applaud them for being super focused, I think it’s a bit short-sighted as the problem could shift overnight. Devices\browsers are changing. I’m not saying this won’t be an improvement to their platform, I just don’t see how it warrants all the fanfare.
+Facebook is really trying to solve a very specific problem with news publishing:  “News sites are slow”. Although I do applaud them for being super focused, I think it’s a bit short-sighted as the problem could shift overnight. Devices/browsers are changing. I’m not saying this won’t be an improvement to their platform, I just don’t see how it warrants all the fanfare.
 
 Google, on the other hand, is taking a more long-term, strategic approach of “We don’t really know which problems we need to solve first, but we’re focusing on the discovery process”. Sorry for putting words in Google’s mouth, but I hope that made sense.
 
