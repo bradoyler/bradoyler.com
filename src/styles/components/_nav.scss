@@ -85,13 +85,13 @@
   transition: all 0.2s ease-in-out 0s;
 
   a {
-    @include setType(5, $ms-up1);
+    @include setType(5, $ms-down1);
   }
 
   @media (min-width: $screen-sm-min) {
     max-height: none;
     a {
-      @include setType(2, $ms-down1);
+      @include setType(2, $ms-up1);
     }
   }
 }
