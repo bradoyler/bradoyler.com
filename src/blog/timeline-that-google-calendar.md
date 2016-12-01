@@ -2,7 +2,7 @@
 title: Timeline that Google Calendar with gcal-timeline
 date: 2014-09-04
 modified: null
-description: how understanding 'exit intent' can optimize a news site
+description: easy way to display a google calendar in a timeline 
 art: article.png
 layout: post.html
 ---

@@ -1,15 +1,3 @@
-.article--body > p:first-of-type:first-line {
-  font-weight: 600;
-}
-
-.article--body > p:last-of-type:first-line {
-  font-weight: 400;
-}
-
-.article--body > p:last-child:after {
-  content: '\25c6';
-}
-
 @if $paragraph-indent {
   .article--post {
     p + p {

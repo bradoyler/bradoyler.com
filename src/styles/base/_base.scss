@@ -10,7 +10,7 @@ html {
 
 body {
   padding: 0;
-  font-family: $font-serif;
+  font-family: $font-sans;
   font-weight: 400;
   color: $text-color;
   margin: auto;
@@ -148,7 +148,7 @@ blockquote {
   margin-left: 0;
   padding-bottom: 0;
   margin-right: 0;
-  font-family: $font-display-serif;
+  font-family: $font-sans;
 
   p {
     font-weight: 600;
