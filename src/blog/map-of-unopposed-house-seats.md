@@ -16,7 +16,7 @@ Logical next step (for me) was to create a static map using topojson from [Atlas
 - [115th Congressional Districts with US States Topojson](https://github.com/bradoyler/d3-node/blob/master/examples/data/congress-115-states.json)
 
 ## The Map
-<img style='background:#ccc;' class='svg' src='/assets/images/map-unopposed-house.svg' />
+<img alt='house map' src='https://cloud.githubusercontent.com/assets/425966/20950901/845fdef8-bbf0-11e6-8fe0-e5ec51ac37ff.png' />
 
 ## The Code
 <a href='https://github.com/bradoyler/d3-node/blob/master/examples/map-congress-unopposed.js' target='blank'>github.com/bradoyler/d3-node/examples/map-congress-unopposed.js</a>
