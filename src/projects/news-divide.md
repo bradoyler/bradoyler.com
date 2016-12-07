@@ -16,7 +16,7 @@ layout: post.html
 
 ### Concept
 
-Take Snapshots on an hourly basis to compare home pages of the top news sites. The left, right, center columns are lightly based on research from [Pew Research](http://www.journalism.org/) on the [Political Polarization & Media Habits](http://www.journalism.org/2014/10/21/political-polarization-media-habits/)
+Take Snapshots on an hourly basis to compare home pages of the top news sites. The left, right & center columns are lightly based on research from [Pew Research](http://www.journalism.org/) on the [Political Polarization & Media Habits](http://www.journalism.org/2014/10/21/political-polarization-media-habits/)
 
 ### Execution
 
