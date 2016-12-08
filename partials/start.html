@@ -15,7 +15,7 @@
   <meta property="og:url" content="{{url}}{{paths.href}}" />
   <meta property="og:type" content="article" />
   {{#if art}}
-  <meta property="og:image" content="/assets/images/{{art}}" />
+  <meta property="og:image" content="{url}/assets/images/{{art}}" />
   {{else}}
   <meta property="og:image" content="{{settings.avatarurl}}" />
   {{/if}}
@@ -25,8 +25,8 @@
   <meta name="twitter:description" content="{{settings.description}}" />
   <meta name="twitter:creator" content="{{name}}" />
   <meta name="twitter:domain" content="{{url}}>" />
-  {{#if service.socialimage}}
-  <meta name="twitter:image:src" content="{{service.socialimage}}" />
+  {{#if art}}
+  <meta name="twitter:image:src" content="{url}/assets/images/{{art}}" />
   {{else}}
   <meta name="twitter:image" content="{{settings.avatarurl}}" />
   {{/if}}
