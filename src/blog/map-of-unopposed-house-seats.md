@@ -7,7 +7,7 @@ art: map-congress-unopposed.png
 layout: post.html
 ---
 
-I'm somewhat new to the world of election data, but one piece of data I stumbled upon while working on [the 2016 Elections for NBC News](http://www.nbcnews.com/politics/2016-election/house), was that 29 house seats went unopposed. I thought this was pretty interesting and wanted to understand why this happens. After half a dozen ill-informed google searched, I came up with nothing.
+I'm somewhat new to the world of election data, but one piece of data I stumbled upon while working on [the 2016 Elections for NBC News](http://www.nbcnews.com/politics/2016-election/house), was that 29 house seats went unopposed. I thought this was pretty interesting and wanted to understand why this happens. After half a dozen ill-informed google searches, I came up with nothing.
 
 Logical next step (for me) was to create a static map using topojson from [Atlas-Make](https://github.com/bradoyler/atlas-make/tree/master/us-congress-census), the final House results from the [AP Election API](https://developer.ap.org/ap-elections-api) and render all the data together using [D3Node](https://github.com/bradoyler/d3-node)
 
