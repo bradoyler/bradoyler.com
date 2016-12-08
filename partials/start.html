@@ -14,8 +14,8 @@
   <meta property="og:title" content="{{capitalize title}} - {{name}}" />
   <meta property="og:url" content="{{url}}{{paths.href}}" />
   <meta property="og:type" content="article" />
-  {{#if service.socialimage}}
-  <meta property="og:image" content="{{service.socialimage}}" />
+  {{#if art}}
+  <meta property="og:image" content="/assets/images/{{art}}" />
   {{else}}
   <meta property="og:image" content="{{settings.avatarurl}}" />
   {{/if}}

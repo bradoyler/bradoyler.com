@@ -1,8 +1,8 @@
 ---
-title: The 29 unopposed house seats in 2016 election
+title: The 29 Unopposed House seats in 2016 Election
 date: 2016-12-05
 modified: null
-description: map of the 115th congress
+description: U.S. Map of the 115th Congress
 art: map-congress-unopposed.png
 layout: post.html
 ---
