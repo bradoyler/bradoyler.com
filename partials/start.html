@@ -19,11 +19,11 @@
   {{else}}
   <meta property="og:image" content="{{settings.avatarurl}}" />
   {{/if}}
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="{{name}}" />
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="{{settings.author.twitter}}" />
   <meta name="twitter:title" content="{{title}} - {{name}}" />
   <meta name="twitter:description" content="{{settings.description}}" />
-  <meta name="twitter:creator" content="{{name}}" />
+  <meta name="twitter:creator" content="{{settings.author.twitter}}" />
   <meta name="twitter:domain" content="{{url}}>" />
   {{#if art}}
   <meta name="twitter:image:src" content="{{url}}/assets/images/{{art}}" />
