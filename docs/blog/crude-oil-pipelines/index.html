@@ -8,21 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Planning to change the world with software built for humans.">
   <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="http://bradoyler.com/assets/images/atlas-make/" />
+  <meta name="standout" content="http://bradoyler.com/blog/crude-oil-pipelines/" />
   <meta property="og:site_name" content="{ Brad Oyler }" />
   <meta property="og:description" content="Planning to change the world with software built for humans." />
-  <meta property="og:title" content="Atlas-Make - Brad Oyler" />
-  <meta property="og:url" content="http://bradoyler.com/assets/images/atlas-make/" />
+  <meta property="og:title" content="Crude Oil Pipelines - Brad Oyler" />
+  <meta property="og:url" content="http://bradoyler.com/blog/crude-oil-pipelines/" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="http://bradoyler.com/assets/images/atlas-make-square.jpg" />
+  <meta property="og:image" content="http://bradoyler.com/assets/images/map-pipelines.jpg" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bradoyler" />
-  <meta name="twitter:title" content="Atlas-Make - Brad Oyler" />
+  <meta name="twitter:title" content="Crude Oil Pipelines - Brad Oyler" />
   <meta name="twitter:description" content="Planning to change the world with software built for humans." />
   <meta name="twitter:creator" content="@bradoyler" />
   <meta name="twitter:domain" content="http://bradoyler.com>" />
-  <meta name="twitter:image:src" content="http://bradoyler.com/assets/images/atlas-make-square.jpg" />
-  <title>Atlas-Make - Brad Oyler</title>
+  <meta name="twitter:image:src" content="http://bradoyler.com/assets/images/map-pipelines.jpg" />
+  <title>Crude Oil Pipelines - Brad Oyler</title>
   <link rel="author" href="humans.txt" />
   <link rel="icon" href="/assets/images/avatar.png">
   <link rel="stylesheet" href="/styles/main.css">
@@ -73,49 +73,56 @@
     <div class="row">
       <div class="meta--container meta--container-post">
         <div class="meta--txt meta--heading">
-          <span class="meta meta--primary">Assets/images/atlas-make</span>
+          <span class="meta meta--primary"><a class="meta--link" href="/blog">blog</a></span>
         </div>
       </div>
       <div class="meta--container meta--container-post">
         <div class="meta--txt meta--heading">
-          <time class="meta meta--primary" datetime="2016-09-15T00:00:00.000Z" itemprop="datePublished">Sep 14, 2016</time>
+          <time class="meta meta--primary" datetime="2016-12-17T00:00:00.000Z" itemprop="datePublished">Dec 16, 2016</time>
         </div>
       </div>
     </div>
   </div>
     <header class="article--header">
-      <h1 itemprop="headline">Atlas-Make</h1>
-      <p class="dek dek--lg">Makefile toolbelt for building geojson, topojson &amp; csv from public Shape files</p>
+      <h1 itemprop="headline">Crude Oil Pipelines</h1>
+      <p class="dek dek--lg">U.S. Map of Crude Oil Pipelines</p>
     </header>
     <div class="article--body" itemprop="articleBody">
-      <figure class="media-full">
-  <img src="/assets/images/atlas-make.png" alt="Homepage on Desktop">
-  <figcaption> World map built from <a href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Small scale Cultural vectors</a> via <a href="http://naturalearthdata.com/">Natural Earth</a> </figcaption>
-</figure>
+      <p>Recent news related to the <a href="http://www.nbcnews.com/storyline/dakota-pipeline-protests/">Dakota Access Pipeline (<span class="caps">DAPL</span>)</a> persuaded me to look into the public data around Crude Oil Pipelines in the <span class="caps">US</span>, which lead me to the <a href="https://www.eia.gov">Energy Information Administration (<span class="caps">EIA</span>.gov)</a>. They have a bunch of <a href="https://www.eia.gov/maps/">interesting maps</a>, but couldn’t find a map specific to Crude Oil pipelines.</p>
+<p>There are, however, a <a href="http://www.nytimes.com/interactive/2016/11/23/us/dakota-access-pipeline-protest-map.html">handful of great maps focused on the recent <span class="caps">DAPL</span> events</a> so go check them out too.</p>
+<h2 id="data">Data</h2>
+<ul>
+<li><a href="https://www.eia.gov/maps/layer_info-m.php">Pipeline data from <span class="caps">EIA</span>.gov</a></li>
+<li><a href="https://github.com/bradoyler/atlas-make"><span class="caps">US</span> States &amp; Cities via Atlas-Make</a></li>
+</ul>
+<h2 id="interactive-map">Interactive Map</h2>
+<p><iframe id="iframe_pipelines" src="/assets/widgets/pipelines.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe></p>
+<script>
+    window.addEventListener('message', function(e) {
+       console.log('message.e:', e.data);
+        var $iframe = document.getElementById('iframe_pipelines');
+        var height = e.data[1];
+        if (e.data[0]==='setHeight') {
+            $iframe.style.height = height + 'px';
+        }
+    }, false);
+</script>
 
-<h3 id="install-system-prereqs-linux-macosx-">Install System prereqs (Linux/MacOSX):</h3>
-<pre><code>$ brew install node
-$ brew install gdal
-</code></pre><h3 id="clone-repo-and-install-dependencies">Clone repo and install dependencies</h3>
-<pre><code>$ git clone https://github.com/bradoyler/atlas-make.git
-$ cd atlas-make
-$ npm install
-</code></pre><h3 id="make-all-targets-recipes">Make all targets/recipes</h3>
-<pre><code>$ make all
-</code></pre><p>this may take about 15mins, so try <code>$ make us-states</code> first</p>
-<h3 id="current-targets-">Current targets:</h3>
-<p><a href="https://github.com/bradoyler/atlas-make/tree/master/na-places"><code>$ make na-places</code></a> (populated places in North America )</p>
-<p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-states"><code>$ make us-states</code></a></p>
-<p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-counties"><code>$ make us-counties</code></a></p>
-<p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-towns"><code>$ make us-towns</code></a> (county subdivisions)</p>
-<p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-cities"><code>$ make us-cities</code></a></p>
-<p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-demographics"><code>$ make us-demographics</code></a></p>
-<p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-transportation"><code>$ make us-transportation</code></a></p>
-<p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-congress"><code>$ make us-congress</code></a></p>
+<h2 id="the-code">The Code</h2>
+<p><a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714</a></p>
+<h2 id="lesson-learned">Lesson learned</h2>
+<p>coming soon…</p>
 
     </div>
   </article>
   <nav class="nav nav--post row is-first">
+      <div class="nav--next">
+        <h2 class="nav--post-heading">The 29 Unopposed House seats in 2016 Election</h2>
+        <p class="dek dek--sm">U.S. Map of the 115th Congress</p>
+      </div>
+      <div class="nav--post-button">
+        <a class="button--link" href="/blog/the-29-unopposed-house-seats-in-2016-election">Next</a>
+      </div>
   </nav>    </main>
   <footer class="row">
     <div class="newsletter--l">

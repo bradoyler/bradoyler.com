@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="//d3js.org/topojson.v1.min.js"></script>
+  <style>
+    body {margin:0; padding: 0;}
+
+    .pipelines {
+     fill: none;
+     stroke: darkred;
+     stroke-width: 2px;
+    }
+    .highlight { fill:none; stroke: black; stroke-width: 3px;}
+
+    .city-label { font: 10px sans-serif;}
+    .states {
+     pointer-events: none;
+     fill: #eee;
+     stroke: #CCC;
+     stroke-width: 1px;
+    }
+    #panel { height: 14px;}
+  </style>
+</head>
+
+<body>
+  <div class='svg-container'></div>
+  <div id='panel'></div>
+  <script>
+    var svg = d3.select('.svg-container').append('svg')
+      .attr('xmlns', 'http://www.w3.org/2000/svg')
+      .attr('version', '1.1')
+      .attr('viewBox', '0 0 900 500')
+      .attr('preserveAspectRatio', 'xMidYMid meet');
+
+
+    var projection = d3.geoAlbersUsa();
+    var path = d3.geoPath().projection(projection);
+
+    d3.json('us-pipelines.json', function(error, topoData) {
+     if (error) throw error;
+
+      var pipelines = topoData.objects.CrudeOil_Pipelines_US_201606;
+
+      svg.selectAll('.states')
+        .data(topojson.feature(topoData, topoData.objects.states).features)
+        .enter()
+        .append('path')
+        .attr('class', 'states')
+        .attr('d', path)
+
+      svg.selectAll('.pipelines')
+        .data(topojson.feature(topoData, pipelines).features)
+  			.enter()
+  			.append('path')
+        .attr('class', 'pipelines')
+        .attr('d', path)
+      	.on('mouseover', function(d){
+          d3.select('#panel')
+            .html(d.properties.Opername+' - '+ d.properties.Pipename);
+          d3.selectAll('.highlight').attr('class', 'pipelines');
+          d3.select(this).attr('class','highlight');
+      	});
+
+      svg.append('path')
+        .datum(topojson.feature(topoData, topoData.objects.cities))
+        .attr('d', path)
+        .attr('class', 'city');
+
+      svg.selectAll('.city-label')
+        .data(topojson.feature(topoData, topoData.objects.cities).features)
+        .enter().append('text')
+        .attr('class', 'city-label')
+        .attr('transform', function (d) { return 'translate(' + projection(d.geometry.coordinates) + ')'; })
+        .attr('dy', '.70em')
+        .attr('dx', '.50em')
+        .text(function (d) {
+          return d.properties.NAME;
+        });
+});
+
+  </script>
+  <script>
+  var height;
+  var body = document.body, html = document.documentElement;
+
+  function iframeResize() {
+    height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    var location = document.location.href;
+    console.log("resize height:", height);
+    window.parent.postMessage(["setHeight", height, location], "*");
+  }
+
+  window.addEventListener("DOMContentLoaded", function(event) {
+    console.log("DOM fully loaded and parsed");
+    iframeResize();
+  });
+
+  window.addEventListener("resize", iframeResize);
+</script>
+</body>
+</html>
