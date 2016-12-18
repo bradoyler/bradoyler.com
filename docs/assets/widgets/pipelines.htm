@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="//d3js.org/topojson.v1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.panzoom/3.2.2/jquery.panzoom.min.js"></script>
   <style>
     body {margin:0; padding: 0;}
-
+    .petro_pipelines {
+      fill: none;
+      stroke: orange;
+      stroke-width: 1px;
+    }
     .pipelines {
      fill: none;
      stroke: darkred;
      stroke-width: 2px;
     }
-    .highlight { fill:none; stroke: black; stroke-width: 3px;}
-
+    .highlight { fill:none; stroke: black; stroke-width: 2px;}
     .city-label { font: 10px sans-serif;}
     .states {
      pointer-events: none;
@@ -20,11 +26,16 @@
      stroke: #CCC;
      stroke-width: 1px;
     }
-    #panel { height: 14px;}
+    #panel { height: 20px;}
   </style>
 </head>
 
 <body>
+  <div class="checkbox">
+    <label>
+      <input id='showPetro' type="checkbox"> Show Petroleum Pipelines
+    </label>
+  </div>
   <div class='svg-container'></div>
   <div id='panel'></div>
   <script>
@@ -34,42 +45,73 @@
       .attr('viewBox', '0 0 900 500')
       .attr('preserveAspectRatio', 'xMidYMid meet');
 
-
     var projection = d3.geoAlbersUsa();
     var path = d3.geoPath().projection(projection);
 
-    d3.json('us-pipelines.json', function(error, topoData) {
-     if (error) throw error;
+    d3.queue()
+    .defer(d3.json, 'CrudeOil_Pipelines_US_201606.json')
+    .defer(d3.json, 'us-major-cities.json')
+    .defer(d3.json, 'us-states-simplified.json')
+    .defer(d3.json, 'PetroleumProduct_Pipelines_US_201606.json')
+    .await(dataReady);
 
-      var pipelines = topoData.objects.CrudeOil_Pipelines_US_201606;
+    var _crude = {}, _cities = {}, _states = {}, _petro = {};
+    function dataReady(error, crude, cities, states, petro) {
+      if (error) throw error;
+      _crude = crude;
+      _cities = cities;
+      _states = states;
+      _petro = petro;
+      renderMap(_crude, _cities, _states);
+    }
+
+    function renderMap(crude, cities, states, petro) {
+      svg.selectAll('*').remove(); // clear for re-render
+
+      var crudeObjects = crude.objects.CrudeOil_Pipelines_US_201606;
 
       svg.selectAll('.states')
-        .data(topojson.feature(topoData, topoData.objects.states).features)
+        .data(topojson.feature(states, states.objects.states).features)
         .enter()
         .append('path')
         .attr('class', 'states')
         .attr('d', path)
 
       svg.selectAll('.pipelines')
-        .data(topojson.feature(topoData, pipelines).features)
+        .data(topojson.feature(crude, crudeObjects).features)
   			.enter()
   			.append('path')
         .attr('class', 'pipelines')
         .attr('d', path)
       	.on('mouseover', function(d){
           d3.select('#panel')
-            .html(d.properties.Opername+' - '+ d.properties.Pipename);
+            .html(d.properties.Opername+' - '+ d.properties.Pipename + ' (Crude)');
           d3.selectAll('.highlight').attr('class', 'pipelines');
           d3.select(this).attr('class','highlight');
       	});
 
+      if (petro) {
+        var petroObjects = petro.objects.PetroleumProduct_Pipelines_US_201606;
+        svg.selectAll('.petro_pipelines')
+          .data(topojson.feature(petro, petroObjects).features)
+    			.enter()
+    			.append('path')
+          .attr('class', 'petro_pipelines')
+          .attr('d', path)
+        	.on('mouseover', function(d){
+            d3.select('#panel')
+              .html(d.properties.Opername+' - '+ d.properties.Pipename + ' (Petro)');
+            d3.selectAll('.highlight').attr('class', 'petro_pipelines');
+            d3.select(this).attr('class','highlight');
+        	});
+      }
       svg.append('path')
-        .datum(topojson.feature(topoData, topoData.objects.cities))
+        .datum(topojson.feature(cities, cities.objects.cities))
         .attr('d', path)
         .attr('class', 'city');
 
       svg.selectAll('.city-label')
-        .data(topojson.feature(topoData, topoData.objects.cities).features)
+        .data(topojson.feature(cities, cities.objects.cities).features)
         .enter().append('text')
         .attr('class', 'city-label')
         .attr('transform', function (d) { return 'translate(' + projection(d.geometry.coordinates) + ')'; })
@@ -78,22 +120,62 @@
         .text(function (d) {
           return d.properties.NAME;
         });
-});
+    }
 
-  </script>
-  <script>
+    $('#showPetro').on('click', function (e) {
+      var checked = $(this)[0].checked;
+      if (checked) {
+        renderMap(_crude, _cities, _states, _petro);
+      } else {
+        renderMap(_crude, _cities, _states);
+      }
+    })
+</script>
+
+<script type="application/javascript">
+
+    $(function () {
+        // pan + zoom
+        var $elem = $('svg').panzoom();
+        var zoomedIn = false;
+
+        $elem.panzoom('option', {
+            duration: 600,
+            minScale: 1,
+            maxScale: 10,
+            animate: true
+        });
+
+        $elem.parent().on('dblclick', function(e) {
+            e.preventDefault();
+
+            if (zoomedIn) {
+                $elem.panzoom('resetPan');
+                $elem.panzoom('resetZoom');
+                zoomedIn = false;
+                return;
+            }
+
+            zoomedIn = true;
+            var zoom = 6;
+            $elem.panzoom('zoom', zoom, {
+                focal: e
+            });
+
+        });
+    });
+</script>
+<script>
   var height;
-  var body = document.body, html = document.documentElement;
+  var body = document.body;
+  var html = document.documentElement;
 
   function iframeResize() {
     height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-    var location = document.location.href;
-    console.log("resize height:", height);
-    window.parent.postMessage(["setHeight", height, location], "*");
+    window.parent.postMessage(["setHeight", height, document.location.href], "*");
   }
 
   window.addEventListener("DOMContentLoaded", function(event) {
-    console.log("DOM fully loaded and parsed");
     iframeResize();
   });
 
