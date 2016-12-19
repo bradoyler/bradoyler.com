@@ -2,10 +2,6 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="//d3js.org/topojson.v1.min.js"></script>
-  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.panzoom/3.2.2/jquery.panzoom.min.js"></script>
   <style>
     body {margin:0; padding: 0;}
     .petro_pipelines {
@@ -39,149 +35,15 @@
   </div>
   <div class='svg-container'></div>
   <div id='panel'></div>
-  <script>
-    var svg = d3.select('.svg-container').append('svg')
-      .attr('xmlns', 'http://www.w3.org/2000/svg')
-      .attr('version', '1.1')
-      .attr('viewBox', '0 0 900 500')
-      .attr('preserveAspectRatio', 'xMidYMid meet');
 
-    var projection = d3.geoAlbersUsa();
-    var path = d3.geoPath().projection(projection);
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="//d3js.org/topojson.v1.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.panzoom/3.2.2/jquery.panzoom.min.js"></script>
 
-    d3.queue()
-    .defer(d3.json, 'CrudeOil_Pipelines_US_201606.json')
-    .defer(d3.json, 'us-major-cities.json')
-    .defer(d3.json, 'us-states-simplified.json')
-    .defer(d3.json, 'PetroleumProduct_Pipelines_US_201606.json')
-    .await(dataReady);
-
-    var _crude = {}, _cities = {}, _states = {}, _petro = {};
-    function dataReady(error, crude, cities, states, petro) {
-      if (error) throw error;
-      _crude = crude;
-      _cities = cities;
-      _states = states;
-      _petro = petro;
-      renderMap(_crude, _cities, _states);
-    }
-
-    function renderMap(crude, cities, states, petro) {
-      svg.selectAll('*').remove(); // clear for re-render
-
-      var crudeObjects = crude.objects.CrudeOil_Pipelines_US_201606;
-
-      svg.selectAll('.states')
-        .data(topojson.feature(states, states.objects.states).features)
-        .enter()
-        .append('path')
-        .attr('class', 'states')
-        .attr('d', path)
-
-      svg.selectAll('.pipelines')
-        .data(topojson.feature(crude, crudeObjects).features)
-  			.enter()
-  			.append('path')
-        .attr('class', 'pipelines')
-        .attr('d', path)
-      	.on('mouseover touchstart', function(d){
-          d3.select('#panel')
-            .html(d.properties.Opername+' - '+ d.properties.Pipename + ' (Crude)');
-          d3.selectAll('.highlight').attr('class', 'pipelines');
-          d3.select(this).attr('class','highlight');
-      	});
-
-      if (petro) {
-        var petroObjects = petro.objects.PetroleumProduct_Pipelines_US_201606;
-        svg.selectAll('.petro_pipelines')
-          .data(topojson.feature(petro, petroObjects).features)
-    			.enter()
-    			.append('path')
-          .attr('class', 'petro_pipelines')
-          .attr('d', path)
-        	.on('mouseover touchstart', function(d){
-            d3.select('#panel')
-              .html(d.properties.Opername+' - '+ d.properties.Pipename + ' (Petro)');
-            d3.selectAll('.highlight_orange').attr('class', 'petro_pipelines');
-            d3.select(this).attr('class','highlight_orange');
-        	});
-      }
-      svg.append('path')
-        .datum(topojson.feature(cities, cities.objects.cities))
-        .attr('d', path)
-        .attr('class', 'city');
-
-      svg.selectAll('.city-label')
-        .data(topojson.feature(cities, cities.objects.cities).features)
-        .enter().append('text')
-        .attr('class', 'city-label')
-        .attr('transform', function (d) { return 'translate(' + projection(d.geometry.coordinates) + ')'; })
-        .attr('dy', '.70em')
-        .attr('dx', '.50em')
-        .text(function (d) {
-          return d.properties.NAME;
-        });
-    }
-
-    $('#showPetro').on('click', function (e) {
-      var checked = $(this)[0].checked;
-      if (checked) {
-        renderMap(_crude, _cities, _states, _petro);
-      } else {
-        renderMap(_crude, _cities, _states);
-      }
-    })
-</script>
-
-<script type="application/javascript">
-/*
-$(function () {
-    // pan + zoom
-    var $elem = $('svg').panzoom();
-    var zoomedIn = false;
-
-    $elem.panzoom('option', {
-        duration: 600,
-        minScale: 1,
-        maxScale: 10,
-        animate: true
-    });
-
-    $elem.parent().on('dblclick', function(e) {
-        e.preventDefault();
-
-        if (zoomedIn) {
-            $elem.panzoom('resetPan');
-            $elem.panzoom('resetZoom');
-            zoomedIn = false;
-            return;
-        }
-
-        zoomedIn = true;
-        var zoom = 3;
-        $elem.panzoom('zoom', zoom, {
-            focal: e
-        });
-
-    });
-});
-*/
-</script>
-<script>
-  var height;
-  var body = document.body;
-  var html = document.documentElement;
-
-  function iframeResize() {
-    height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-    window.parent.postMessage(["setHeight", height, document.location.href], "*");
-  }
-
-  window.addEventListener("DOMContentLoaded", function(event) {
-    iframeResize();
-  });
-
-  window.addEventListener("resize", iframeResize);
-</script>
+<script src='/scripts/utils.js'></script>
+<script src='/scripts/pipelines.js'></script>
+<script src='/scripts/panzoom-init.js'></script>
+<script src='/scripts/widgets.js'></script>
 </body>
 </html>
