@@ -29,7 +29,7 @@ There are, however, a [handful of great maps focused on the recent DAPL events](
 </script>
 
 ## The Code
-<a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714</a>
+<a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/crude-oil</a>
 
 ## Lesson learned
 coming soon...
