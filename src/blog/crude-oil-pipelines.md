@@ -16,7 +16,9 @@ There are, however, a [handful of great maps focused on the recent DAPL events](
 - [US States & Cities via Atlas-Make](https://github.com/bradoyler/atlas-make)
 
 ## Interactive Map
+<figure class="media-full">
 <iframe id="iframe_pipelines" src="/assets/widgets/pipelines.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
+</figure>
 <script>
     window.addEventListener('message', function(e) {
        console.log('message.e:', e.data);
