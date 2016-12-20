@@ -27,7 +27,28 @@ function dataReady(error, crude, cities, states, petro) {
 function renderMap(crude, cities, states, petro) {
   svg.selectAll('*').remove(); // clear for re-render
 
+  var cnt=0;
+  var colorLegend = {
+    'CENTURION PIPELINE':'purple',
+    'PLAINS PIPELINE':'darkred',
+    'PHILLIPS 66 PIPELINE': 'grey',
+     EXXONMOBIL:'blue',
+     'KOCH PIPELINE': 'orange',
+     'EXXONMOBIL WEST COAST':'blue',
+     SHELL: 'red',
+     SUNOCO: 'yellow',
+     ENBRIDGE:'green',
+     ENTERPRISE:'brown',
+     other: '#000'
+  };
+
   var crudeObjects = crude.objects.CrudeOil_Pipelines_US_201606;
+
+  crudeObjects.geometries.sort(function(a, b){
+    if(a.properties.Opername < b.properties.Opername) return -1;
+    if(a.properties.Opername > b.properties.Opername) return 1;
+    return 0;
+  });
 
   svg.selectAll('.states')
     .data(topojson.feature(states, states.objects.states).features)
@@ -42,9 +63,15 @@ function renderMap(crude, cities, states, petro) {
     .append('path')
     .attr('class', 'pipelines')
     .attr('d', path)
+    .style('stroke', function (d) {
+      console.log(d.properties.Opername);
+      return colorLegend[d.properties.Opername] || colorLegend.other;
+    })
     .on('mouseover touchstart', function(d){
+      var color = colorLegend[d.properties.Opername] || colorLegend.other;
+      var label = '<span class="glyphicon glyphicon-oil" style="color:'+ color +'"></span> '+ d.properties.Opername+' - '+ d.properties.Pipename + ' (Crude)';
       d3.select('#panel')
-        .html(d.properties.Opername+' - '+ d.properties.Pipename + ' (Crude)');
+        .html(label);
       d3.selectAll('.highlight').attr('class', 'pipelines');
       d3.select(this).attr('class','highlight');
     });

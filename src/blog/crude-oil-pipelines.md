@@ -3,7 +3,7 @@ title: Crude Oil Pipelines
 date: 2016-12-17
 modified: null
 description: U.S. Map of Crude Oil Pipelines
-art: map-pipelines.jpg
+art: map-pipelines-v2.jpg
 layout: post.html
 ---
 
@@ -32,4 +32,19 @@ There are, however, a [handful of great maps focused on the recent DAPL events](
 <a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/crude-oil</a>
 
 ## Lesson learned
-coming soon...
+Top 12 Pipeline Operators in the U.S. (by number of pipelines):
+
+- ENBRIDGE (27)
+-	PLAINS PIPELINE (25)
+-	SUNOCO (20)
+-	CENTURION PIPELINE (12)
+-	SHELL (11)
+-	ENTERPRISE (10)
+-	PHILLIPS 66 PIPELINE (9)
+-	KOCH PIPELINE (7)
+-	BP PIPELINE (7)
+-	GENESIS ENERGY (6)
+-	HUNT CRUDE OIL SUPPLY (6)
+-	EXXONMOBIL (6)
+
+(Note: still working on a list by mileage.)
