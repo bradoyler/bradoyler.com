@@ -33,8 +33,8 @@ There are, however, a [handful of great maps focused on the recent DAPL events](
 ## The Code
 <a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/crude-oil</a>
 
-## Lesson learned
-Top 12 Pipeline Operators in the U.S. (by number of pipelines):
+## Lessons learned
+1) Top 12 Pipeline Operators in the U.S. (by number of pipelines):
 
 - ENBRIDGE (27)
 -	PLAINS PIPELINE (25)
@@ -50,3 +50,5 @@ Top 12 Pipeline Operators in the U.S. (by number of pipelines):
 -	EXXONMOBIL (6)
 
 (Note: still working on a list by mileage.)
+
+2) <a href='http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp'>48% of Crude Oil pipelines installed before 1970 (PHMSA)</a>
