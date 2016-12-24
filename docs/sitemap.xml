@@ -2,18 +2,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 <url> <loc>http://bradoyler.com/404.html</loc> </url>
 <url> <loc>http://bradoyler.com/</loc> </url>
-<url> <loc>http://bradoyler.com/blog/</loc> </url>
 <url> <loc>http://bradoyler.com/projects/</loc> </url>
+<url> <loc>http://bradoyler.com/blog/</loc> </url>
 <url> <loc>http://bradoyler.com/about/</loc> </url>
+<url> <loc>http://bradoyler.com/projects/atlas-make/</loc> </url>
+<url> <loc>http://bradoyler.com/projects/d3-node/</loc> </url>
+<url> <loc>http://bradoyler.com/projects/news-divide/</loc> </url>
+<url> <loc>http://bradoyler.com/projects/newsblock/</loc> </url>
+<url> <loc>http://bradoyler.com/projects/route-cache/</loc> </url>
 <url> <loc>http://bradoyler.com/blog/bounce-rate-optimization-for-publishers-exit-intent/</loc> </url>
 <url> <loc>http://bradoyler.com/blog/crude-oil-pipelines/</loc> </url>
 <url> <loc>http://bradoyler.com/blog/the-29-unopposed-house-seats-in-2016-election/</loc> </url>
 <url> <loc>http://bradoyler.com/blog/my-key-management-principles-kmp/</loc> </url>
 <url> <loc>http://bradoyler.com/blog/future-of-news-according-to-facebook-google/</loc> </url>
 <url> <loc>http://bradoyler.com/blog/timeline-that-google-calendar-with-gcal-timeline/</loc> </url>
-<url> <loc>http://bradoyler.com/projects/d3-node/</loc> </url>
-<url> <loc>http://bradoyler.com/projects/atlas-make/</loc> </url>
-<url> <loc>http://bradoyler.com/projects/news-divide/</loc> </url>
-<url> <loc>http://bradoyler.com/projects/newsblock/</loc> </url>
-<url> <loc>http://bradoyler.com/projects/route-cache/</loc> </url>
 </urlset>

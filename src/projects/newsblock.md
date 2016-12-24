@@ -24,4 +24,4 @@ layout: post.html
   <figcaption>Story page provides a URL for the story and a place to discuss the content.</figcaption>
 </figure>
 
-[Newsblock](http://getnewsblock.com) is an ongoing experiment and collaboration created by myself and the talented designer [Ian Rose](http://ianrose.me/).
+[Newsblock](http://newsblock.io) is an ongoing experiment and collaboration created by myself and the talented designer [Ian Rose](http://ianrose.me/).
