@@ -29,16 +29,16 @@ function renderMap(crude, cities, states, petro) {
 
   var cnt=0;
   var colorLegend = {
-    'CENTURION PIPELINE':'purple',
-    'PLAINS PIPELINE':'darkred',
-    'PHILLIPS 66 PIPELINE': 'grey',
-     EXXONMOBIL:'blue',
-     'KOCH PIPELINE': 'orange',
-     'EXXONMOBIL WEST COAST':'blue',
-     SHELL: 'red',
-     SUNOCO: 'yellow',
-     ENBRIDGE:'green',
-     ENTERPRISE:'brown',
+    'CENTURION PIPELINE':'#7570b3',
+    'PLAINS PIPELINE':'#e7298a',
+    'PHILLIPS 66 PIPELINE': '#666666',
+     'KOCH PIPELINE': '#d95f02',
+     EXXONMOBIL:'#377eb8',
+     'EXXONMOBIL WEST COAST':'#377eb8',
+     SHELL: '#e41a1c',
+     SUNOCO: '#ffff33',
+     ENBRIDGE:'#4daf4a',
+     ENTERPRISE:'#a65628',
      other: '#000'
   };
 
