@@ -57,7 +57,7 @@ var svg = d3.select('.svg-container').append('svg')
 
   var yAxis = d3.axisLeft(y);
 
-  d3.csv("crime-in-us.csv", type, function(error, data) {
+  d3.csv("crime-in-us-2015.csv", type, function(error, data) {
     if (error) throw error;
     data = data.filter(function (item) { return item.murder > 7});
     x.domain([0, d3.max(data, function(d) { return d.murder; })]);
@@ -89,7 +89,7 @@ var svg = d3.select('.svg-container').append('svg')
         .attr("y", function(d) { return y(d.city); })
         .attr("width", function(d) { return x(d.murder); })
       .append('title')
-      .text('test');
+      .text(function (d) { return d.murder;});
   });
 
   function type(d) {

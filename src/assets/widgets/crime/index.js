@@ -11,7 +11,7 @@ var path = d3.geoPath().projection(projection);
 d3.queue()
 .defer(d3.csv, '../cities-over-250k.csv')
 .defer(d3.json, '../us-states-simplified.json')
-.defer(d3.csv, 'crime-in-us.csv')
+.defer(d3.csv, 'crime-in-us-2015.csv')
 .await(dataReady);
 
 var _cities = {}, _states = {}, _crime = {};
@@ -28,9 +28,11 @@ function dataReady(error, cities, states, crime) {
     });
 
     if (crimeCity) {
-      row.pop_2014 = crimeCity.pop_2014;
-      row.pop_1950 = crimeCity.pop_1950;
-      row.murder_rate = crimeCity.murder;
+      //console.log(crimeCity.city, crimeCity.murder);
+      row.pop_2015 = crimeCity.pop_2015;
+      //row.pop_1950 = crimeCity.pop_1950;
+      row.murder = crimeCity.murder;
+      row.murder_rate = crimeCity.murder_rate;
     }
 
     return row;
@@ -52,15 +54,21 @@ function drawMapCircles(cities) {
   circleGroup
     .append('circle')
     .style("fill", "#820505")
+    .style("stroke", "grey")
+    .style('fill-opacity', .8)
 		.attr('r', function (d) {
-		  return d.murder_rate ? Math.round(d.murder_rate)* .8 : 0;
+      console.log(d.NAME+','+ Math.round(d.murder_rate));
+		  return d.murder_rate ? d.murder_rate : 0;
 		})
+    .on('mouseover', function () {
+      var html = d3.select(this).text();
+      d3.select('#panel').text(html);
+    })
     .append('title')
     .text(function(d) {
-      return d.NAME+
-      '\nMurders: '+Math.round(d.murder_rate) + ' for every 100k'+
-      '\n2014 Population: '+ d.pop_2014 +
-      '\n1950 Population: '+ d.pop_1950;
+      return d.NAME+ ' -'+
+      '\nMurders: '+d.murder +' ('+ +Math.round(d.murder_rate) + ' for every 100k),'+
+      '\n2015 Population: '+ d.pop_2015;
     });
 
   // circleGroup
