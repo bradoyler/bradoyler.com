@@ -3,7 +3,7 @@ title: Crime in US Cities
 date: 2016-12-31
 modified: null
 description:
-art: map-pipelines-v2.jpg
+art: crime-in-us-cities.jpg
 layout: post.html
 ---
 
