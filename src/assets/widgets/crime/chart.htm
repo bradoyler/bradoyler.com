@@ -7,7 +7,11 @@
 
   <style>
     .bar {
-      fill: darkred;
+      fill: #820505;
+    }
+
+    .bar2 {
+      fill: steelblue;
     }
 
     .bar:hover {
@@ -15,8 +19,9 @@
     }
 
     .label {
-      fill: black;
+      fill: #eee;
       font: 12px sans-serif;
+      stroke: none;
     }
   </style>
 
@@ -26,20 +31,12 @@
   <div id='panel'></div>
   <script>
 
-    var margin = {
-        top: 20,
-        right: 20,
-        bottom: 30,
-        left: 140
-      };
-    var width = 960 - margin.left - margin.right;
-    var height = 950 - margin.top - margin.bottom;
-
-    // var svg = d3.select("body").append("svg")
-    //     .attr("width", width + margin.left + margin.right)
-    //     .attr("height", height + margin.top + margin.bottom)
-    //   .append("g")
-    //     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+var margin = {
+    top: 20,
+    right: 20,
+    bottom: 30,
+    left: 140
+  };
 
 var svg = d3.select('.svg-container').append('svg')
   .attr('xmlns', 'http://www.w3.org/2000/svg')
@@ -49,47 +46,62 @@ var svg = d3.select('.svg-container').append('svg')
   .append("g")
   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  var x = d3.scaleLinear().range([0, 500]);
+  var x = d3.scaleLinear().range([0, 120]);
+  var x2 = d3.scaleLinear().range([0, 120]);
 
-  var y = d3.scaleBand().range([0, 900]);
+  var y = d3.scaleBand().range([0, 600]);
 
   var xAxis = d3.axisBottom(x).ticks(10, "%");
 
   var yAxis = d3.axisLeft(y);
 
   d3.csv("crime-in-us-2015.csv", type, function(error, data) {
-    if (error) throw error;
-    data = data.filter(function (item) { return item.murder > 7});
+    if (error) {
+      throw error;
+    }
+    data = data.filter(function (item) { return item.murder > 99});
     x.domain([0, d3.max(data, function(d) { return d.murder; })]);
+    x2.domain([0, d3.max(data, function(d) { return d.pop_2015; })]);
+
     y.domain(data.map(function(d) { return d.city; }))
-      .paddingInner(0.2)
+      .paddingInner(0.57)
       .paddingOuter(0.3);
 
-    // svg.append("g")
-    //     .attr("class", "x-axis")
-    //     .attr("transform", "translate(0," + height + ")")
-    //     .call(xAxis)
-    //   .append("text")
-    //     .attr("class", "label")
-    //     .attr("transform", "translate(" + width + ",0)")
-    //     .attr("y", -5)
-    //     .style("text-anchor", "end")
-    //     .text("Frequency");
-
-    svg.append("g")
-        .attr("class", "y-axis")
+    svg.append('g')
+        .attr('class', 'y-axis')
         .call(yAxis);
 
-    svg.selectAll(".bar")
+    var barGroup = svg.selectAll('.bar')
       .data(data)
-      .enter().append("rect")
-        .attr("class", "bar")
-        .attr("x", 2)
-        .attr("height", y.bandwidth())
-        .attr("y", function(d) { return y(d.city); })
-        .attr("width", function(d) { return x(d.murder); })
-      .append('title')
-      .text(function (d) { return d.murder;});
+      .enter()
+      .append('g');
+
+    barGroup.append('rect')
+      .attr('class', 'bar2')
+      .attr("x", 2)
+      .attr("height", y.bandwidth())
+      .attr("y", function(d) { return y(d.city)+ 15; })
+      .attr("width", function(d) { return x2(d.pop_2015); });
+
+    barGroup.append('rect')
+      .attr("class", "bar")
+      .attr("x", 2)
+      .attr("height", y.bandwidth())
+      .attr("y", function(d) { return y(d.city); })
+      .attr("width", function(d) { return x(d.murder); });
+
+    barGroup.append('text')
+      .attr("x", 7)
+      .attr("y", function(d) { return y(d.city) + 12; })
+      .text(function (d) { return d.murder;})
+      .attr('class', 'label');
+
+    barGroup.append('text')
+      .attr("x", 7)
+      .attr("y", function(d) { return y(d.city) + 26; })
+      .text(function (d) { return Math.round(d.pop_2015*.001) + 'K';})
+      .attr('class', 'label');
+
   });
 
   function type(d) {
@@ -100,3 +112,4 @@ var svg = d3.select('.svg-container').append('svg')
 </script>
 
 </body>
+</html>
