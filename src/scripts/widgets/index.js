@@ -1,7 +1,7 @@
 // var _widgets = _widgets || {};
 (function () {
   var height;
-  var body = document.body;
+  var body = document.body || {};
   var html = document.documentElement;
 
   function iframeResize() {

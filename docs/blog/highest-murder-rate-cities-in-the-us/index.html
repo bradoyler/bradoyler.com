@@ -8,21 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Planning to change the world with software built for humans.">
   <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="http://bradoyler.com/blog/crime-in-us-cities/" />
+  <meta name="standout" content="http://bradoyler.com/blog/highest-murder-rate-cities-in-the-us/" />
   <meta property="og:site_name" content="{ Brad Oyler }" />
   <meta property="og:description" content="Planning to change the world with software built for humans." />
-  <meta property="og:title" content="Crime in US Cities - Brad Oyler" />
-  <meta property="og:url" content="http://bradoyler.com/blog/crime-in-us-cities/" />
+  <meta property="og:title" content="Highest Murder Rate Cities in the US - Brad Oyler" />
+  <meta property="og:url" content="http://bradoyler.com/blog/highest-murder-rate-cities-in-the-us/" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="http://bradoyler.com/assets/images/crime-in-us-cities.jpg" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bradoyler" />
-  <meta name="twitter:title" content="Crime in US Cities - Brad Oyler" />
+  <meta name="twitter:title" content="Highest Murder Rate Cities in the US - Brad Oyler" />
   <meta name="twitter:description" content="Planning to change the world with software built for humans." />
   <meta name="twitter:creator" content="@bradoyler" />
   <meta name="twitter:domain" content="http://bradoyler.com>" />
   <meta name="twitter:image:src" content="http://bradoyler.com/assets/images/crime-in-us-cities.jpg" />
-  <title>Crime in US Cities - Brad Oyler</title>
+  <title>Highest Murder Rate Cities in the US - Brad Oyler</title>
   <link rel="author" href="humans.txt" />
   <link rel="icon" href="/assets/images/avatar.png">
   <link rel="stylesheet" href="/styles/main.css">
@@ -84,18 +84,23 @@
     </div>
   </div>
     <header class="article--header">
-      <h1 itemprop="headline">Crime in US Cities</h1>
-      <p class="dek dek--lg"></p>
+      <h1 itemprop="headline">Highest Murder Rate Cities in the US</h1>
+      <p class="dek dek--lg">A look at homicide across cities in America</p>
     </header>
     <div class="article--body" itemprop="articleBody">
-      <p>[insert copy here]</p>
+      <p>By using the number of murders in large cities (over 250k) combined with their population, we can determine the murder rate (per 100k residents) in those cities.</p>
+<p>I realized that geography doesn’t give a great representation so I added a scatterplot below to show how the murder rates are clustered. Of course, murder rate alone doesn’t give the full picture of crime in a city, but I’m saving that for another post.</p>
 <h2 id="data">Data</h2>
+<p>The <span class="caps">FBI</span> releases a yearly <a href="https://ucr.fbi.gov/crime-in-the-u.s">Crime in the <span class="caps">US</span></a> report which gives a breakdown of crimes for each city.</p>
+<p>Murder rate is determined by murders per 100k residents.</p>
+<h4 id="data-sources-">data sources:</h4>
 <ul>
-<li><a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-8/table_8_offenses_known_to_law_enforcement_by_state_by_city_2015.xls/view">‘Uniform Crime Reporting’ data from ucr.fbi.gov</a></li>
-<li><a href="https://github.com/bradoyler/atlas-make"><span class="caps">US</span> States &amp; Cities via Atlas-Make</a></li>
+<li><a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-8/table_8_offenses_known_to_law_enforcement_by_state_by_city_2015.xls/view">Offenses known to law enforcement (2015)</a> - <span class="caps">FBI</span>.gov Uniform Crime Reporting (<span class="caps">UCR</span>) database.</li>
+<li><span class="caps">US</span> States (Topojson) via <a href="https://github.com/bradoyler/atlas-make/tree/master/us-states">Atlas-Make/us-states</a></li>
+<li><span class="caps">US</span> Cities via <a href="https://github.com/bradoyler/atlas-make/tree/master/us-cities">Atlas-Make/us-cities</a></li>
 </ul>
+<h2 id="map-us-cities-by-murder-rate">Map - <span class="caps">US</span> Cities by Murder Rate</h2>
 <p><figure class="media-full"></p>
-<h2 id="map">Map</h2>
 <p><iframe id="iframe_map" src="/assets/widgets/crime/map.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
 </figure></p>
 <script>
@@ -109,8 +114,8 @@
     }, false);
 </script>
 
+<h2 id="scatterplot-murders-over-population">Scatterplot - Murders over Population</h2>
 <p><figure class="media-full"></p>
-<h2 id="scatterplot">Scatterplot</h2>
 <p><iframe id="iframe_scatterplot" src="/assets/widgets/crime/scatterplot.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
 </figure></p>
 <script>
@@ -125,9 +130,12 @@
 </script>
 
 <h2 id="the-code">The Code</h2>
-<p><a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/crime-in-us</a></p>
+<p><a href='http://bl.ocks.org/bradoyler/5adf1567be59283d3e882035e0371ed1' target='blank'>gist.github.com/bradoyler/crime-in-us</a></p>
 <h2 id="lessons-learned">Lessons learned</h2>
-<h4 id="there-seems-to-be-an-interesting-correlation-between-shrinking-cities-and-crime-which-has-inspired-me-to-dig-more-but-more-on-that-in-2017-">There seems to be an interesting correlation between shrinking cities and crime, which has inspired me to dig more, but more on that in 2017.</h4>
+<p>1) There seems to be an interesting correlation between violent crime rate and shrinking cities. If you look at past populations in Detroit, Baltimore, New Orleans, and St. Louis you’ll notice those cities have shrunk dramatically in the past 20-30 years. Hoping to dig more into that soon.</p>
+<p>2) The <span class="caps">FBI</span> report, for the previous year, is released pretty late (September), so I want to have these charts handy for that time next year. 538 has also collected partial data for 2016</p>
+<p>3) <a href="http://fivethirtyeight.com/features/murders-rose-at-their-fastest-pace-in-a-quarter-century-last-year/">FiveThirtyEight</a>, <a href="https://www.washingtonpost.com/graphics/national/2015-homicides/">Washington Post</a> and <a href="http://www.nytimes.com/interactive/2016/09/08/us/us-murder-rates.html">NYTimes</a> have all posted some great insights on recent crime and homicide trends.</p>
+<p>4) <span class="caps">FBI</span> also publishes a report on the weapons used in reported homicides, but that only seems to be available by state. This state data is also often reported as ‘Limited supplemental homicide data received.’ so the numbers can be completely incorrect. <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-20">See example with Alabama</a></p>
 
     </div>
   </article>
