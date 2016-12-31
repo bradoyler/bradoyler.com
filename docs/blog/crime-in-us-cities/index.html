@@ -8,21 +8,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Planning to change the world with software built for humans.">
   <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="http://bradoyler.com/blog/crude-oil-pipelines/" />
+  <meta name="standout" content="http://bradoyler.com/blog/crime-in-us-cities/" />
   <meta property="og:site_name" content="{ Brad Oyler }" />
   <meta property="og:description" content="Planning to change the world with software built for humans." />
-  <meta property="og:title" content="Crude Oil Pipelines - Brad Oyler" />
-  <meta property="og:url" content="http://bradoyler.com/blog/crude-oil-pipelines/" />
+  <meta property="og:title" content="Crime in US Cities - Brad Oyler" />
+  <meta property="og:url" content="http://bradoyler.com/blog/crime-in-us-cities/" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="http://bradoyler.com/assets/images/map-pipelines-v2.jpg" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bradoyler" />
-  <meta name="twitter:title" content="Crude Oil Pipelines - Brad Oyler" />
+  <meta name="twitter:title" content="Crime in US Cities - Brad Oyler" />
   <meta name="twitter:description" content="Planning to change the world with software built for humans." />
   <meta name="twitter:creator" content="@bradoyler" />
   <meta name="twitter:domain" content="http://bradoyler.com>" />
   <meta name="twitter:image:src" content="http://bradoyler.com/assets/images/map-pipelines-v2.jpg" />
-  <title>Crude Oil Pipelines - Brad Oyler</title>
+  <title>Crime in US Cities - Brad Oyler</title>
   <link rel="author" href="humans.txt" />
   <link rel="icon" href="/assets/images/avatar.png">
   <link rel="stylesheet" href="/styles/main.css">
@@ -78,31 +78,45 @@
       </div>
       <div class="meta--container meta--container-post">
         <div class="meta--txt meta--heading">
-          <time class="meta meta--primary" datetime="2016-12-17T00:00:00.000Z" itemprop="datePublished">Dec 16, 2016</time>
+          <time class="meta meta--primary" datetime="2016-12-31T00:00:00.000Z" itemprop="datePublished">Dec 30, 2016</time>
         </div>
       </div>
     </div>
   </div>
     <header class="article--header">
-      <h1 itemprop="headline">Crude Oil Pipelines</h1>
-      <p class="dek dek--lg">U.S. Map of Crude Oil Pipelines</p>
+      <h1 itemprop="headline">Crime in US Cities</h1>
+      <p class="dek dek--lg"></p>
     </header>
     <div class="article--body" itemprop="articleBody">
-      <p>Recent news related to the Dakota Access Pipeline <a href="http://www.nbcnews.com/storyline/dakota-pipeline-protests/">(<span class="caps">DAPL</span>)</a> persuaded me to look into the public data around Crude Oil Pipelines in the <span class="caps">US</span>, which lead me to the <a href="https://www.eia.gov">Energy Information Administration (<span class="caps">EIA</span>.gov)</a>. They have a bunch of <a href="https://www.eia.gov/maps/">interesting maps</a>, but couldn’t find a map specific to Crude Oil pipelines.</p>
-<p>There are, however, a <a href="http://www.nytimes.com/interactive/2016/11/23/us/dakota-access-pipeline-protest-map.html">handful of great maps focused on the recent <span class="caps">DAPL</span> events</a> so go check them out too.</p>
+      <p>[insert copy here]</p>
 <h2 id="data">Data</h2>
 <ul>
-<li><a href="https://www.eia.gov/maps/layer_info-m.php">Pipeline data from <span class="caps">EIA</span>.gov</a></li>
+<li><a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-8/table_8_offenses_known_to_law_enforcement_by_state_by_city_2015.xls/view">‘Uniform Crime Reporting’ data from ucr.fbi.gov</a></li>
 <li><a href="https://github.com/bradoyler/atlas-make"><span class="caps">US</span> States &amp; Cities via Atlas-Make</a></li>
 </ul>
-<h2 id="interactive-map">Interactive Map</h2>
 <p><figure class="media-full"></p>
-<p><iframe id="iframe_pipelines" src="/assets/widgets/pipelines.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
+<h2 id="map">Map</h2>
+<p><iframe id="iframe_map" src="/assets/widgets/crime/map.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
 </figure></p>
 <script>
     window.addEventListener('message', function(e) {
        console.log('message.e:', e.data);
-        var $iframe = document.getElementById('iframe_pipelines');
+        var $iframe = document.getElementById('iframe_map');
+        var height = e.data[1];
+        if (e.data[0]==='setHeight') {
+            $iframe.style.height = height + 'px';
+        }
+    }, false);
+</script>
+
+<p><figure class="media-full"></p>
+<h2 id="scatterplot">Scatterplot</h2>
+<p><iframe id="iframe_scatterplot" src="/assets/widgets/crime/scatterplot.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
+</figure></p>
+<script>
+    window.addEventListener('message', function(e) {
+       console.log('message.e:', e.data);
+        var $iframe = document.getElementById('iframe_scatterplot');
         var height = e.data[1];
         if (e.data[0]==='setHeight') {
             $iframe.style.height = height + 'px';
@@ -111,44 +125,19 @@
 </script>
 
 <h2 id="the-code">The Code</h2>
-<p><a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/crude-oil</a></p>
+<p><a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/crime-in-us</a></p>
 <h2 id="lessons-learned">Lessons learned</h2>
-<h4 id="1-top-12-pipeline-operators-in-the-u-s-by-number-of-pipelines-">1) Top 12 Pipeline Operators in the <span class="caps">U.S.</span>(by number of pipelines):</h4>
-<ul>
-<li><span class="caps">ENBRIDGE</span> (27)</li>
-<li><span class="caps">PLAINS</span> <span class="caps">PIPELINE</span> (25)</li>
-<li><span class="caps">SUNOCO</span> (20)</li>
-<li><span class="caps">CENTURION</span> <span class="caps">PIPELINE</span> (12)</li>
-<li><span class="caps">SHELL</span> (11)</li>
-<li><span class="caps">ENTERPRISE</span> (10)</li>
-<li><span class="caps">PHILLIPS</span> 66 <span class="caps">PIPELINE</span> (9)</li>
-<li><span class="caps">KOCH</span> <span class="caps">PIPELINE</span> (7)</li>
-<li><span class="caps">BP</span> <span class="caps">PIPELINE</span> (7)</li>
-<li><span class="caps">GENESIS</span> <span class="caps">ENERGY</span> (6)</li>
-<li><span class="caps">HUNT</span> <span class="caps">CRUDE</span> <span class="caps">OIL</span> <span class="caps">SUPPLY</span> (6)</li>
-<li><span class="caps">EXXONMOBIL</span> (6)</li>
-</ul>
-<p>(Note: still working on a list by mileage.)</p>
-<h4 id="2-a-href-http-opsweb-phmsa-dot-gov-pipeline_replacement-by_decade_installation-asp-48-of-crude-oil-pipelines-where-installed-before-1970-phmsa-a-">2) <a href='http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp'>48% of Crude Oil pipelines where installed before 1970 (<span class="caps">PHMSA</span>)</a></h4>
-<p>These pipelines have a vulnerability to ‘seam quality issues’ (leakage).</p>
-<p><em>source: <a href="http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp">phmsa.dot.gov/pipelines</a></em></p>
+<h4 id="there-seems-to-be-an-interesting-correlation-between-shrinking-cities-and-crime-which-has-inspired-me-to-dig-more-but-more-on-that-in-2017-">There seems to be an interesting correlation between shrinking cities and crime, which has inspired me to dig more, but more on that in 2017.</h4>
 
     </div>
   </article>
-  <nav class="nav nav--post row">
-      <div class="nav--prev">
-        <h2 class="nav--post-heading">Crime in US Cities</h2>
-        <p class="dek dek--sm"></p>
-      </div>
-      <div class="nav--post-button">
-        <a class="button--link" href="/blog/crime-in-us-cities">Previous</a>
-      </div>
+  <nav class="nav nav--post row is-first">
       <div class="nav--next">
-        <h2 class="nav--post-heading">The 29 Unopposed House seats in 2016 Election</h2>
-        <p class="dek dek--sm">U.S. Map of the 115th Congress</p>
+        <h2 class="nav--post-heading">Crude Oil Pipelines</h2>
+        <p class="dek dek--sm">U.S. Map of Crude Oil Pipelines</p>
       </div>
       <div class="nav--post-button">
-        <a class="button--link" href="/blog/the-29-unopposed-house-seats-in-2016-election">Next</a>
+        <a class="button--link" href="/blog/crude-oil-pipelines">Next</a>
       </div>
   </nav>    </main>
   <footer class="row">

@@ -7,7 +7,7 @@ art: map-pipelines-v2.jpg
 layout: post.html
 ---
 
-Recent news related to the [Dakota Access Pipeline (DAPL)](http://www.nbcnews.com/storyline/dakota-pipeline-protests/) persuaded me to look into the public data around Crude Oil Pipelines in the US, which lead me to the [Energy Information Administration (EIA.gov)](https://www.eia.gov). They have a bunch of [interesting maps](https://www.eia.gov/maps/), but couldn't find a map specific to Crude Oil pipelines.
+Recent news related to the Dakota Access Pipeline [(DAPL)](http://www.nbcnews.com/storyline/dakota-pipeline-protests/) persuaded me to look into the public data around Crude Oil Pipelines in the US, which lead me to the [Energy Information Administration (EIA.gov)](https://www.eia.gov). They have a bunch of [interesting maps](https://www.eia.gov/maps/), but couldn't find a map specific to Crude Oil pipelines.
 
 There are, however, a [handful of great maps focused on the recent DAPL events](http://www.nytimes.com/interactive/2016/11/23/us/dakota-access-pipeline-protest-map.html) so go check them out too.
 
@@ -54,4 +54,4 @@ There are, however, a [handful of great maps focused on the recent DAPL events](
 #### 2) <a href='http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp'>48% of Crude Oil pipelines where installed before 1970 (PHMSA)</a>
 These pipelines have a vulnerability to 'seam quality issues' (leakage).
 
-*source: [phmsa.dot.gov/pipeline_replacement/by_decade_installation](http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp)*
+*source: [phmsa.dot.gov/pipelines](http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp)*
