@@ -8,6 +8,20 @@ var svg = d3.select('.svg-container').append('svg')
 var projection = d3.geoAlbersUsa();
 var path = d3.geoPath().projection(projection);
 
+var colorScale = d3.scaleThreshold()
+  .domain([1,4,8,15,20,30,40,50,60])
+  .range([
+    'rgb(255,245,240)',
+		'rgb(254,224,210)',
+		'rgb(252,187,161)',
+		'rgb(252,146,114)',
+		'rgb(251,106,74)',
+		'rgb(239,59,44)',
+		'rgb(203,24,29)',
+		'rgb(165,15,21)',
+		'rgb(103,0,13)',
+  	]);
+
 d3.queue()
 .defer(d3.csv, '../cities-over-250k.csv')
 .defer(d3.json, '../us-states-simplified.json')
@@ -28,9 +42,7 @@ function dataReady(error, cities, states, crime) {
     });
 
     if (crimeCity) {
-      //console.log(crimeCity.city, crimeCity.murder);
       row.pop_2015 = crimeCity.pop_2015;
-      //row.pop_1950 = crimeCity.pop_1950;
       row.murder = crimeCity.murder;
       row.murder_rate = crimeCity.murder_rate;
     }
@@ -53,12 +65,14 @@ function drawMapCircles(cities) {
 
   circleGroup
     .append('circle')
-    .style("fill", "#820505")
-    .style("stroke", "grey")
+    .style('fill', function (d) {
+      return colorScale(d.murder_rate);
+    })
+    .style('stroke', 'grey')
     .style('fill-opacity', .8)
 		.attr('r', function (d) {
-      console.log(d.NAME+','+ Math.round(d.murder_rate));
-		  return d.murder_rate ? d.murder_rate : 0;
+      //console.log(d.NAME+','+ Math.round(d.murder_rate));
+		  return d.murder_rate ? (d.murder_rate * 0.5) : 0;
 		})
     .on('mouseover', function () {
       var html = d3.select(this).text();
