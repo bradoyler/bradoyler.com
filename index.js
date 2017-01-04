@@ -35,7 +35,7 @@ var config = {
   version: pkg.version,
   devBuild: devBuild,
   domain: "bradoyler.com",
-  url: "http://bradoyler.com",
+  url: "https://bradoyler.com",
   dest: "./docs/"
 };
 
