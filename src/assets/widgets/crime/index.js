@@ -1,9 +1,19 @@
+var tip = d3.tip()
+ .attr('class', 'd3-tip')
+ .offset([-10, 0])
+ .html(function(d) {
+   return d.NAME+ ': '+
+     d.murder +' ('+ Math.round(d.murder_rate)+' per 100k)'+
+     '<div>2015 Population: '+ d.pop_2015+ '</div>';
+ });
 
 var svg = d3.select('.svg-container').append('svg')
   .attr('xmlns', 'http://www.w3.org/2000/svg')
   .attr('version', '1.1')
   .attr('viewBox', '0 0 900 500')
   .attr('preserveAspectRatio', 'xMidYMid meet');
+
+svg.call(tip);
 
 var projection = d3.geoAlbersUsa();
 var path = d3.geoPath().projection(projection);
@@ -74,40 +84,8 @@ function drawMapCircles(cities) {
       //console.log(d.NAME+','+ Math.round(d.murder_rate));
 		  return d.murder_rate ? (d.murder_rate * 0.5) : 0;
 		})
-    .on('mouseover', function () {
-      var html = d3.select(this).text();
-      d3.select('#panel').text(html);
-    })
-    .append('title')
-    .text(function(d) {
-      return d.NAME+ ' -'+
-      '\nMurders: '+d.murder +' ('+ +Math.round(d.murder_rate) + ' for every 100k),'+
-      '\n2015 Population: '+ d.pop_2015;
-    });
-
-  // circleGroup
-  //   .append('text')
-  //   .attr('class', 'text')
-  //   .style('stroke', function (d) {
-  //     if (d.murder_rate > 10) {
-  //       return '#EEE';
-  //     }
-  //     return '#000';
-  //   })
-  //   .attr('dx', function(d){
-  //     if (d.murder_rate > 10) {
-  //       return -6;
-  //     } else if (d.murder_rate) {
-  //       return Math.round(d.murder_rate);
-  //     }
-  //     return 6;
-  //   })
-  //   .attr('dy', 3)
-  //   .text(function(d) {
-  //     if (parseInt(d.murder_rate)) {
-  //       return Math.round(d.murder_rate);
-  //     }
-  //   });
+    .on('mouseover', tip.show)
+    .on('mouseout', tip.hide);
 }
 
 function renderMap(cities, states, crime) {
