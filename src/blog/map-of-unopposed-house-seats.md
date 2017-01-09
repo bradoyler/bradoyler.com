@@ -3,7 +3,7 @@ title: The 29 Unopposed House seats in 2016 Election
 date: 2016-12-05
 modified: null
 description: U.S. Map of the 115th Congress
-art: map-congress-unopposed.png
+art: map-unopposed.jpg
 layout: post.html
 ---
 
@@ -16,7 +16,7 @@ Logical next step (for me) was to create a static map using topojson from [Atlas
 - [115th Congressional Districts with US States Topojson](https://github.com/bradoyler/d3-node/blob/master/examples/data/congress-115-states.json)
 
 ## The Map
-<img alt='house map' src='https://cloud.githubusercontent.com/assets/425966/20950901/845fdef8-bbf0-11e6-8fe0-e5ec51ac37ff.png' />
+<img alt='house map' src='https://cloud.githubusercontent.com/assets/425966/21755664/572f8a96-d5e5-11e6-889a-584e3369aaa9.jpg' />
 
 ## The Code
 <a href='https://github.com/bradoyler/d3-node/blob/master/examples/map-congress-unopposed.js' target='blank'>github.com/bradoyler/d3-node/examples/map-congress-unopposed.js</a>
