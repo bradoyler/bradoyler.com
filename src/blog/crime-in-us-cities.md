@@ -24,27 +24,18 @@ Murder rate is determined by murders per 100k residents.
 <figure class="media-full">
 <iframe id="iframe_map" src="/assets/widgets/crime/map.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
 </figure>
+
+## Scatterplot - Murders over Population
+<figure class="media-full">
+<iframe id="iframe_scatterplot" src="/assets/widgets/crime/scatterplot.htm" frameborder="0" width="100%" style="height:500px;" scrolling="no" height="0"></iframe>
+</figure>
+
 <script>
     window.addEventListener('message', function(e) {
        console.log('message.e:', e.data);
         var $iframe = document.getElementById('iframe_map');
         var height = e.data[1];
-        if (e.data[0]==='setHeight') {
-            $iframe.style.height = height + 'px';
-        }
-    }, false);
-</script>
-
-## Scatterplot - Murders over Population
-<figure class="media-full">
-<iframe id="iframe_scatterplot" src="/assets/widgets/crime/scatterplot.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
-</figure>
-<script>
-    window.addEventListener('message', function(e) {
-       console.log('message.e:', e.data);
-        var $iframe = document.getElementById('iframe_scatterplot');
-        var height = e.data[1];
-        if (e.data[0]==='setHeight') {
+        if (e.data[0]==='setHeight' && e.data[2].indexOf($iframe.src) > -1) {
             $iframe.style.height = height + 'px';
         }
     }, false);

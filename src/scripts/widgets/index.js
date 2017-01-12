@@ -1,11 +1,9 @@
 // var _widgets = _widgets || {};
 (function () {
-  var height;
-  var body = document.body || {};
-  var html = document.documentElement;
 
   function iframeResize() {
-    height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
+    var body = document.body || {};
+    var height = body.offsetHeight;
     window.parent.postMessage(["setHeight", height, document.location.href], "*");
   }
 
