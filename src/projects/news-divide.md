@@ -3,14 +3,14 @@ title: The News Divide
 date: 2016-11-25
 modified: null
 project:
-  url: https://bradoyler.github.io/newsdivide.html
+  url: http://newsdivide.bradoyler.com
 description: Snapshots of the Left, Right & Center of News
 art: newsdivide_image.jpg
 layout: post.html
 ---
 
 <figure class="media-full">
-  [![Homepage on Desktop](/assets/images/newsdivide_screen.png)](http://bradoyler.github.io/newsdivide.html)
+  [![Homepage on Desktop](/assets/images/newsdivide_screen.png)](http://newsdivide.bradoyler.com)
   <figcaption> screenshot of 'The News Divide' </figcaption>
 </figure>
 
@@ -24,4 +24,4 @@ Used NodeJs & PhantomJs to screen capture a collection of sites and save images 
 
 ### Try it
 
-[-> bradoyler.github.io/newsdivide](http://bradoyler.github.io/newsdivide.html)
+[-> NewsDivide](http://newsdivide.bradoyler.com)
