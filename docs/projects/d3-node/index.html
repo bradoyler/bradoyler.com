@@ -88,11 +88,55 @@
       <p class="dek dek--lg">Server-side D3 for static chart/map generation via Node.js</p>
     </header>
     <div class="article--body" itemprop="articleBody">
-      <figure class="media-full">
+      <figure>
   <img src="/assets/images/d3-node.png" alt="Homepage on Desktop">
   <figcaption>Example choropleth using population data of France and topojson from Atlas-Make.</figcaption>
 </figure>
 
+<h3 id="why-">Why?</h3>
+<ul>
+<li>Performance: pre-rendering allows offloading data processing, and network overhead</li>
+<li>Take advantage of the entire ecosystem: npmjs.com</li>
+<li>Static rendering of Data-Driven Documents (D3.js)</li>
+<li>Portable <span class="caps">SVG</span> with embedded stylesheets</li>
+<li>Easily adapt examples from bl.ocks.org</li>
+</ul>
+<h3 id="basic-usage-">Basic usage:</h3>
+<p><a href="https://nodei.co/npm/d3-node/"><img src="https://nodei.co/npm/d3-node.png?downloads=true&amp;downloadRank=true" alt="NPM"></a></p>
+<pre><code class="lang-javascript"> var D3Node = require(&#39;d3-node&#39;)
+ var d3 = D3Node.d3
+ var d3n = new D3Node()    // create instance
+ d3.select(d3n.document.body).append(&#39;span&#39;) // select &lt;body&gt; &amp; insert span
+ d3n.html() // returns: &lt;html&gt;&lt;head&gt;&lt;/head&gt;&lt;body&gt;&lt;span&gt;&lt;/span&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+<p><strong><span class="caps">SVG</span> creation</strong></p>
+<pre><code class="lang-javascript"> var d3n = new D3Node()      // initializes D3 with container element
+ d3n.createSVG().append(&#39;g&#39;) // create SVG w/ &#39;g&#39; tag
+ d3n.svgString() // output: &lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;&lt;g&gt;&lt;/g&gt;&lt;/svg&gt;
+</code></pre>
+<h3 id="advanced-usage">Advanced usage</h3>
+<p><strong>Setting container &amp; insertion point via selector</strong></p>
+<pre><code class="lang-javascript"> var options = { selector: &#39;#chart&#39;, container: &#39;&lt;div id=&quot;container&quot;&gt;&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;&lt;/div&gt;&#39; }
+ var d3n = new D3Node(options) // initializes D3 with container element
+ var d3 = d3n.d3
+ d3.select(d3n.document.querySelector(&#39;#chart&#39;)).append(&#39;span&#39;) // insert span tag into #chart
+ d3n.html()   // output: &lt;html&gt;&lt;body&gt;&lt;div id=&quot;container&quot;&gt;&lt;div id=&quot;chart&quot;&gt;&lt;span&gt;&lt;/span&gt;&lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+</code></pre>
+<p><strong>Inline <span class="caps">SVG</span> styles</strong></p>
+<pre><code class="lang-javascript"> var d3n = new D3Node({styles:&#39;.test {fill:#000;}&#39;})
+ d3n.createSVG().append(&#39;g&#39;)
+ d3n.svgString()
+</code></pre>
+<blockquote>
+<p>Output</p>
+<pre><code class="lang-html">&lt;svg xmlns=&quot;http://www.w3.org/2000/svg&quot;&gt;
+   &lt;defs&gt;
+     &lt;style type=&quot;text/css&quot;&gt;&lt;![CDATA[ .test{fill:#000;} ]]&gt;&lt;/style&gt;
+   &lt;/defs&gt;
+   &lt;g&gt;&lt;/g&gt;
+&lt;svg&gt;
+</code></pre>
+</blockquote>
 <p>See more <a href="https://github.com/bradoyler/d3-node/blob/master/examples/README.md">D3-Node examples</a></p>
 
     </div>
