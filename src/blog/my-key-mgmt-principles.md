@@ -2,7 +2,7 @@
 title: My “Key Management Principles” (KMP)
 date: 2013-07-23
 modified: null
-description: YAGNI, KISS, Occam’s razor & Agile ar my best lessons learned.
+description: YAGNI, KISS, Occam’s razor & Agile are my best lessons learned.
 art: article.png
 layout: post.html
 ---
