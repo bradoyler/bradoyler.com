@@ -1,6 +1,6 @@
 ---
 title: Highest Murder Rate Cities in the US
-date: 2016-12-31
+date: 2017-11-16
 modified: null
 description: A look at homicide across cities in America
 art: crime-in-us-cities.jpg
@@ -16,7 +16,8 @@ The FBI releases a yearly [Crime in the US](https://ucr.fbi.gov/crime-in-the-u.s
 
 Murder rate is determined by murders per 100k residents.
 #### data sources:
-- [Offenses known to law enforcement (2015)](https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-8/table_8_offenses_known_to_law_enforcement_by_state_by_city_2015.xls/view) - FBI.gov Uniform Crime Reporting (UCR) database.
+- [Offenses known to law enforcement (2016)](https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-6/table-6.xls/view) - FBI.gov Uniform Crime Reporting (UCR) database.
+- [Offenses known to law enforcement (2015)](https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-8/table_8_offenses_known_to_law_enforcement_by_state_by_city_2015.xls/view) - FBI.gov (UCR)
 - US States (Topojson) via [Atlas-Make/us-states](https://github.com/bradoyler/atlas-make/tree/master/us-states)
 - US Cities via [Atlas-Make/us-cities](https://github.com/bradoyler/atlas-make/tree/master/us-cities)
 
@@ -25,10 +26,16 @@ Murder rate is determined by murders per 100k residents.
 <iframe id="iframe_map" src="/assets/widgets/crime/map.htm" frameborder="0" width="100%" scrolling="no" height="0"></iframe>
 </figure>
 
-## Scatterplot - Murders over Population
+## Scatterplots - Murders over Population (2015 - 2016)
+<h3>2016</h3>
 <figure class="media-full">
-<iframe id="iframe_scatterplot" src="/assets/widgets/crime/scatterplot.htm" frameborder="0" width="100%" style="height:500px;" scrolling="no" height="0"></iframe>
+<iframe id="iframe_scatterplot" src="/assets/widgets/crime/scatterplot2016.htm" frameborder="0" width="100%" style="height:500px;" scrolling="no" height="0"></iframe>
 </figure>
+<h3>2015 </h3>
+<figure class="media-full">
+<iframe id="iframe_scatterplot" src="/assets/widgets/crime/scatterplot2015.htm" frameborder="0" width="100%" style="height:500px;" scrolling="no" height="0"></iframe>
+</figure>
+
 
 <script>
     window.addEventListener('message', function(e) {

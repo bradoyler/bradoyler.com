@@ -1,41 +1,35 @@
 <!doctype html>
+<html>
 <head>
+<title>Scatterplot</title>
 <meta charset="utf-8">
-<head>
+</head>
 <body>
 <div id="viz"></div>
-<script src="//d3plus.org/js/d3.js"></script>
-<script src="//d3plus.org/js/d3plus.js"></script>
-<script src='/scripts/widgets/index.js'></script>
+<script src="https://d3plus.org/js/d3.js"></script>
+<script src="https://d3plus.org/js/d3plus.js"></script>
+<!-- <script src="//scripts/widgets/index.js"></script> -->
 <script>
   function type(d) {
-    var row = {
-      murders: +d.murder,
+    var row = { murders: +d.murder,
       'murder rate per 100k': +d.murder_rate,
-      city: d.city,
-      '2015 Population': +d.pop_2015
+      city: d.city, 'Population': +d.pop
     };
     return row;
   }
 
-d3.csv("crime-in-us-2015.csv", type, function(error, data) {
-  if (error) {
-    throw error;
-  }
-
-  //data = data.slice(0,10)
-
-  var visualization = d3plus.viz()
+d3.csv('crime-in-us-2015.csv', type, function(error, data) {
+   d3plus.viz()
     .container('#viz')  // container DIV to hold the visualization
     .data(data)  // data to use with the visualization
     .type('scatter') // visualization type
     .id('city')  // key for which our data is unique on
-    .x('2015 Population') // key for x-axis
+    .x('Population') // key for x-axis
     .y('murders') // key for y-axis
     .size('murder rate per 100k')
     .draw()
+});
 
-  });
 </script>
 </body>
 </html>

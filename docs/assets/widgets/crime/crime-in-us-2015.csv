@@ -1,4 +1,4 @@
-city,pop_2015,violent_crime,murder,murder_rate
+city,pop,violent_crime,murder,murder_rate
 Newark,281944,0,105,37.24
 Portland,632309,0,34,5.3
 Chicago,2728695,24663,478,17.51753127

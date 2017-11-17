@@ -4,7 +4,7 @@ var tip = d3.tip()
  .html(function(d) {
    return d.NAME+ ': '+
      d.murder +' ('+ Math.round(d.murder_rate)+' per 100k)'+
-     '<div>2015 Population: '+ d.pop_2015+ '</div>';
+     '<div>2016 Population: '+ d.pop+ '</div>';
  });
 
 var svg = d3.select('.svg-container').append('svg')
@@ -35,7 +35,7 @@ var colorScale = d3.scaleThreshold()
 d3.queue()
 .defer(d3.csv, '../cities-over-250k.csv')
 .defer(d3.json, '../us-states-simplified.json')
-.defer(d3.csv, 'crime-in-us-2015.csv')
+.defer(d3.csv, 'crime-in-us-2016.csv')
 .await(dataReady);
 
 var _cities = {}, _states = {}, _crime = {};
@@ -52,7 +52,7 @@ function dataReady(error, cities, states, crime) {
     });
 
     if (crimeCity) {
-      row.pop_2015 = crimeCity.pop_2015;
+      row.pop = crimeCity.pop;
       row.murder = crimeCity.murder;
       row.murder_rate = crimeCity.murder_rate;
     }
