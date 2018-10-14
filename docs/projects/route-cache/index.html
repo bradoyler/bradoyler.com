@@ -8,11 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Planning to change the world with software built for humans.">
   <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="https://bradoyler.com/projects/route-cache/" />
+  <meta name="standout" content="https://bradoyler.com/projects\route-cache/" />
   <meta property="og:site_name" content="{ Brad Oyler }" />
   <meta property="og:description" content="Planning to change the world with software built for humans." />
   <meta property="og:title" content="Route-Cache - Brad Oyler" />
-  <meta property="og:url" content="https://bradoyler.com/projects/route-cache/" />
+  <meta property="og:url" content="https://bradoyler.com/projects\route-cache/" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://bradoyler.com/assets/images/route-cache.jpg" />
   <meta name="twitter:card" content="summary_large_image">
@@ -36,9 +36,9 @@
           <img class="nav-avatar" src="/assets/images/avatar_400x400.jpg">
         </a>
       </div>
-          <p class="site-title site-title--name" itemprop="name">
-            <a href="/">{ Brad Oyler }</a>
-          </p>
+      <h1 class="site-title site-title--name" itemprop="name">
+        <a href="/">{ Brad Oyler }</a>
+      </h1>
       <p class="site-title site-title--sub" itemprop="specialty">Developer</p>
       <button title="Site Menu" id="js-toggle-menu" class="button--menu" aria-label="Site Menu">
         <svg class="button--menu-open" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -112,6 +112,8 @@ app.get(&#39;/index&#39;, routeCache.cacheSeconds(20), function(req, res){
     console.log(&#39;you will only see this every 20 seconds.&#39;);
     res.send(&#39;this response will be cached&#39;);
 });
+
+
 </code></pre>
 <h2 id="delete-a-cached-route">Delete a cached route</h2>
 <pre><code class="lang-javascript">routeCache.removeCache(&#39;/index&#39;);
