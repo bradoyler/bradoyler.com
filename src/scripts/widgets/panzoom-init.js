@@ -6,16 +6,21 @@ $(function () {
 
   // pan + zoom
   var $elem = $('svg').panzoom();
-  var zoomedIn = false;
 
   $elem.panzoom('option', {
-      duration: 500,
+      duration: 300,
       minScale: 1,
       maxScale: 12,
-      animate: true
+      animate: false
   });
 
   var zoom = 0;
+  $elem.parent().on('mousewheel', function(e) {
+    // console.log(e.deltaX, e.deltaY, e.deltaFactor);
+    zoom += e.deltaY
+    $elem.panzoom('zoom', zoom, { focal: e });
+  });
+
   $elem.parent().on('dblclick', function(e) {
       e.preventDefault();
 
