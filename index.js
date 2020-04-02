@@ -115,10 +115,10 @@ var ms = Metalsmith(__dirname)
     destination: './assets' // relative to the build directory
   }));
 
-  if(!devBuild) ms.use(uglify({
-      removeOriginal: true,
-      nameTemplate: '[name].js'
-  }));
+  // if(!devBuild) ms.use(uglify({
+  //     removeOriginal: true,
+  //     nameTemplate: '[name].js'
+  // }));
 
   if(devBuild) ms.use(browserSync({
     server: config.dest,

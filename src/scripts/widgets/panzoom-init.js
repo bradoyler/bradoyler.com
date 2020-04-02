@@ -9,27 +9,25 @@ $(function () {
   var zoomedIn = false;
 
   $elem.panzoom('option', {
-      duration: 600,
+      duration: 500,
       minScale: 1,
-      maxScale: 10,
+      maxScale: 12,
       animate: true
   });
 
+  var zoom = 0;
   $elem.parent().on('dblclick', function(e) {
       e.preventDefault();
 
-      if (zoomedIn) {
+      zoom += 3
+      if (zoom > 9) {
           $elem.panzoom('resetPan');
           $elem.panzoom('resetZoom');
-          zoomedIn = false;
+          zoom = 0
           return;
       }
 
-      zoomedIn = true;
-      var zoom = 3;
-      $elem.panzoom('zoom', zoom, {
-          focal: e
-      });
+      $elem.panzoom('zoom', zoom, { focal: e });
 
   });
 });

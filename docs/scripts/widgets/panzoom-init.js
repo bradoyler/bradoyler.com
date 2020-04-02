@@ -1,1 +1,33 @@
-$(function(){if(!window._utils||!_utils.isMobile){var o=$("svg").panzoom(),n=!1;o.panzoom("option",{duration:600,minScale:1,maxScale:10,animate:!0}),o.parent().on("dblclick",function(a){if(a.preventDefault(),n)return o.panzoom("resetPan"),o.panzoom("resetZoom"),void(n=!1);n=!0;o.panzoom("zoom",3,{focal:a})})}});
+$(function () {
+
+  if (window._utils && _utils.isMobile) {
+    return;
+  }
+
+  // pan + zoom
+  var $elem = $('svg').panzoom();
+  var zoomedIn = false;
+
+  $elem.panzoom('option', {
+      duration: 500,
+      minScale: 1,
+      maxScale: 12,
+      animate: true
+  });
+
+  var zoom = 0;
+  $elem.parent().on('dblclick', function(e) {
+      e.preventDefault();
+
+      zoom += 3
+      if (zoom > 9) {
+          $elem.panzoom('resetPan');
+          $elem.panzoom('resetZoom');
+          zoom = 0
+          return;
+      }
+
+      $elem.panzoom('zoom', zoom, { focal: e });
+
+  });
+});
