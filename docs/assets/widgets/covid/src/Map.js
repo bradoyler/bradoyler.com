@@ -4,7 +4,7 @@ export default {
   name: 'Map',
   props: ['coords', 'reports'],
   mounted () {
-    const reportDate = '3/30/2020'
+    const reportDate = '4/2/20'
     mapboxgl.accessToken = window.mapbox_token
 
     const map = new mapboxgl.Map({
