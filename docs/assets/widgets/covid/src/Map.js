@@ -5,8 +5,6 @@ export default {
   props: ['coords', 'reports'],
   mounted () {
     const reportDate = '3/30/2020'
-    console.log('>>>>> Map', reportDate);
-
     mapboxgl.accessToken = window.mapbox_token
 
     const map = new mapboxgl.Map({
@@ -23,14 +21,13 @@ export default {
     window.map = map // export to window
     const that = this
     map.on('load', function () {
-      console.log('map loaded!', that.reports)
-
       const geojson = turf.featureCollection(that.reports.map(r => {
         const cases = Number(r[reportDate])
         const properties = { cases, FIPS: r.FIPS, pop: 0, rate: 0 }
         if (r.pop) {
           const rate = Math.round(cases / (r.pop/10000))
-          properties.html = `<strong>${r.Admin2}, ${r.Province_State}</strong><p>Pop: ${r.pop}, rate: ${rate}</p>`
+          properties.html = `<strong>${r.Admin2}, ${r.Province_State}</strong>
+                             <p>Population: ${r.pop}, Cases: ${cases}, Per 10k: ${rate}</p>`
           properties.rate = rate
           properties.pop = r.pop
         }
