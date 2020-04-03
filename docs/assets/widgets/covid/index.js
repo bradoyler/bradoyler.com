@@ -1,4 +1,4 @@
-const reportDate = '3/30/2020'
+const reportDate = '4/2/2020'
 
 const tip = d3.tip()
  .attr('class', 'd3-tip')
@@ -65,7 +65,7 @@ function drawMapCircles(reports) {
 		.data(reports)
 		.enter()
     .append('g')
-    .attr('transform', d => 'translate('+ projection([d.Long, d.Lat])+')')
+    .attr('transform', d => 'translate('+ projection([d.Long_, d.Lat])+')')
     .attr('class', 'city');
 
   circleGroup

@@ -15,7 +15,8 @@ export default {
           const reports = responses[0]
           const counties = responses[1]
           this.reports = reports.map(r => {
-            const county = counties.find(c => +r.FIPS === +`${c.STATE}${c.COUNTY}`)
+            const fips = Math.round(Number(r.FIPS))
+            const county = counties.find(c => fips === +`${c.STATE}${c.COUNTY}`)
             if (county) {
               r.pop = Number(county.POPESTIMATE2019)
             } else {

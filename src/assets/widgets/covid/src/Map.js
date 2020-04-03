@@ -22,7 +22,7 @@ export default {
     const that = this
     map.on('load', function () {
       const geojson = turf.featureCollection(that.reports.map(r => {
-        const cases = Number(r[reportDate])
+        const cases = Math.round(Number(r[reportDate]))
         const properties = { cases, FIPS: r.FIPS, pop: 0, rate: 0 }
         if (r.pop) {
           const rate = Math.round(cases / (r.pop/10000))
@@ -31,8 +31,10 @@ export default {
           properties.rate = rate
           properties.pop = r.pop
         }
-        return turf.point([r.Long, r.Lat], properties)
+        return turf.point([r.Long_, r.Lat], properties)
       }))
+
+      console.log('geo::', geojson);
 
       map.addSource(`report`, { type: 'geojson', data: geojson })
 
