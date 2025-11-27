@@ -1,5 +1,6 @@
 ---
 title: About Me
+description: Planning to change the world with software built for humans
 art: avatar_400x400.jpg
 layout: default.njk
 ---
