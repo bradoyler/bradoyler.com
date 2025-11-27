@@ -750,7 +750,7 @@ video {
 }
 
 .prose :where(h3):not(:where([class~="not-prose"],[class~="not-prose"] *)) {
-  color: #f3f4f6;
+  color: var(--tw-prose-headings);
   font-weight: 600;
   font-size: 1.25em;
   margin-top: 1.6em;
