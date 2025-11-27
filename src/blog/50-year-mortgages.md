@@ -1,6 +1,6 @@
 ---
-title: 50 year mortgages
-date: 2025-11-15
+title: 50 year mortgages? 
+date: 2025-11-26
 modified: null
 description: it's a leveraged short!
 art: 50-year-mortgage.jpg
