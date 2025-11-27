@@ -4,7 +4,8 @@ date: 2016-12-05
 modified: null
 description: U.S. Map of the 115th Congress
 art: map-unopposed.jpg
-layout: post.html
+layout: post.njk
+tags: ['blog']
 ---
 
 I'm somewhat new to the world of election data, but one piece of data I stumbled upon while working on [the 2016 Elections for NBC News](http://www.nbcnews.com/politics/2016-election/house), was that 29 house seats went unopposed. I thought this was pretty interesting and wanted to understand why this happens. After half a dozen ill-informed google searches, I came up with nothing.

@@ -1,8 +1,0 @@
-/blog/:slug                                                        /post/:slug
-/maps                                                              http://mapshaper.org
-bradoyler.github.io                                                www.bradoyler.com
-/post/100643877241/timeline-that-google-calendar-with-jquery       /blog/timeline-that-google-calendar-with-gcal-timeline/
-/post/99188801771/bounce-rate-optimization-for-publishers-using    /blog/bounce-rate-optimization-for-publishers-exit-intent/
-/post/92660488146/kmp                                              /blog/my-key-management-principles-kmp/
-/post/122944596446/git-replay-changes-of-a-branch                  /blog/git-replay-changes-of-a-branch/
-/post/3614362044/uploading-an-image-with-aws-sdk-for-net-c        /blog/uploading-an-image-with-aws-sdk-for-net-c/

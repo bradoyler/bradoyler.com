@@ -1,5 +1,5 @@
 ---
 title: Projects
-layout: collection.html
+layout: collection.njk
 permalink: false
 ---

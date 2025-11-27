@@ -1,5 +1,4 @@
 ---
-layout: home.html
-permalink: false
+layout: home.njk
 title: Home
 ---

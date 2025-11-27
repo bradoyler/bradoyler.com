@@ -1,5 +1,5 @@
 ---
 title: blog
 permalink: false
-layout: collection.html
+layout: collection.njk
 ---

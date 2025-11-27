@@ -1,109 +1,89 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="utf-8">
-  <script>
-    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Planning to change the world with software built for humans.">
-  <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="https://bradoyler.com/projects\atlas-make/" />
-  <meta property="og:site_name" content="{ Brad Oyler }" />
-  <meta property="og:description" content="Planning to change the world with software built for humans." />
-  <meta property="og:title" content="Atlas-Make - Brad Oyler" />
-  <meta property="og:url" content="https://bradoyler.com/projects\atlas-make/" />
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://bradoyler.com/assets/images/atlas-make-square.jpg" />
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@bradoyler" />
-  <meta name="twitter:title" content="Atlas-Make - Brad Oyler" />
-  <meta name="twitter:description" content="Planning to change the world with software built for humans." />
-  <meta name="twitter:creator" content="@bradoyler" />
-  <meta name="twitter:domain" content="https://bradoyler.com>" />
-  <meta name="twitter:image:src" content="https://bradoyler.com/assets/images/atlas-make-square.jpg" />
-  <title>Atlas-Make - Brad Oyler</title>
-  <link rel="author" href="humans.txt" />
-  <link rel="icon" href="/assets/images/avatar.png">
-  <link rel="stylesheet" href="/styles/main.css">
-  <!-- production v0.0.1 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atlas-Make — My New Blog</title>
+    <meta name="description"
+        content="Makefile toolbelt for building geojson, topojson &amp; csv from public Shape files">
+
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 </head>
-<body id="top" class="-page" itemscope itemtype="http://schema.org/WebPage">
-  <div class="nav--menu">
-    <header class="site-header">
-      <div>
-        <a href="/">
-          <img class="nav-avatar" src="/assets/images/avatar_400x400.jpg">
-        </a>
-      </div>
-      <h1 class="site-title site-title--name" itemprop="name">
-        <a href="/">{ Brad Oyler }</a>
-      </h1>
-      <p class="site-title site-title--sub" itemprop="specialty">Developer</p>
-      <button title="Site Menu" id="js-toggle-menu" class="button--menu" aria-label="Site Menu">
-        <svg class="button--menu-open" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-          <path fill="#fff" d="M16.4,9H3.6C3.048,9,3,9.447,3,10c0,0.553,0.048,1,0.6,1H16.4c0.552,0,0.6-0.447,0.6-1C17,9.447,16.952,9,16.4,9z M16.4,13
-    	H3.6C3.048,13,3,13.447,3,14c0,0.553,0.048,1,0.6,1H16.4c0.552,0,0.6-0.447,0.6-1C17,13.447,16.952,13,16.4,13z M3.6,7H16.4
-    	C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.048,7,3.6,7z"/>
-        </svg>
-        <svg class="button--menu-close" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-          <path fill="#fff" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
-    	c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697c0.469-0.469,1.228-0.469,1.697,0
-    	L10,8.183l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0c0.469,0.469,0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15
-    	C14.817,13.62,14.817,14.38,14.348,14.849z"/>
-        </svg>
-      </button>
-    </header>
-    <nav id="js-menu" class="nav" itemprop="breadcrumb">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="layout--main">
-    <div class="container">
-    <main>
-  <article class="article--post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="meta--post--l">
-    <div class="row">
-      <div class="meta--container meta--container-post">
-        <div class="meta--txt meta--heading">
-          <span class="meta meta--primary"><a class="meta--link" href="/projects">projects</a></span>
+
+<body class="bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans">
+
+    
+    <header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 sticky top-0 z-10">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-xl md:text-2xl font-extrabold tracking-tight hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+               { BRAD OYLER }
+            </a>
+            <nav class="space-x-6 text-sm font-medium">
+                <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+                <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+                <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
+            </nav>
         </div>
-      </div>
-      <div class="meta--container meta--container-post">
-        <div class="meta--txt meta--heading">
-          <time class="meta meta--primary" datetime="2016-09-15T00:00:00.000Z" itemprop="datePublished">Sep 14, 2016</time>
-        </div>
-      </div>
-    </div>
-  </div>
-    <header class="article--header">
-      <h1 itemprop="headline">Atlas-Make</h1>
-      <p class="dek dek--lg">Makefile toolbelt for building geojson, topojson &amp; csv from public Shape files</p>
     </header>
-    <div class="article--body" itemprop="articleBody">
-      <figure class="media-full">
+
+    <main class="flex-1">
+        
+        <article class="max-w-4xl mx-auto my-12 md:my-16 p-8 md:p-12 
+                        bg-white dark:bg-gray-800 shadow-xl rounded-lg"> 
+
+            
+            <header class="mb-12 border-b border-gray-100 dark:border-gray-700 pb-8">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Atlas-Make
+                </h1>
+
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+                    
+                    <time datetime="2016-09-15">
+                        Published on September 14, 2016
+                    </time>
+                    
+                    
+                        <span class="text-gray-400 dark:text-gray-600">•</span> 
+                        
+                        <div class="flex gap-2">
+                            
+                                
+                                    <a href="/tags/projects/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 hover:underline capitalize">
+                                        #projects
+                                    </a>
+                                
+                            
+                        </div>
+                    
+                </div>
+            </header>
+
+            
+            <div class="prose prose-xl dark:prose-invert max-w-none 
+                        prose-a:text-blue-600 dark:prose-a:text-blue-400
+                        prose-img:rounded-lg prose-img:shadow-md
+                        prose-pre:bg-gray-900 prose-pre:text-gray-50">
+                <figure class="media-full">
   <img src="/assets/images/atlas-make.png" alt="Homepage on Desktop">
   <figcaption> World map built from <a href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Small scale Cultural vectors</a> via <a href="http://naturalearthdata.com/">Natural Earth</a> </figcaption>
 </figure>
-
-<h3 id="install-system-prereqs-linux-macosx-">Install System prereqs (Linux/MacOSX):</h3>
+<h3>Install System prereqs (Linux/MacOSX):</h3>
 <pre><code>$ brew install node
 $ brew install gdal
-</code></pre><h3 id="clone-repo-and-install-dependencies">Clone repo and install dependencies</h3>
+</code></pre>
+<h3>Clone repo and install dependencies</h3>
 <pre><code>$ git clone https://github.com/bradoyler/atlas-make.git
 $ cd atlas-make
 $ npm install
-</code></pre><h3 id="make-all-targets-recipes">Make all targets/recipes</h3>
+</code></pre>
+<h3>Make all targets/recipes</h3>
 <pre><code>$ make all
-</code></pre><p>this may take about 15mins, so try <code>$ make us-states</code> first</p>
-<h3 id="current-targets-">Current targets:</h3>
+</code></pre>
+<p>this may take about 15mins, so try <code>$ make us-states</code> first</p>
+<h3>Current targets:</h3>
 <p><a href="https://github.com/bradoyler/atlas-make/tree/master/na-places"><code>$ make na-places</code></a> (populated places in North America )</p>
 <p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-states"><code>$ make us-states</code></a></p>
 <p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-counties"><code>$ make us-counties</code></a></p>
@@ -113,76 +93,26 @@ $ npm install
 <p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-transportation"><code>$ make us-transportation</code></a></p>
 <p><a href="https://github.com/bradoyler/atlas-make/tree/master/us-congress"><code>$ make us-congress</code></a></p>
 
-    </div>
-  </article>
-  <nav class="nav nav--post row">
-      <div class="nav--prev">
-        <h2 class="nav--post-heading">The News Divide</h2>
-        <p class="dek dek--sm">Snapshots from the Reading Habits of Left, Right and Center</p>
-      </div>
-      <div class="nav--post-button">
-        <a class="button--link" href="/projects/news-divide">Previous</a>
-      </div>
-      <div class="nav--next">
-        <h2 class="nav--post-heading">D3-Node</h2>
-        <p class="dek dek--sm">Server-side D3 for static chart/map generation via Node.js</p>
-      </div>
-      <div class="nav--post-button">
-        <a class="button--link" href="/projects/d3-node">Next</a>
-      </div>
-  </nav>
-<div id="disqus_thread"></div>
-<script>
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//bradoyler.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+
+            
+            <nav class="mt-20 pt-12 border-t border-gray-200 dark:border-gray-800 grid grid-cols-2 gap-8 text-sm">
+                <div>
+                    
+                </div>
+                <div class="text-right">
+                    
+                </div>
+            </nav>
+
+        </article>
     </main>
-  <footer class="row">
-    <div class="newsletter--l">
-    </div>
-    <div class="footer--nav--l">
-      <nav class="footer--nav row">
-        <div class="footer--col--l">
-          <div><a href="https://twitter.com/@bradoyler" target="_blank">Twitter</a></div>
-          <div><a href="http://linkedin.com/in/bradoyler/" target="_blank">LinkedIn</a></div>
+
+    
+    <footer class="mt-16 border-t border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900">
+        <div class="max-w-4xl mx-auto px-6 py-8 text-center text-sm text-gray-600 dark:text-gray-400">
+            &copy; 2025 My New Blog. Built with 11ty.
         </div>
-        <div class="footer--col--l">
-          <div><a href="https://github.com/bradoyler" target="_blank">GitHub</a></div>
-          <div><a href="https://github.com/bradoyler/bradoyler.com" target="_blank">Site Source</a></div>
-        </div>
-      </nav>
-    </div>
-    <div class="back-to-top--l">
-      <div class="footer--col--l">
-        <a class="button--link" href="#top">Back to Top</a>
-      </div>
-    </div>
-  </footer>
-  </div>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="/scripts/main.js"></script>
-<script src="/scripts/prism.js"></script>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-372716-12', 'auto');
-  ga('send', 'pageview');
-</script></body>
+    </footer>
+</body>
 </html>

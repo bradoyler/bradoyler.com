@@ -3,14 +3,17 @@ title: The News Divide
 date: 2016-11-25
 modified: null
 project:
-  url: http://newsdivide.bradoyler.com
+  url: https://www.thenewsdivide.com
 description: Snapshots from the Reading Habits of Left, Right and Center
 art: newsdivide_image.jpg
-layout: post.html
+layout: post.njk
+tags: ['projects']
 ---
 
 <figure class="media-full">
-  [![Homepage on Desktop](/assets/images/newsdivide_screen.png)](http://newsdivide.bradoyler.com)
+  <a href="https://www.thenewsdivide.com">
+    <img src="/assets/images/newsdivide_screen.png" alt="Homepage on Desktop">
+  </a>
   <figcaption> screenshot of 'The News Divide' </figcaption>
 </figure>
 
@@ -20,18 +23,17 @@ Take Snapshots on an hourly basis to compare home pages of the top news sites. T
 
 I came across these two 'interesting' visuals that I think show particular perspectives.
 <figure>
-![example A](/assets/images/news_spectrum1.jpg)
-<figcaption> source: [imgur.com](http://imgur.com/gallery/iPLkz)  </figcaption>
+  <img src="/assets/images/news_spectrum1.jpg" alt="example A">
+  <figcaption> source: <a href="http://imgur.com/gallery/iPLkz">imgur.com</a>  </figcaption>
 </figure>
 
 <figure>
-![example B](/assets/images/news_spectrum2.jpg)
-<figcaption> source: unknown </figcaption>
+  <img src="/assets/images/news_spectrum2.jpg" alt="example B">
+  <figcaption> source: unknown </figcaption>
 </figure>
 
 ### Execution
 
 Used NodeJs & PhantomJs to screen capture a collection of sites and save images to Amazon S3
 
-
-[newsdivide.bradoyler.com](http://newsdivide.bradoyler.com)
+[www.thenewsdivide.com](https://www.thenewsdivide.com)

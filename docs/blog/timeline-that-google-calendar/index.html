@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The News Divide — My New Blog</title>
+    <title>Timeline that Google Calendar with gcal-timeline — My New Blog</title>
     <meta name="description"
-        content="Snapshots from the Reading Habits of Left, Right and Center">
+        content="easy way to display a google calendar in a timeline">
 
     <link rel="stylesheet" href="/assets/style.css">
     <link rel="alternate" type="application/rss+xml" href="/feed.xml">
@@ -36,13 +36,13 @@
             
             <header class="mb-12 border-b border-gray-100 dark:border-gray-700 pb-8">
                 <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-                    The News Divide
+                    Timeline that Google Calendar with gcal-timeline
                 </h1>
 
                 <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
                     
-                    <time datetime="2016-11-25">
-                        Published on November 24, 2016
+                    <time datetime="2014-09-04">
+                        Published on September 3, 2014
                     </time>
                     
                     
@@ -51,8 +51,8 @@
                         <div class="flex gap-2">
                             
                                 
-                                    <a href="/tags/projects/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 hover:underline capitalize">
-                                        #projects
+                                    <a href="/tags/blog/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 hover:underline capitalize">
+                                        #blog
                                     </a>
                                 
                             
@@ -66,26 +66,12 @@
                         prose-a:text-blue-600 dark:prose-a:text-blue-400
                         prose-img:rounded-lg prose-img:shadow-md
                         prose-pre:bg-gray-900 prose-pre:text-gray-50">
-                <figure class="media-full">
-  <a href="https://www.thenewsdivide.com">
-    <img src="/assets/images/newsdivide_screen.png" alt="Homepage on Desktop">
-  </a>
-  <figcaption> screenshot of 'The News Divide' </figcaption>
-</figure>
-<h3>Concept</h3>
-<p>Take Snapshots on an hourly basis to compare home pages of the top news sites. The left, right &amp; center columns are lightly based on research from <a href="http://www.journalism.org/">Pew Research</a> on the <a href="http://www.journalism.org/2014/10/21/political-polarization-media-habits/">Political Polarization &amp; Media Habits</a></p>
-<p>I came across these two 'interesting' visuals that I think show particular perspectives.</p>
-<figure>
-  <img src="/assets/images/news_spectrum1.jpg" alt="example A">
-  <figcaption> source: <a href="http://imgur.com/gallery/iPLkz">imgur.com</a>  </figcaption>
-</figure>
-<figure>
-  <img src="/assets/images/news_spectrum2.jpg" alt="example B">
-  <figcaption> source: unknown </figcaption>
-</figure>
-<h3>Execution</h3>
-<p>Used NodeJs &amp; PhantomJs to screen capture a collection of sites and save images to Amazon S3</p>
-<p><a href="https://www.thenewsdivide.com">www.thenewsdivide.com</a></p>
+                <p>Created a new github repo the other day to build out a simple jQuery plug-in that accepts a calendarId from a public google calendar and builds out a nice looking timeline of pasts events. That’s right, jQuery is still really useful.</p>
+<p>I found this timeline concept pretty useful for displaying &amp; tracking a list of completed milestones for a project or even past career accomplishments.</p>
+<h3>Screenshot:</h3>
+<p><img src="http://68.media.tumblr.com/bbf24fecc2105559c9f6158f1054878e/tumblr_inline_ndtw0sS1ih1qzitrw.png" alt="screen"></p>
+<p>Try it out here: <a href="http://bradoyler.github.io/gcal-timeline/example/?calendarId=37m0e27nin17l7fe8fg4rnt41c@group.calendar.google.com" title="demo">DEMO</a></p>
+<p>More info + source code @ <a href="https://github.com/bradoyler/gcal-timeline" title="github">https://github.com/bradoyler/gcal-timeline</a></p>
 
             </div>
 

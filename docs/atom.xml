@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>{ Brad Oyler }</title>
-    <link>https://bradoyler.com</link>
-    <description>Planning to change the world with software built for humans.</description>
-    <atom:link href="https://bradoyler.com/atom.xml" rel="self" type="application/rss+xml" />
-  </channel>
-</rss>

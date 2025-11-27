@@ -4,7 +4,8 @@ date: 2017-11-16
 modified: null
 description: A look at homicide across cities in America
 art: crime-in-us-cities.jpg
-layout: post.html
+layout: post.njk
+tags: ['blog']
 ---
 
 By using the number of murders in large cities (over 250k) combined with their population, we can determine the murder rate (per 100k residents) in those cities.

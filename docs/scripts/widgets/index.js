@@ -1,1 +1,15 @@
-!function(){function e(){var e=document.body||{},n=e.offsetHeight;window.parent.postMessage(["setHeight",n,document.location.href],"*")}window.addEventListener("DOMContentLoaded",function(n){e()}),window.addEventListener("resize",e)}();
+// var _widgets = _widgets || {};
+(function () {
+
+  function iframeResize() {
+    var body = document.body || {};
+    var height = body.offsetHeight;
+    window.parent.postMessage(["setHeight", height, document.location.href], "*");
+  }
+
+  window.addEventListener("DOMContentLoaded", function(event) {
+    iframeResize();
+  });
+
+  window.addEventListener("resize", iframeResize);
+})();
