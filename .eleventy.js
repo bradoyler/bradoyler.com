@@ -37,12 +37,6 @@ module.exports = function (eleventyConfig) {
     return format(date, formatStr);
   });
 
-  // Auto-TOC (replaces metalsmith-autotoc — use a plugin or custom filter)
-  // eleventyConfig.addFilter('autotoc', function (content) {
-  //   // Simple regex-based TOC for h2-h4 (upgrade to a plugin like eleventy-plugin-toc for advanced)
-  //   const headings = content.match(/<h[2-4][^>]*>(.*?)<\/h[2-4]>/g) || [];
-  //   return headings.map(h => h.replace(/<[^>]*>/g, '')).join(' | ');
-  // });
 
 eleventyConfig.addCollection('all_tagged_content', collection => {
     // This returns everything Eleventy processed that has a 'tags' property
@@ -75,7 +69,6 @@ eleventyConfig.addCollection('all_tagged_content', collection => {
       input: 'src',     // Matches your source
       output: 'docs',   // Matches your dest
       layouts: '../layouts',  // Relative to input
-      // includes: '../partials' // Relative to input
     },
     templateFormats: ['md', 'njk', 'html'],  // Handlebars support
     markdownTemplateEngine: 'njk',  // Markdown + Handlebars
