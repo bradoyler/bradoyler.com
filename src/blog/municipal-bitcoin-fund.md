@@ -11,8 +11,6 @@ tags: ['blog']
 # Unlocking Fiscal Freedom: What a Municipal Bitcoin Fund Means for America's Towns  
 *Inspired by the Yardley Bitcoin Fund Proposal – A 4-Page Blueprint from October 2025*  
 
-**November 17, 2025**
-
 Picture this: Your local mayor announces a 10% property tax cut, funded not by slashing services or hiking fees, but by the steady appreciation of a small Bitcoin allocation in the town's treasury. No bonds, no bailouts—just smart, asymmetric investing in the world's most battle-tested digital asset.
 
 This isn't a pipe dream. It's the core idea behind **municipal Bitcoin funds**, a growing movement that's already whispering through town halls from Pennsylvania to Texas. And it all kicked off with a punchy 4-page whitepaper I dropped in October 2025 during my write-in campaign for mayor of Yardley, PA. Today, we're diving into what these funds are, why they're a game-changer for cash-strapped municipalities, and how that Yardley doc—straight from my campaign playbook—could spark a nationwide wave.
