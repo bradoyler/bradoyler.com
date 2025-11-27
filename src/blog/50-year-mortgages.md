@@ -1,5 +1,5 @@
 ---
-title: 50 yr mortgages
+title: 50 year mortgages
 date: 2025-11-15
 modified: null
 description: it's a leveraged short!

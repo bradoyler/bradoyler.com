@@ -1,5 +1,6 @@
 ---
 title: About Me
+art: avatar_400x400.jpg
 layout: default.njk
 ---
 I’ve been working on back-end, middle-tier and front-end systems since 1999. I’ve tackled many tough problems around scaling an application, refactoring complex systems, and building a solution from the ground up. I’m a creative developer and don’t, however, consider myself a computer scientist. I build software for people (first) and typically out of necessity.
