@@ -67,6 +67,7 @@ eleventyConfig.addCollection('all_tagged_content', collection => {
   eleventyConfig.addPassthroughCopy("src/scripts");
   eleventyConfig.addPassthroughCopy("src/*.txt");
   eleventyConfig.addPassthroughCopy("src/CNAME");
+  eleventyConfig.addPassthroughCopy("src/sitemap.xml");
   // eleventyConfig.addPassthroughCopy("src/_redirects");
   
   return {
