@@ -1,7 +1,9 @@
 ---
-title: About
+title: About Me
+description: Planning to change the world with software built for humans
+art: avatar_400x400.jpg
+layout: default.njk
 ---
-## About me
 I’ve been working on back-end, middle-tier and front-end systems since 1999. I’ve tackled many tough problems around scaling an application, refactoring complex systems, and building a solution from the ground up. I’m a creative developer and don’t, however, consider myself a computer scientist. I build software for people (first) and typically out of necessity.
 
 As for leading a project, I’m a long-time student of Agile and Lean methodologies. Although learning through carefully-crafted experiments, always comes first. I focus on determining which features to build and also which features NOT to build. Iterating quickly and validating the most valuable features first are paramount. Also, communication is the most underrated team skill, so I strive to improve that with every team that i work with, as it’s one of my specialties.
@@ -11,7 +13,11 @@ I’m a social geek and I’ve been heavily involved with the tech community by 
 To sum up, I’m looking for talented, passionate people to work with on exciting challenges. Life is short, why not build something epic!
 
 ---
-Chronolog of work/projects:
+Chronolog of work/projects: 
+
+[2020] Started at Gopuff where I currently manage multiple engineering teams. Cloud Engineering, SRE & Data Engineering.
+
+[2018] Became engineering team lead over at Trimble Maps
 
 [2015] Launched Newsblock.io mainly as a way to experiment with news aggregation, curation via social trends and automated posting to social platforms. Also experimenting with Google Cloud and AWS for a “serverless” architecture.
 
@@ -45,3 +51,5 @@ Transitioned the ASP.Net platform over to NodeJs (Gulp, Express & Redis)
 [1998] Army Corp of Engineers (co-op)
 
 [1997] Started college - Drexel University (5 yr program)
+
+[See LinkedIn profile](https://www.linkedin.com/in/brado/)

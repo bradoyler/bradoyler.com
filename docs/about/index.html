@@ -1,127 +1,106 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <script>
-    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
-  </script>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Planning to change the world with software built for humans.">
-  <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="https://bradoyler.com/about/" />
+  <title>About Me - Brad Oyler</title>
+  <meta name="description" content="Planning to change the world with software built for humans">
   <meta property="og:site_name" content="{ Brad Oyler }" />
-  <meta property="og:description" content="Planning to change the world with software built for humans." />
-  <meta property="og:title" content="About - Brad Oyler" />
-  <meta property="og:url" content="https://bradoyler.com/about/" />
+  <meta property="og:description" content="Planning to change the world with software built for humans" />
+  <meta property="og:title" content="About Me - Brad Oyler" />
+  <meta property="og:url" content="https://www.bradoyler.com/about/" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="/assets/images/avatar_400x400.jpg" />
+  <meta property="og:image" content="https://www.bradoyler.com/assets/images/avatar_400x400.jpg" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bradoyler" />
-  <meta name="twitter:title" content="About - Brad Oyler" />
-  <meta name="twitter:description" content="Planning to change the world with software built for humans." />
+  <meta name="twitter:title" content="About Me - Brad Oyler" />
+  <meta name="twitter:description" content="Planning to change the world with software built for humans" />
   <meta name="twitter:creator" content="@bradoyler" />
-  <meta name="twitter:domain" content="https://bradoyler.com>" />
-  <meta name="twitter:image" content="/assets/images/avatar_400x400.jpg" />
-  <title>About - Brad Oyler</title>
-  <link rel="author" href="humans.txt" />
-  <link rel="icon" href="/assets/images/avatar.png">
-  <link rel="stylesheet" href="/styles/main.css">
-  <!-- production v0.0.1 -->
+  <meta name="twitter:domain" content="https://www.bradoyler.com" />
+  <meta name="twitter:image:src" content="https://www.bradoyler.com/assets/images/avatar_400x400.jpg" />
+
+  <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body id="top" class="-page" itemscope itemtype="http://schema.org/WebPage">
-  <div class="nav--menu">
-    <header class="site-header">
-      <div>
-        <a href="/">
-          <img class="nav-avatar" src="/assets/images/avatar_400x400.jpg">
+
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+
+  <header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900" x-data="{ open: false }">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        
+        <a href="/" class="text-xl md:text-2xl font-extrabold tracking-tight hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            { BRAD OYLER }
         </a>
-      </div>
-      <h1 class="site-title site-title--name" itemprop="name">
-        <a href="/">{ Brad Oyler }</a>
-      </h1>
-      <p class="site-title site-title--sub" itemprop="specialty">Developer</p>
-      <button title="Site Menu" id="js-toggle-menu" class="button--menu" aria-label="Site Menu">
-        <svg class="button--menu-open" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-          <path fill="#fff" d="M16.4,9H3.6C3.048,9,3,9.447,3,10c0,0.553,0.048,1,0.6,1H16.4c0.552,0,0.6-0.447,0.6-1C17,9.447,16.952,9,16.4,9z M16.4,13
-    	H3.6C3.048,13,3,13.447,3,14c0,0.553,0.048,1,0.6,1H16.4c0.552,0,0.6-0.447,0.6-1C17,13.447,16.952,13,16.4,13z M3.6,7H16.4
-    	C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.048,7,3.6,7z"/>
-        </svg>
-        <svg class="button--menu-close" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-          <path fill="#fff" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
-    	c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697c0.469-0.469,1.228-0.469,1.697,0
-    	L10,8.183l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0c0.469,0.469,0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15
-    	C14.817,13.62,14.817,14.38,14.348,14.849z"/>
-        </svg>
-      </button>
-    </header>
-    <nav id="js-menu" class="nav" itemprop="breadcrumb">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="layout--main">
-    <div class="container">
-    <main>
-<div style="padding: .7em">
-  <h2 id="about-me">About me</h2>
-<p>I’ve been working on back-end, middle-tier and front-end systems since 1999. I’ve tackled many tough problems around scaling an application, refactoring complex systems, and building a solution from the ground up. I’m a creative developer and don’t, however, consider myself a computer scientist. I build software for people (first) and typically out of necessity.</p>
-<p>As for leading a project, I’m a long-time student of Agile and Lean methodologies. Although learning through carefully-crafted experiments, always comes first. I focus on determining which features to build and also which features <span class="caps">NOT</span> to build. Iterating quickly and validating the most valuable features first are paramount. Also, communication is the most underrated team skill, so I strive to improve that with every team that i work with, as it’s one of my specialties.</p>
+
+        
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+            <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+            <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+            <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
+        </nav>
+        
+        
+        <button @click="open = !open" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation">
+            <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </div>
+
+    
+    <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden border-t border-gray-200 dark:border-gray-800">
+        <nav class="flex flex-col space-y-2 p-4 text-base font-medium">
+            <a href="/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Home</a>
+            <a href="/blog/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Blog</a>
+            <a href="/projects/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Projects</a>
+            <a href="/about/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">About</a>
+        </nav>
+    </div>
+</header>
+
+  <main class="max-w-5xl mx-auto px-6 py-12 flex-1">
+    
+    
+    <h1 class="text-4xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4">
+      About Me
+    </h1>
+
+    
+    <div class="prose prose-xl dark:prose-invert max-w-none 
+                prose-a:text-blue-600 dark:prose-a:text-blue-400">
+      <p>I’ve been working on back-end, middle-tier and front-end systems since 1999. I’ve tackled many tough problems around scaling an application, refactoring complex systems, and building a solution from the ground up. I’m a creative developer and don’t, however, consider myself a computer scientist. I build software for people (first) and typically out of necessity.</p>
+<p>As for leading a project, I’m a long-time student of Agile and Lean methodologies. Although learning through carefully-crafted experiments, always comes first. I focus on determining which features to build and also which features NOT to build. Iterating quickly and validating the most valuable features first are paramount. Also, communication is the most underrated team skill, so I strive to improve that with every team that i work with, as it’s one of my specialties.</p>
 <p>I’m a social geek and I’ve been heavily involved with the tech community by organizing events like StartupWeekend and curating for the StartupDigest. I even created a national event ‘PitchSwap’.</p>
 <p>To sum up, I’m looking for talented, passionate people to work with on exciting challenges. Life is short, why not build something epic!</p>
 <hr>
 <p>Chronolog of work/projects:</p>
-<p>[2015] Launched Newsblock.io mainly as a way to experiment with news aggregation, curation via social trends and automated posting to social platforms. Also experimenting with Google Cloud and <span class="caps">AWS</span> for a “serverless” architecture.</p>
-<p>[2013 - Present] NBCUniversal (Engineer for <span class="caps">TODAY</span>.com &amp; NBCNews.com):
-Transitioned the <span class="caps">ASP</span>.Net platform over to NodeJs (Gulp, Express &amp; Redis)</p>
+<p>[2020] Started at Gopuff where I currently manage multiple engineering teams. Cloud Engineering, SRE &amp; Data Engineering.</p>
+<p>[2018] Became engineering team lead over at Trimble Maps</p>
+<p>[2015] Launched Newsblock.io mainly as a way to experiment with news aggregation, curation via social trends and automated posting to social platforms. Also experimenting with Google Cloud and AWS for a “serverless” architecture.</p>
+<p>[2013 - Present] NBCUniversal (Engineer for TODAY.com &amp; NBCNews.com):
+Transitioned the ASP.Net platform over to NodeJs (Gulp, Express &amp; Redis)</p>
 <p>[2012] Worked on startup weekend projects like Mealtik.com, StagFund.co and PitchSwap that “failed quietly”, but learned a lot.</p>
 <p>[2011] Launched FundingWorks.org (fundraised ~$25k for multiple non-profits).</p>
-<p>[2011-2012] Organized StartupWeekend I, <span class="caps">II</span>, &amp; <span class="caps">III</span> in Philadelphia</p>
+<p>[2011-2012] Organized StartupWeekend I, II, &amp; III in Philadelphia</p>
 <p>[2010] Started the Philly StartupDigest</p>
-<p>[2009 - 2012] <span class="caps">ARAMARK</span> Architect/Developer of their Legal/<span class="caps">SCM</span> <span class="caps">CMS</span>, eDocs.</p>
+<p>[2009 - 2012] ARAMARK Architect/Developer of their Legal/SCM CMS, eDocs.</p>
 <p>[2009] Launched W3Gifts and earned revenue</p>
 <p>[2005 - 2008] Algorithmics - (Developer &amp; Product Specialist)</p>
 <p>[2004- 2005] Merck &amp; Co. (Developer / Test Automation Engineer)</p>
 <p>[2004 - 2011] W3Portals (Founder) mostly using .Net work for many small clients</p>
 <p>[2002 - 2004] Open Source web consulting @ Teknaspan</p>
-<p>[2002] Graduated Drexel University (<span class="caps">B.S.</span> in Information Systems)</p>
+<p>[2002] Graduated Drexel University (B.S. in Information Systems)</p>
 <p>[1999 - 2001] Systems Analyst at a startup - Network Alternatives</p>
 <p>[1998] Army Corp of Engineers (co-op)</p>
 <p>[1997] Started college - Drexel University (5 yr program)</p>
+<p><a href="https://www.linkedin.com/in/brado/">See LinkedIn profile</a></p>
 
-</div>
-    </main>
-  <footer class="row">
-    <div class="newsletter--l">
     </div>
-    <div class="footer--nav--l">
-      <nav class="footer--nav row">
-        <div class="footer--col--l">
-          <div><a href="https://twitter.com/@bradoyler" target="_blank">Twitter</a></div>
-          <div><a href="http://linkedin.com/in/bradoyler/" target="_blank">LinkedIn</a></div>
-        </div>
-        <div class="footer--col--l">
-          <div><a href="https://github.com/bradoyler" target="_blank">GitHub</a></div>
-          <div><a href="https://github.com/bradoyler/bradoyler.com" target="_blank">Site Source</a></div>
-        </div>
-      </nav>
-    </div>
-    <div class="back-to-top--l">
-      <div class="footer--col--l">
-        <a class="button--link" href="#top">Back to Top</a>
-      </div>
-    </div>
-  </footer>
-  </div>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="/scripts/main.js"></script>
-<script src="/scripts/prism.js"></script>
+
+  </main>
+
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -129,5 +108,11 @@ Transitioned the <span class="caps">ASP</span>.Net platform over to NodeJs (Gulp
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-372716-12', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+<footer class="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
+    <div class="max-w-5xl mx-auto px-6 py-12 text-center text-sm text-gray-600 dark:text-gray-400">
+        &copy; 2025 Brad Oyler
+    </div>
+</footer>
+</body>
 </html>

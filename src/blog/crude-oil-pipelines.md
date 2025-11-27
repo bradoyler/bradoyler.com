@@ -4,7 +4,8 @@ date: 2016-12-17
 modified: null
 description: U.S. Map of Crude Oil Pipelines
 art: map-pipelines-v2.jpg
-layout: post.html
+layout: post.njk
+tags: ['blog']
 ---
 
 Recent news related to the Dakota Access Pipeline [(DAPL)](http://www.nbcnews.com/storyline/dakota-pipeline-protests/) persuaded me to look into the public data around Crude Oil Pipelines in the US, which lead me to the [Energy Information Administration (EIA.gov)](https://www.eia.gov). They have a bunch of [interesting maps](https://www.eia.gov/maps/), but couldn't find a map specific to Crude Oil pipelines.

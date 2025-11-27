@@ -1,0 +1,17 @@
+{
+  "title": "Brad Oyler | Web Portfolio",
+  "name": "Brad Oyler",
+  "tagline": "Building software for humans.",
+  "url": "https://www.bradoyler.com",
+  "language": "en",
+  "description": "The personal website and portfolio of Brad Oyler, featuring projects in web development, data visualization, and engineering insights.",
+  "author": {
+    "name": "Brad Oyler",
+    "email": "brad.oyler@example.com",
+    "twitter": "bradoyler"
+  },
+  "social": {
+    "github": "https://github.com/bradoyler",
+    "linkedin": "https://www.linkedin.com/in/bradoyler/"
+  }
+}

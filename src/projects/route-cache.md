@@ -6,7 +6,8 @@ project:
   url: https://github.com/bradoyler/route-cache
 description: Caching middleware for Express (w/ expiration)
 art: route-cache.jpg
-layout: post.html
+layout: post.njk
+tags: ['projects']
 ---
 
 [View repo on Github >>](https://github.com/bradoyler/route-cache)

@@ -6,12 +6,13 @@ project:
   url: https://github.com/bradoyler/atlas-make
 description: Makefile toolbelt for building geojson, topojson & csv from public Shape files
 art: atlas-make-square.jpg
-layout: post.html
+layout: post.njk
+tags: ['projects']
 ---
 
 <figure class="media-full">
-  ![Homepage on Desktop](/assets/images/atlas-make.png)
-  <figcaption> World map built from [Small scale Cultural vectors](http://www.naturalearthdata.com/downloads/10m-cultural-vectors/) via [Natural Earth](http://naturalearthdata.com/) </figcaption>
+  <img src="/assets/images/atlas-make.png" alt="Homepage on Desktop">
+  <figcaption> World map built from <a href="http://www.naturalearthdata.com/downloads/10m-cultural-vectors/">Small scale Cultural vectors</a> via <a href="http://naturalearthdata.com/">Natural Earth</a> </figcaption>
 </figure>
 
 ### Install System prereqs (Linux/MacOSX):

@@ -6,11 +6,12 @@ project:
   url: https://github.com/bradoyler/d3-node
 description: Server-side D3 for static chart/map generation via Node.js
 art: d3-node.png
-layout: post.html
+layout: post.njk
+tags: ['projects']
 ---
 
 <figure>
-  ![Homepage on Desktop](/assets/images/d3-node.png)
+  <img src="/assets/images/d3-node.png" alt="Homepage on Desktop">
   <figcaption>Example choropleth using population data of France and topojson from Atlas-Make.</figcaption>
 </figure>
 

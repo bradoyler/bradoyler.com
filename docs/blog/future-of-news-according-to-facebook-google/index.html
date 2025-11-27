@@ -1,95 +1,104 @@
-<!doctype html>
-<html lang="en" class="no-js">
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
 <head>
-  <meta charset="utf-8">
-  <script>
-    document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + 'has-js ';
-  </script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Planning to change the world with software built for humans.">
-  <meta name="news_keywords" content="Brad Oyler, Web Developer, Software Engineer, UX, HCI, Dataviz, Nodejs, Javascript" />
-  <meta name="standout" content="https://bradoyler.com/blog\future-of-news-according-to-facebook-google/" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future of News, according to Facebook &amp; Google - Brad Oyler</title>
+  <meta name="description" content="how &#39;new media&#39; is approaching the news industry">
   <meta property="og:site_name" content="{ Brad Oyler }" />
-  <meta property="og:description" content="Planning to change the world with software built for humans." />
+  <meta property="og:description" content="how &#39;new media&#39; is approaching the news industry" />
   <meta property="og:title" content="Future of News, according to Facebook &amp; Google - Brad Oyler" />
-  <meta property="og:url" content="https://bradoyler.com/blog\future-of-news-according-to-facebook-google/" />
+  <meta property="og:url" content="https://www.bradoyler.com/blog/future-of-news-according-to-facebook-google/" />
   <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://bradoyler.com/assets/images/googlenewslab.png" />
+  <meta property="og:image" content="https://www.bradoyler.com/assets/images/googlenewslab.png" />
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@bradoyler" />
   <meta name="twitter:title" content="Future of News, according to Facebook &amp; Google - Brad Oyler" />
-  <meta name="twitter:description" content="Planning to change the world with software built for humans." />
+  <meta name="twitter:description" content="how &#39;new media&#39; is approaching the news industry" />
   <meta name="twitter:creator" content="@bradoyler" />
-  <meta name="twitter:domain" content="https://bradoyler.com>" />
-  <meta name="twitter:image:src" content="https://bradoyler.com/assets/images/googlenewslab.png" />
-  <title>Future of News, according to Facebook &amp; Google - Brad Oyler</title>
-  <link rel="author" href="humans.txt" />
-  <link rel="icon" href="/assets/images/avatar.png">
-  <link rel="stylesheet" href="/styles/main.css">
-  <!-- production v0.0.1 -->
+  <meta name="twitter:domain" content="https://www.bradoyler.com" />
+  <meta name="twitter:image:src" content="https://www.bradoyler.com/assets/images/googlenewslab.png" />
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="alternate" type="application/rss+xml" href="/feed.xml">
 </head>
-<body id="top" class="-page" itemscope itemtype="http://schema.org/WebPage">
-  <div class="nav--menu">
-    <header class="site-header">
-      <div>
-        <a href="/">
-          <img class="nav-avatar" src="/assets/images/avatar_400x400.jpg">
+
+<body class="bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans">
+
+    <header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900" x-data="{ open: false }">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        
+        <a href="/" class="text-xl md:text-2xl font-extrabold tracking-tight hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            { BRAD OYLER }
         </a>
-      </div>
-      <h1 class="site-title site-title--name" itemprop="name">
-        <a href="/">{ Brad Oyler }</a>
-      </h1>
-      <p class="site-title site-title--sub" itemprop="specialty">Developer</p>
-      <button title="Site Menu" id="js-toggle-menu" class="button--menu" aria-label="Site Menu">
-        <svg class="button--menu-open" version="1.1" id="Menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-          <path fill="#fff" d="M16.4,9H3.6C3.048,9,3,9.447,3,10c0,0.553,0.048,1,0.6,1H16.4c0.552,0,0.6-0.447,0.6-1C17,9.447,16.952,9,16.4,9z M16.4,13
-    	H3.6C3.048,13,3,13.447,3,14c0,0.553,0.048,1,0.6,1H16.4c0.552,0,0.6-0.447,0.6-1C17,13.447,16.952,13,16.4,13z M3.6,7H16.4
-    	C16.952,7,17,6.553,17,6c0-0.553-0.048-1-0.6-1H3.6C3.048,5,3,5.447,3,6C3,6.553,3.048,7,3.6,7z"/>
-        </svg>
-        <svg class="button--menu-close" version="1.1" id="Cross" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-          <path fill="#fff" d="M14.348,14.849c-0.469,0.469-1.229,0.469-1.697,0L10,11.819l-2.651,3.029c-0.469,0.469-1.229,0.469-1.697,0
-    	c-0.469-0.469-0.469-1.229,0-1.697l2.758-3.15L5.651,6.849c-0.469-0.469-0.469-1.228,0-1.697c0.469-0.469,1.228-0.469,1.697,0
-    	L10,8.183l2.651-3.031c0.469-0.469,1.228-0.469,1.697,0c0.469,0.469,0.469,1.229,0,1.697l-2.758,3.152l2.758,3.15
-    	C14.817,13.62,14.817,14.38,14.348,14.849z"/>
-        </svg>
-      </button>
-    </header>
-    <nav id="js-menu" class="nav" itemprop="breadcrumb">
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/projects">Projects</a></li>
-        <li><a href="/blog">Blog</a></li>
-      </ul>
-    </nav>
-  </div>
-  <div class="layout--main">
-    <div class="container">
-    <main>
-  <article class="article--post" itemscope itemtype="http://schema.org/BlogPosting">
-  <div class="meta--post--l">
-    <div class="row">
-      <div class="meta--container meta--container-post">
-        <div class="meta--txt meta--heading">
-          <span class="meta meta--primary"><a class="meta--link" href="/blog">blog</a></span>
-        </div>
-      </div>
-      <div class="meta--container meta--container-post">
-        <div class="meta--txt meta--heading">
-          <time class="meta meta--primary" datetime="2014-06-23T00:00:00.000Z" itemprop="datePublished">Jun 22, 2014</time>
-        </div>
-      </div>
+
+        
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+            <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+            <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+            <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
+        </nav>
+        
+        
+        <button @click="open = !open" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation">
+            <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
     </div>
-  </div>
-    <header class="article--header">
-      <h1 itemprop="headline">Future of News, according to Facebook &amp; Google</h1>
-      <p class="dek dek--lg">how &#x27;new media&#x27; is approaching the news industry</p>
-    </header>
-    <div class="article--body" itemprop="articleBody">
-      <p>Two of today’s largest “media giants”  have made some recent strides into the News world over the past month or so.</p>
-<p>May 12th, Facebook launched “Instant articles” with several large news publishers: The New York Times, National Geographic, BuzzFeed, <span class="caps">NBC</span> News, The Atlantic, The Guardian, <span class="caps">BBC</span> News, Spiegel and Bild. More info.</p>
+
+    
+    <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden border-t border-gray-200 dark:border-gray-800">
+        <nav class="flex flex-col space-y-2 p-4 text-base font-medium">
+            <a href="/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Home</a>
+            <a href="/blog/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Blog</a>
+            <a href="/projects/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Projects</a>
+            <a href="/about/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">About</a>
+        </nav>
+    </div>
+</header>
+
+    <main class="flex-1">
+        
+        <article class="max-w-4xl mx-auto my-12 md:my-16 p-8 md:p-12 
+                        bg-white dark:bg-gray-800 shadow-xl rounded-lg"> 
+
+            
+            <header class="mb-12 border-b border-gray-100 dark:border-gray-700 pb-8">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+                    Future of News, according to Facebook &amp; Google
+                </h1>
+
+                <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400">
+                    
+                    <time datetime="2014-06-23">
+                        Published on June 22, 2014
+                    </time>
+                    
+                    
+                        <span class="text-gray-400 dark:text-gray-600">•</span> 
+                        
+                        <div class="flex gap-2">
+                            
+                                
+                                    <a href="/blog/" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 hover:underline capitalize">
+                                        #blog
+                                    </a>
+                                
+                            
+                        </div>
+                    
+                </div>
+            </header>
+
+            
+            <div class="prose prose-xl dark:prose-invert max-w-none 
+                        prose-a:text-blue-600 dark:prose-a:text-blue-400
+                        prose-img:rounded-lg prose-img:shadow-md
+                        prose-pre:bg-gray-900 prose-pre:text-gray-50">
+                <p>Two of today’s largest “media giants”  have made some recent strides into the News world over the past month or so.</p>
+<p>May 12th, Facebook launched “Instant articles” with several large news publishers: The New York Times, National Geographic, BuzzFeed, NBC News, The Atlantic, The Guardian, BBC News, Spiegel and Bild. More info.</p>
 <p>June 22nd, Google launches “News Lab” with a handful of lesser known partners. Read the write up on Techcrunch</p>
 <p><img src="http://68.media.tumblr.com/eaa422b785387fe90a850b135852cc5d/tumblr_inline_nqekrtEGe21qzitrw_500.png" alt="img"></p>
 <p>The part I find most interesting is how fundamentally different the approaches are for these two “competitors”, really.</p>
@@ -101,70 +110,23 @@
 <p>I should also mention that Apple announced their “News” app on June 8th, so we’ll have to wait for that one to hit the App Store (meh). More on that via Wired</p>
 <p>Would love to hear what you think…</p>
 
-    </div>
-  </article>
-  <nav class="nav nav--post row">
-      <div class="nav--prev">
-        <h2 class="nav--post-heading">Timeline that Google Calendar with gcal-timeline</h2>
-        <p class="dek dek--sm">easy way to display a google calendar in a timeline</p>
-      </div>
-      <div class="nav--post-button">
-        <a class="button--link" href="/blog/timeline-that-google-calendar-with-gcal-timeline">Previous</a>
-      </div>
-      <div class="nav--next">
-        <h2 class="nav--post-heading">My “Key Management Principles” (KMP)</h2>
-        <p class="dek dek--sm">YAGNI, KISS, Occam’s razor &amp; Agile are my best lessons learned.</p>
-      </div>
-      <div class="nav--post-button">
-        <a class="button--link" href="/blog/my-key-management-principles-kmp">Next</a>
-      </div>
-  </nav>
-<div id="disqus_thread"></div>
-<script>
-/**
-*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
-/*
-var disqus_config = function () {
-this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
-this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-};
-*/
-(function() { // DON'T EDIT BELOW THIS LINE
-var d = document, s = d.createElement('script');
-s.src = '//bradoyler.disqus.com/embed.js';
-s.setAttribute('data-timestamp', +new Date());
-(d.head || d.body).appendChild(s);
-})();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+            </div>
+
+            
+            <nav class="mt-20 pt-12 border-t border-gray-200 dark:border-gray-800 grid grid-cols-2 gap-8 text-sm">
+                <div>
+                    
+                </div>
+                <div class="text-right">
+                    
+                </div>
+            </nav>
+
+        </article>
     </main>
-  <footer class="row">
-    <div class="newsletter--l">
-    </div>
-    <div class="footer--nav--l">
-      <nav class="footer--nav row">
-        <div class="footer--col--l">
-          <div><a href="https://twitter.com/@bradoyler" target="_blank">Twitter</a></div>
-          <div><a href="http://linkedin.com/in/bradoyler/" target="_blank">LinkedIn</a></div>
-        </div>
-        <div class="footer--col--l">
-          <div><a href="https://github.com/bradoyler" target="_blank">GitHub</a></div>
-          <div><a href="https://github.com/bradoyler/bradoyler.com" target="_blank">Site Source</a></div>
-        </div>
-      </nav>
-    </div>
-    <div class="back-to-top--l">
-      <div class="footer--col--l">
-        <a class="button--link" href="#top">Back to Top</a>
-      </div>
-    </div>
-  </footer>
-  </div>
-</div>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="/scripts/main.js"></script>
-<script src="/scripts/prism.js"></script>
+
+   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -172,5 +134,11 @@ s.setAttribute('data-timestamp', +new Date());
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
   ga('create', 'UA-372716-12', 'auto');
   ga('send', 'pageview');
-</script></body>
+</script>
+<footer class="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
+    <div class="max-w-5xl mx-auto px-6 py-12 text-center text-sm text-gray-600 dark:text-gray-400">
+        &copy; 2025 Brad Oyler
+    </div>
+</footer>
+</body>
 </html>
