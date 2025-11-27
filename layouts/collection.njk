@@ -4,46 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title | capitalize }} — Brad Oyler</title>
+  <meta name="description" content="Listing of all {{ title | lower }} by Brad Oyler.">
   <link rel="stylesheet" href="/assets/style.css">
 </head>
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen">
 
-  <header class="border-b border-gray-200 dark:border-gray-800">
-    <div class="max-w-5xl mx-auto px-6 py-6 flex justify-between items-center">
-      <a href="/" class="text-2xl font-bold tracking-tight">Brad Oyler</a>
-      <nav class="space-x-8 text-sm font-medium">
-        <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-        <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
-        <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
-        <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
-      </nav>
-    </div>
-  </header>
+<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
 
-  <main class="max-w-5xl mx-auto px-6 py-12">
+  {% include "layouts/_includes/header.njk" %}
 
-    <h1 class="text-4xl font-bold mb-12">{{ title | capitalize }}</h1>
+  <main class="max-w-5xl mx-auto px-6 py-12 flex-1">
 
-    <section class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-      {% for post in collections[page.fileSlug] %}
-        <article class="border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:shadow-lg transition">
-          <h2 class="text-xl font-semibold mb-2">
-            <a href="{{ post.url }}">{{ post.data.title }}</a>
-          </h2>
-          <time class="text-sm text-gray-600 dark:text-gray-400" datetime="{{ post.date }}">
-            {{ post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
-          </time>
-          {% if post.data.description %}
-            <p class="mt-3 text-gray-700 dark:text-gray-300">{{ post.data.description }}</p>
+    <h1 class="text-4xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4">
+      {{ title | capitalize }}
+    </h1>
+
+    <section class="grid gap-8 md:grid-cols-2">
+      {# Loop uses page.fileSlug (e.g., 'blog' or 'projects') to dynamically fetch the collection #}
+      {% for item in collections[page.fileSlug] | reverse %}
+        <article class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition-shadow bg-white dark:bg-gray-900 flex flex-col">
+          
+          {# --- Image Display Section (Copied from home.njk Project/Blog card) --- #}
+          {% if item.data.art %}
+            <a href="{{ item.url }}" class="block overflow-hidden h-40">
+              <img src="/assets/images/{{ item.data.art }}" 
+                   alt="Featured image for {{ item.data.title }}" 
+                   class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"/>
+            </a>
           {% endif %}
-          <a href="{{ post.url }}" class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">
-            Read more
-          </a>
+
+          {# --- Content Details --- #}
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a href="{{ item.url }}" class="hover:text-blue-600 dark:hover:text-blue-400">{{ item.data.title }}</a>
+            </h2>
+            
+            {# Determine date format based on collection type #}
+            {% if page.fileSlug == 'projects' %}
+                {% set date_label = "Last updated" %}
+                {% set date_format = { year: 'numeric', month: 'long' } %}
+                {% set desc_truncate = 150 %}
+                {% set link_text = "View Details →" %}
+            {% else %}
+                {% set date_label = "Published on" %}
+                {% set date_format = { year: 'numeric', month: 'long', day: 'numeric' } %}
+                {% set desc_truncate = 120 %}
+                {% set link_text = "Read Post →" %}
+            {% endif %}
+
+            <time class="text-sm text-gray-600 dark:text-gray-400" datetime="{{ item.date }}">
+              {{ date_label }} {{ item.date.toLocaleDateString('en-US', date_format) }}
+            </time>
+            
+            {% if item.data.description %}
+              <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">{{ item.data.description | truncate(desc_truncate) }}</p>
+            {% endif %}
+            
+            <a href="{{ item.url }}" class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start">
+              {{ link_text }}
+            </a>
+          </div>
         </article>
       {% endfor %}
     </section>
 
   </main>
+
+ {% include "layouts/_includes/footer.njk" %}
 
 </body>
 </html>
