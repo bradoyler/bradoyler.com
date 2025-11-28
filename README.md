@@ -5,16 +5,22 @@ One of my main goals is to not have to rebuild this thing every 3 yrs (we'll see
 ## How to Setup
 
 ### 1. Clone
-`git clone https://github.com/bradoyler/bradoyler.com.git`
+```sh 
+git clone https://github.com/bradoyler/bradoyler.com.git
+```
 
 ### 2. Install Dependencies
-```
-$ npm install
+```sh
+npm install
 ```
 
-## How to use
-To develop: `npm run dev`
-To generate: `npm run build`
+## 3. Start locahost
+development: 
+```sh 
+npm run dev
+```
+
+for more, see "scripts" in [package.json](package.json)
 
 ### Requirements
 Nodejs v20+
