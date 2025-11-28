@@ -7,7 +7,8 @@
     "build-css": "npx tailwindcss -i ./src/assets/input.css -o ./docs/assets/style.css --minify",
     "watch-css": "npx tailwindcss -i ./src/assets/input.css -o ./docs/assets/style.css --watch",
     "build": "npm run build-css && eleventy",
-    "start": "concurrently \"npm run watch-css\" \"eleventy --serve --watch\"",
+    "start": "concurrently \"eleventy --serve --watch\"",
+    "start:withcss": "concurrently \"npm run watch-css\" \"eleventy --serve --watch\"",
     "dev": "npm run start"
   },
   "keywords": [],
