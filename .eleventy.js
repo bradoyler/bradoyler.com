@@ -17,7 +17,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("slice", (array, start, end) => {
-         return array.slice(start, end);
+    return array.slice(start, end);
   });
 
   // Add these to your existing config
@@ -37,9 +37,9 @@ module.exports = function (eleventyConfig) {
   });
 
 
-eleventyConfig.addCollection('all_tagged_content', collection => {
+  eleventyConfig.addCollection('all_tagged_content', collection => {
     // This returns everything Eleventy processed that has a 'tags' property
-    return collection.getAll().filter(item => item.data.tags); 
+    return collection.getAll().filter(item => item.data.tags);
   });
 
 
@@ -55,14 +55,20 @@ eleventyConfig.addCollection('all_tagged_content', collection => {
       .sort((a, b) => new Date(b.date) - new Date(a.date));
   });
 
+  // Copy over misc crap for visualization
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/widgets");
   eleventyConfig.addPassthroughCopy("src/scripts");
-  eleventyConfig.addPassthroughCopy("src/*.txt");
-  eleventyConfig.addPassthroughCopy("src/CNAME");
-  eleventyConfig.addPassthroughCopy("src/*.xml");
-  // eleventyConfig.addPassthroughCopy("src/_redirects");
   
+  // copy txt files
+  eleventyConfig.addPassthroughCopy("src/*.txt");
+
+  // needed for Github pages custom domain
+  eleventyConfig.addPassthroughCopy("src/CNAME");
+  
+  // used for static sitemaps
+  eleventyConfig.addPassthroughCopy("src/*.xml");
+
   return {
     dir: {
       input: 'src',     // Matches your source
