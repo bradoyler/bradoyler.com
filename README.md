@@ -1,23 +1,18 @@
-# bradoyler.com
+# Static site for bradoyler.com
 
 ## How to Setup
 
 ### 1. Clone
-
 `git clone https://github.com/bradoyler/bradoyler.com.git`
 
 ### 2. Install Dependencies
-
 ```
 $ npm install
 ```
 
 ## How to use
-
 To develop: `npm run dev`
-
-To generate: `npm run compile`
+To generate: `npm run build`
 
 ## Requirements
-
-Node.js
+Nodejs v20+

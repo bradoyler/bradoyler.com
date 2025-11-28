@@ -1,11 +1,8 @@
 {
   "name": "bradoyler.com",
-  "version": "1.0.0",
-  "description": "## How to Setup",
+  "version": "2.0.1",
+  "description": "Static site for bradoyler.com",
   "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
   "scripts": {
     "build-css": "npx tailwindcss -i ./src/assets/input.css -o ./docs/assets/style.css --minify",
     "watch-css": "npx tailwindcss -i ./src/assets/input.css -o ./docs/assets/style.css --watch",
@@ -14,8 +11,8 @@
     "dev": "npm run start"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Brad Oyler <bradoyler@gmail.com> (github.com/bradoyler)",
+  "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
