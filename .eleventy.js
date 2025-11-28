@@ -2,12 +2,12 @@
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (eleventyConfig) {
-  // Metadata from _data/ (replaces metalsmith-metadata)
-  eleventyConfig.addGlobalData('config', {
+  // todo: use metadata from _data/
+  eleventyConfig.addGlobalData('site', {
     name: 'Brad Oyler',
     version: '0.0.1',
     domain: 'bradoyler.com',
-    url: 'https://bradoyler.com'
+    url: 'https://www.bradoyler.com'
   });
 
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
@@ -15,6 +15,8 @@ module.exports = function (eleventyConfig) {
     // This is the required format for the HTML datetime attribute.
     return dateObj.toISOString().split('T')[0];
   });
+
+  eleventyConfig.addFilter("absoluteUrl", (url, base) => new URL(url, base).toString());
 
   eleventyConfig.addFilter("slice", (array, start, end) => {
     return array.slice(start, end);

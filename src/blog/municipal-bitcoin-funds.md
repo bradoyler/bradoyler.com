@@ -1,7 +1,7 @@
 ---
 title: Municipal Bitcoin funds
 date: 2025-11-19
-modified: null
+modified: 2025-11-25
 description: Unlocking Fiscal Freedom
 art: municipal-bitcoin-funds.jpg.webp
 layout: post.njk
