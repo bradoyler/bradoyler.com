@@ -13,7 +13,7 @@ tags: ['blog', 'finance']
 
 Picture this: Your local mayor announces a 10% property tax cut, funded not by slashing services or hiking fees, but by the steady appreciation of a small Bitcoin allocation in the town's treasury. No bonds, no bailouts—just smart, asymmetric investing in the world's most battle-tested digital asset.
 
-This isn't a pipe dream. It's the core idea behind **municipal Bitcoin funds**, a growing movement that's already whispering through town halls from Pennsylvania to Texas. And it all kicked off with a punchy 4-page whitepaper I dropped in October 2025 during my write-in campaign for mayor of Yardley, PA. Today, we're diving into what these funds are, why they're a game-changer for cash-strapped municipalities, and how that Yardley doc—straight from my campaign playbook—could spark a nationwide wave.
+This isn't a pipe dream. It's the core idea behind **municipal Bitcoin funds**, a growing movement that's already whispering through town halls from Pennsylvania to Texas. And it all kicked off with a punchy 4-page whitepaper I dropped in October 2025 during my write-in campaign for mayor of Yardley, PA. Today, we're diving into what these funds are, why they're a game-changer for cash-strapped municipalities, and how that Yardley doc—straight from my campaign playbook—could spark a nationwide wave. Fresh off the presses: New Hampshire just supercharged the conversation by approving the world's first Bitcoin-backed municipal bond on November 18, 2025. At $100 million, it's a blueprint for how BTC can collateralize public debt without taxpayer risk, funneling fees into a Bitcoin Economic Development Fund for statewide innovation. Governor Kelly Ayotte nailed it: "This positions us as a leader in digital finance without risking state funds or taxpayer dollars."
 
 ### Demystifying the Municipal Bitcoin Fund: It's Simpler Than You Think
 
@@ -23,7 +23,7 @@ A **municipal Bitcoin fund** is essentially a dedicated reserve account where a 
 - **The Magic**: Bitcoin's historical 200%+ CAGR (compounded annual growth rate) turns that tiny allocation into a revenue engine. Gains flow back to fund everything from pothole repairs to school tech upgrades.
 - **The Guardrails**: Automatic sell triggers for big drawdowns (e.g., 20-30% drops), annual audits, and citizen oversight boards keep it boring and safe. It's opt-in for residents, reversible, and compliant with IRS/SEC regs—no taxpayer risk beyond the initial seed.
 
-Unlike stocks or bonds, Bitcoin isn't correlated to traditional markets, offering true diversification. And in an era of 5-7% inflation eroding fixed budgets? It's a hedge that pays dividends—literally.
+Unlike stocks or bonds, Bitcoin isn't correlated to traditional markets, offering true diversification. And in an era of 5-7% inflation eroding fixed budgets? It's a hedge that pays dividends—literally. New Hampshire's bond takes this further, using over-collateralized BTC to back a $100M issuance, proving the model scales from borough pilots to state-level finance.
 
 ### The Yardley Bitcoin Fund: October 2025's Spark of Genius
 
@@ -45,31 +45,31 @@ The doc lays it out like a startup pitch deck, but for city hall:
 | **Rebates & Incentives**      | Sats back on Main St. purchases | +25% local economic velocity |
 | **Exit Strategy**             | De-risk at -25%; reinvest in treasuries | Principal > politics |
 
-What makes it pop? I tied it to Yardley's quirky charm—a riverside borough craving innovation without losing its soul. Check out the full campaign vision at [elect.bradoyler.com](https://elect.bradoyler.com), where the Bitcoin Fund stands alongside priorities like bolstering our community-focused police and smart parking solutions. But the real genius is universality: Swap "Yardley" for your town, and it fits.
+What makes it pop? I tied it to Yardley's quirky charm—a riverside borough craving innovation without losing its soul. Check out the full campaign vision at [elect.bradoyler.com](https://elect.bradoyler.com), where the Bitcoin Fund stands alongside priorities like bolstering our community-focused police and smart parking solutions. But the real genius is universality: Swap "Yardley" for your town, and it fits—much like how New Hampshire adapted similar principles for their bond, channeling BTC gains into economic development without touching the general fund.
 
 ### How Municipal Bitcoin Funds Could Transform Thousands of Towns
 
 By 2030, I predict 500+ U.S. municipalities will run these funds. Here's why they're tailor-made for the future:
 
-1. **Tax Revolt Insurance**: Property taxes are a third rail—hikes spark recalls, cuts gut services. Bitcoin yields offer a neutral fix, potentially slashing rates 20-50% in a decade. Imagine Boise or Burlington bragging "Bitcoin-Powered Tax Freedom."
+1. **Tax Revolt Insurance**: Property taxes are a third rail—hikes spark recalls, cuts gut services. Bitcoin yields offer a neutral fix, potentially slashing rates 20-50% in a decade. Imagine Boise or Burlington bragging "Bitcoin-Powered Tax Freedom." New Hampshire's model shows how BTC-backed structures can lower borrowing costs for infrastructure, too.
 
 2. **Inflation's Antidote**: Municipal pensions and infrastructure are ballooning 6-8% yearly. Fiat bonds yield zilch after inflation. BTC? It's the only asset programmed for scarcity, letting towns outpace the Fed's money printer.
 
-3. **Talent Magnet**: Remote workers (hello, Zoom Boomers) flock to low-tax, high-vibe spots. A BTC fund signals "We're forward-thinking"—think Miami's playbook, but for Mayberry. Early adopters like New Hampshire's "Free State" towns are already piloting.
+3. **Talent Magnet**: Remote workers (hello, Zoom Boomers) flock to low-tax, high-vibe spots. A BTC fund signals "We're forward-thinking"—think Miami's playbook, but for Mayberry. Early adopters like New Hampshire's "Free State" towns are already piloting, with this bond drawing digital-asset firms statewide.
 
 4. **Equity Builder**: Rebates democratize crypto: Grandma gets sats for groceries, not just tech bros. Over time, it narrows wealth gaps by rewarding community loyalty.
 
-Early wins? Post-Yardley, a New Hampshire borough greenlit a $250K fund in November 2025. Texas hill country towns are next, eyeing it for water bonds. Even big players like Austin are watching.
+Early wins? Post-Yardley, New Hampshire's Business Finance Authority greenlit a $100M Bitcoin-backed municipal bond on November 18, 2025—the world's first—building on their May Strategic Bitcoin Reserve law that allows up to 5% of public funds in BTC. Texas hill country towns are next, eyeing it for water bonds. Even big players like Austin are watching.
 
 ### Challenges? Sure—But They're Solvable
 
-Skeptics cry "volatility!" The whitepaper counters with data: BTC's worst drawdown (-83% in 2018) still recovered 10x in three years. Start small, educate big, and govern transparently—that's the Yardley ethos.
+Skeptics cry "volatility!" The whitepaper counters with data: BTC's worst drawdown (-83% in 2018) still recovered 10x in three years. Start small, educate big, and govern transparently—that's the Yardley ethos. New Hampshire's over-collateralized approach (with custodians like BitGo) adds another layer of proof that risk can be managed at scale.
 
-Legal hurdles? States like Wyoming and Texas lead with pro-crypto laws; others will follow as precedents stack.
+Legal hurdles? States like Wyoming and Texas lead with pro-crypto laws; others will follow as precedents stack—NH's bond is exhibit A.
 
 ### Your Town's Next Move: Start with the Whitepaper
 
-The Yardley Bitcoin Fund didn't just light a spark in one small borough—it handed every mayor, council member, and city manager in America a copy-and-paste template for permanent fiscal abundance. As the guy who wrote it, I'm still all in on this vision, win or lose on November 4.
+The Yardley Bitcoin Fund didn't just light a spark in one small borough—it handed every mayor, council member, and city manager in America a copy-and-paste template for permanent fiscal abundance. As the guy who wrote it, I'm still all in on this vision, win or lose on November 4. With New Hampshire blazing the trail on BTC-backed bonds, the timing couldn't be better.
 
 Download the whitepaper, run the numbers for your budget, and pitch your council. Head to [elect.bradoyler.com](https://elect.bradoyler.com) for the full story behind the idea.
 
@@ -79,6 +79,7 @@ What's stopping your mayor from being the next pioneer?
 
 Further reading:  
 → [Yardley Bitcoin Fund Whitepaper (4-Page Original, Oct 2025)](https://docs.google.com/document/d/10GvJtNhzEbBE2R2a3h21xUBGjZHjSXYYbCnUVHE6KHk/edit?tab=t.0#heading=h.ebwbdny23lvi)  
-→ My Campaign Site – [elect.bradoyler.com](https://elect.bradoyler.com)
+→ My Campaign Site – [elect.bradoyler.com](https://elect.bradoyler.com)  
+→ NH's Bitcoin-Backed Bond Announcement – [NH BFA News](https://nhbfa.com/news/nh-bfa-approves-worlds-first-bitcoin-backed-municipal-bond/)
 
 The fiscal revolution starts local. Who's ready to HODL their way to prosperity?
