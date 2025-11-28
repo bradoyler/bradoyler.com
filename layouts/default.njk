@@ -1,46 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title }} - Brad Oyler</title>
-  <meta name="description" content="{{ description }}">
-  <meta property="og:site_name" content="{ Brad Oyler }" />
-  <meta property="og:description" content="{{ description }}" />
-  <meta property="og:title" content="{{ title }} - Brad Oyler" />
-  <meta property="og:url" content="https://www.bradoyler.com{{ page.url }}" />
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://www.bradoyler.com/assets/images/{{ art }}" />
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@bradoyler" />
-  <meta name="twitter:title" content="{{ title }} - Brad Oyler" />
-  <meta name="twitter:description" content="{{ description }}" />
-  <meta name="twitter:creator" content="@bradoyler" />
-  <meta name="twitter:domain" content="https://www.bradoyler.com" />
-  <meta name="twitter:image:src" content="https://www.bradoyler.com/assets/images/{{ art }}" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }} - Brad Oyler</title>
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:site_name" content="{ Brad Oyler }" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:title" content="{{ title }} - Brad Oyler" />
+    <meta property="og:url" content="https://www.bradoyler.com{{ page.url }}" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:image"
+      content="https://www.bradoyler.com/assets/images/{{ art }}"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bradoyler" />
+    <meta name="twitter:title" content="{{ title }} - Brad Oyler" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="twitter:creator" content="@bradoyler" />
+    <meta name="twitter:domain" content="https://www.bradoyler.com" />
+    <meta
+      name="twitter:image:src"
+      content="https://www.bradoyler.com/assets/images/{{ art }}"
+    />
 
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
 
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
+  <body
+    class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col"
+  >
+    {% include "layouts/_includes/header.njk" %}
 
-  {% include "layouts/_includes/header.njk" %}
+    <main class="max-w-5xl mx-auto px-6 py-12 flex-1">
+      {# --- Page Content Area --- #}
+      <h1
+        class="text-4xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4"
+      >
+        {{ title | capitalize }}
+      </h1>
 
-  <main class="max-w-5xl mx-auto px-6 py-12 flex-1">
-    
-    {# --- Page Content Area --- #}
-    <h1 class="text-4xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4">
-      {{ title | capitalize }}
-    </h1>
+      {# Tailwind Typography for styling Markdown content (e.g., in /about/) #}
+      <div
+        class="prose prose-xl dark:prose-invert max-w-none prose-a:text-blue-600 dark:prose-a:text-blue-400"
+      >
+        {{ content | safe }}
+      </div>
+    </main>
 
-    {# Tailwind Typography for styling Markdown content (e.g., in /about/) #}
-    <div class="prose prose-xl dark:prose-invert max-w-none 
-                prose-a:text-blue-600 dark:prose-a:text-blue-400">
-      {{ content | safe }}
-    </div>
-
-  </main>
-
-{% include "layouts/_includes/footer.njk" %}
-</body>
+    {% include "layouts/_includes/footer.njk" %}
+  </body>
 </html>

@@ -1,6 +1,5 @@
 // .eleventy.js — 11ty config (Handles collections, permalinks, drafts, metadata, etc.)
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
-const { format } = require('date-fns');
 
 module.exports = function (eleventyConfig) {
   // Metadata from _data/ (replaces metalsmith-metadata)

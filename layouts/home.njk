@@ -1,145 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }} - Brad Oyler</title>
-  <meta name="description" content="{{ description }}">
-  <meta property="og:site_name" content="{ Brad Oyler }" />
-  <meta property="og:description" content="{{ description }}" />
-  <meta property="og:title" content="{{ title }} - Brad Oyler" />
-  <meta property="og:url" content="https://www.bradoyler.com{{ page.url }}" />
-  <meta property="og:type" content="article" />
-  <meta property="og:image" content="https://www.bradoyler.com/assets/images/{{ art }}" />
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="@bradoyler" />
-  <meta name="twitter:title" content="{{ title }} - Brad Oyler" />
-  <meta name="twitter:description" content="{{ description }}" />
-  <meta name="twitter:creator" content="@bradoyler" />
-  <meta name="twitter:domain" content="https://www.bradoyler.com" />
-  <meta name="twitter:image:src" content="https://www.bradoyler.com/assets/images/{{ art }}" />
-  <link rel="stylesheet" href="/assets/style.css">
-</head>
+    <meta name="description" content="{{ description }}" />
+    <meta property="og:site_name" content="{ Brad Oyler }" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:title" content="{{ title }} - Brad Oyler" />
+    <meta property="og:url" content="https://www.bradoyler.com{{ page.url }}" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:image"
+      content="https://www.bradoyler.com/assets/images/{{ art }}"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bradoyler" />
+    <meta name="twitter:title" content="{{ title }} - Brad Oyler" />
+    <meta name="twitter:description" content="{{ description }}" />
+    <meta name="twitter:creator" content="@bradoyler" />
+    <meta name="twitter:domain" content="https://www.bradoyler.com" />
+    <meta
+      name="twitter:image:src"
+      content="https://www.bradoyler.com/assets/images/{{ art }}"
+    />
+    <link rel="stylesheet" href="/assets/style.css" />
+  </head>
 
-<body class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col">
-
- {% include "layouts/_includes/header.njk" %}
+  <body
+    class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col"
+  >
+    {% include "layouts/_includes/header.njk" %}
 
     <main class="max-w-5xl mx-auto px-6 py-12 flex-1">
+      <h1 class="sr-only">Home</h1>
+      <p class="text-xl font-bold text-center mb-8">
+        {{ settings.slogan or "Build software for humans..." }}
+      </p>
 
-        <h1 class="sr-only">Home</h1>
-        <p class="text-3xl font-bold text-center mb-8">{{ settings.slogan or "Build software for humans..." }}</p>
+      {# --- LATEST BLOG POSTS SECTION --- #}
+      <section class="mb-20">
+        <h2
+          class="text-3xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4"
+        >
+          <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">
+            Latest posts
+          </a>
+        </h2>
 
-{# --- FEATURED PROJECTS SECTION (Matching Blog Card Size) --- #}
-<section class="mb-20">
-    <h2 class="text-3xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4">
-        <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400">
-          Projects
-        </a>
-    </h2>
-    
-    {# CHANGE MADE HERE: Switched to md:grid-cols-2 to match the blog posts #}
-    <div class="grid gap-8 md:grid-cols-2">
-        {% for project in collections.projects | slice(0, 4) %}
-            <article class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition-shadow bg-white dark:bg-gray-900 flex flex-col">
-                
-                {# Image Display Section - Using the same height (h-40) as the blog card for consistency #}
-                {% if project.data.art %}
-                    <a href="{{ project.url }}" class="block overflow-hidden h-40">
-                        <img src="/assets/images/{{ project.data.art }}" 
-                             alt="Featured image for {{ project.data.title }}" 
-                             class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"/>
-                    </a>
-                {% endif %}
+        <div class="grid gap-8 md:grid-cols-2">
+          {# Loop through the collection, displaying all items found #} {% for
+          post in collections.blog | slice(0, 4) %}
+          <article
+            class="border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:shadow-xl transition-shadow bg-white dark:bg-gray-900"
+          >
+            {# Image Display #} {% if post.data.art %}
+            <a
+              href="{{ post.url }}"
+              class="block mb-4 overflow-hidden rounded-lg"
+            >
+              {# Assuming images are located in a folder like /assets/images/ #}
+              <img
+                src="/assets/images/{{ post.data.art }}"
+                alt="Featured image for {{ post.data.title }}"
+                class="w-full h-40 object-cover transition-transform duration-300 hover:scale-[1.03]"
+              />
+            </a>
+            {% endif %}
 
-                {# Project Details (Padded content) #}
-                <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-xl font-semibold mb-2">
-                        <a href="{{ project.url }}" class="hover:text-blue-600 dark:hover:text-blue-400">{{ project.data.title }}</a>
-                    </h3>
-                    
-                    {% if project.date %}
-                        <time class="text-sm text-gray-600 dark:text-gray-400" datetime="{{ project.date | htmlDateString }}">
-                            Last updated: {{ project.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long' }) }}
-                        </time>
-                    {% endif %}
+            <h3 class="text-xl font-semibold mb-2">
+              <a
+                href="{{ post.url }}"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >{{ post.data.title }}</a
+              >
+            </h3>
 
-                    {% if project.data.project.url %}
-                        <p class="text-xs font-mono text-gray-500 dark:text-gray-400 mb-3 truncate">
-                            {{ project.data.project.url | replace('https://', '') | replace('http://', '') }}
-                        </p>
-                    {% endif %}
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="{{ post.date | htmlDateString }}"
+            >
+              {{ post.date.toLocaleDateString('en-US', { year: 'numeric', month:
+              'long', day: 'numeric' }) }}
+            </time>
 
-                    {% if project.data.description %}
-                        <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">{{ project.data.description | truncate(150) }}</p>
-                    {% endif %}
-                    
-                    <a href="{{ project.url }}" class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start">
-                        View Details →
-                    </a>
-                </div>
-            </article>
-        {% endfor %}
-    </div>
+            {% if post.data.description %}
+            <p class="mt-3 text-gray-700 dark:text-gray-300">
+              {{ post.data.description | truncate(120) }}
+            </p>
+            {% endif %}
 
-    <div class="text-center mt-12">
-        <a href="/projects/" class="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline">
-            View All Projects
-        </a>
-    </div>
-</section>
+            <a
+              href="{{ post.url }}"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium"
+            >
+              Read Post →
+            </a>
+          </article>
+          {% endfor %}
+        </div>
 
-{# --- LATEST BLOG POSTS SECTION (Working Version with Image & NO SLICE FILTER) --- #}
-<section class="mb-20">
-    <h2 class="text-3xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4">
-        <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">
-            Blog
-        </a>
-    </h2>
-
-    <div class="grid gap-8 md:grid-cols-2">
-        {# Loop through the collection, displaying all items found #}
-        {% for post in collections.blog | slice(0, 4) %}
-            <article class="border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:shadow-xl transition-shadow bg-white dark:bg-gray-900">
-                
-                {# Image Display #}
-                {% if post.data.art %}
-                    <a href="{{ post.url }}" class="block mb-4 overflow-hidden rounded-lg">
-                        {# Assuming images are located in a folder like /assets/images/ #}
-                        <img src="/assets/images/{{ post.data.art }}" 
-                             alt="Featured image for {{ post.data.title }}" 
-                             class="w-full h-40 object-cover transition-transform duration-300 hover:scale-[1.03]"/>
-                    </a>
-                {% endif %}
-
-                <h3 class="text-xl font-semibold mb-2">
-                    <a href="{{ post.url }}" class="hover:text-blue-600 dark:hover:text-blue-400">{{ post.data.title }}</a>
-                </h3>
-
-                <time class="text-sm text-gray-600 dark:text-gray-400" datetime="{{ post.date | htmlDateString }}">
-                    {{ post.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) }}
-                </time>
-                
-                {% if post.data.description %}
-                    <p class="mt-3 text-gray-700 dark:text-gray-300">
-                        {{ post.data.description | truncate(120) }}
-                    </p>
-                {% endif %}
-
-                <a href="{{ post.url }}" class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium">
-                    Read Post →
-                </a>
-            </article>
-        {% endfor %}
-    </div>
-
-    <div class="text-center mt-12">
-        <a href="/blog/" class="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline">
+        <div class="text-center mt-12">
+          <a
+            href="/blog/"
+            class="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline"
+          >
             View All Blog Posts
-        </a>
-    </div>
-</section>
+          </a>
+        </div>
+      </section>
+
+      {# --- PROJECTS SECTION--- #}
+      <section class="mb-20">
+        <h2
+          class="text-3xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4"
+        >
+          <a
+            href="/projects/"
+            class="hover:text-blue-600 dark:hover:text-blue-400"
+          >
+            Projects
+          </a>
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          {% for project in collections.projects | slice(0, 4) %}
+          <article
+            class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition-shadow bg-white dark:bg-gray-900 flex flex-col"
+          >
+            {# Image Display Section - Using the same height (h-40) as the blog
+            card for consistency #} {% if project.data.art %}
+            <a href="{{ project.url }}" class="block overflow-hidden h-40">
+              <img
+                src="/assets/images/{{ project.data.art }}"
+                alt="Featured image for {{ project.data.title }}"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+              />
+            </a>
+            {% endif %} {# Project Details (Padded content) #}
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-semibold mb-2">
+                <a
+                  href="{{ project.url }}"
+                  class="hover:text-blue-600 dark:hover:text-blue-400"
+                  >{{ project.data.title }}</a
+                >
+              </h3>
+
+              {% if project.date %}
+              <time
+                class="text-sm text-gray-600 dark:text-gray-400"
+                datetime="{{ project.date | htmlDateString }}"
+              >
+                Last updated: {{ project.date.toLocaleDateString('en-US', {
+                year: 'numeric', month: 'long' }) }}
+              </time>
+              {% endif %} {% if project.data.project.url %}
+              <p
+                class="text-xs font-mono text-gray-500 dark:text-gray-400 mb-3 truncate"
+              >
+                {{ project.data.project.url | replace('https://', '') |
+                replace('http://', '') }}
+              </p>
+              {% endif %} {% if project.data.description %}
+              <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+                {{ project.data.description | truncate(150) }}
+              </p>
+              {% endif %}
+
+              <a
+                href="{{ project.url }}"
+                class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+              >
+                View Details →
+              </a>
+            </div>
+          </article>
+          {% endfor %}
+        </div>
+
+        <div class="text-center mt-12">
+          <a
+            href="/projects/"
+            class="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline"
+          >
+            View All Projects
+          </a>
+        </div>
+      </section>
     </main>
-{% include "layouts/_includes/footer.njk" %}
-</body>
+    {% include "layouts/_includes/footer.njk" %}
+  </body>
 </html>
