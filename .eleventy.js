@@ -5,6 +5,7 @@ module.exports = function (eleventyConfig) {
   // todo: use metadata from _data/
   eleventyConfig.addGlobalData('site', {
     name: 'Brad Oyler',
+    slogan: "Musings about tech, finance & data. Build, measure, learn...",
     version: '0.0.1',
     domain: 'bradoyler.com',
     url: 'https://www.bradoyler.com'
