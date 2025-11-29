@@ -1,14 +1,12 @@
 ---
-title: 50 year mortgages
+title: 50 year mortgages are a leveraged short
 date: 2025-11-15
 modified: null
-description: it's a leveraged short!
+description: ...against the US Dollar
 art: 50-year-mortgage.jpg
 layout: post.njk
 tags: ['blog', 'finance']
 ---
-
-## 50-Year Mortgagea are a Leveraged Short on the US Dollar
 
 Imagine locking in **today’s** interest rate and **today’s** house price… for the next **half-century**.
 
