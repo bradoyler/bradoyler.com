@@ -52,13 +52,13 @@
           >
             {# Date published #}
             <time datetime="{{ page.date | htmlDateString }}">
-              Published: {{ page.date.toLocaleDateString('en-US', { year:'numeric', month: 'short', day: 'numeric' }) }}
+              Published: {{ page.date | formatDate }}
             </time>
             {% if modified %}
             <span> / </span>
             {# Date modified #}
             <time datetime="{{ modified | htmlDateString }}">
-              Updated: {{ modified.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }) }}
+              Updated: {{ modified | formatDate }}
             </time>
             {% endif %}
             {% if tags %}

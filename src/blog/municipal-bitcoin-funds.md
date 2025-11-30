@@ -5,7 +5,7 @@ modified: 2025-11-25
 description: Unlocking Fiscal Freedom
 art: municipal-bitcoin-funds.jpg.webp
 layout: post.njk
-tags: ['blog', 'finance']
+tags: ['blog', 'finance', 'crypto']
 ---
 
 #### What a Municipal Bitcoin Fund Means for America's Towns  

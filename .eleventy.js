@@ -27,6 +27,15 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("capitalize", str => str.charAt(0).toUpperCase() + str.slice(1));
   eleventyConfig.addFilter("truncate", (str, len) => str.length > len ? str.slice(0, len) + "…" : str);
 
+  eleventyConfig.addFilter("formatDate", (dateObj) => {
+  return dateObj.toLocaleDateString("en-US", {
+    timeZone: "UTC",
+    year: "numeric",
+    month: "short",
+    day: "numeric"
+  });
+});
+
   eleventyConfig.addFilter("date", function (dateObj, formatStr) {
     let date;
     if (dateObj === "now" || !dateObj) {
