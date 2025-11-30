@@ -1,24 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-<url> <loc>https://www.bradoyler.com/404.html</loc> </url>
-<url> <loc>https://www.bradoyler.com/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/</loc> </url>
-<url> <loc>https://www.bradoyler.com/projects/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/finance/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/tech/</loc> </url>
-<url> <loc>https://www.bradoyler.com/about/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/municipal-bitcoin-funds/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/50-year-mortgages/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/bounce-rate-optimization-for-publishers-exit-intent/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/highest-murder-rate-cities-in-the-us/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/crude-oil-pipelines/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/the-29-unopposed-house-seats-in-2016-election/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/my-key-management-principles-kmp/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/future-of-news-according-to-facebook-google/</loc> </url>
-<url> <loc>https://www.bradoyler.com/blog/timeline-that-google-calendar-with-gcal-timeline/</loc> </url>
-<url> <loc>https://www.bradoyler.com/projects/atlas-make/</loc> </url>
-<url> <loc>https://www.bradoyler.com/projects/d3-node/</loc> </url>
-<url> <loc>https://www.bradoyler.com/projects/news-divide/</loc> </url>
-<url> <loc>https://www.bradoyler.com/projects/newsblock/</loc> </url>
-<url> <loc>https://www.bradoyler.com/projects/route-cache/</loc> </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+      
+      
+      <url><loc>https://www.bradoyler.com/projects/route-cache/</loc><lastmod>2014-08-01</lastmod></url>
+      
+      
+      <url><loc>https://www.bradoyler.com/projects/newsblock/</loc><lastmod>2015-07-19</lastmod></url>
+      <url><loc>https://www.bradoyler.com/projects/d3-node/</loc><lastmod>2016-07-13</lastmod></url>
+      <url><loc>https://www.bradoyler.com/projects/atlas-make/</loc><lastmod>2016-09-15</lastmod></url>
+      <url><loc>https://www.bradoyler.com/projects/news-divide/</loc><lastmod>2016-11-25</lastmod></url>
+      <url><loc>https://www.bradoyler.com/blog/the-29-unopposed-house-seats-in-2016-election/</loc><lastmod>2016-12-05</lastmod></url>
+      <url><loc>https://www.bradoyler.com/blog/crude-oil-pipelines/</loc><lastmod>2016-12-17</lastmod></url>
+      <url><loc>https://www.bradoyler.com/blog/highest-murder-rate-cities-in-the-us/</loc><lastmod>2017-11-16</lastmod></url>
+      <url><loc>https://www.bradoyler.com/finance/50-year-mortgages/</loc><lastmod>2025-11-15</lastmod></url>
+      <url><loc>https://www.bradoyler.com/blog/municipal-bitcoin-funds/</loc><lastmod>2025-11-19</lastmod></url>
+      <url><loc>https://www.bradoyler.com/404.html</loc><lastmod>2025-11-27</lastmod></url>
+      <url><loc>https://www.bradoyler.com/about/</loc><lastmod>2025-11-27</lastmod></url>
+      <url><loc>https://www.bradoyler.com/blog/</loc><lastmod>2025-11-27</lastmod></url>
+      <url><loc>https://www.bradoyler.com/finance/</loc><lastmod>2025-11-27</lastmod></url>
+      <url><loc>https://www.bradoyler.com/tech/</loc><lastmod>2025-11-27</lastmod></url>
+      <url><loc>https://www.bradoyler.com/</loc><lastmod>2025-11-27</lastmod></url>
+      <url><loc>https://www.bradoyler.com/projects/</loc><lastmod>2025-11-27</lastmod></url>
+      <url><loc>https://www.bradoyler.com/tech/snowflake-cost-control-guide/</loc><lastmod>2025-11-28</lastmod></url>
+      <url><loc>https://www.bradoyler.com/crypto/</loc><lastmod>2025-11-28</lastmod></url>
+      <url><loc>https://www.bradoyler.com/ai/ai-news-digest-nov-2025/</loc><lastmod>2025-11-30</lastmod></url>
+      <url><loc>https://www.bradoyler.com/blog/crypto-as-a-lifeline/</loc><lastmod>2025-11-30</lastmod></url>
+      <url><loc>https://www.bradoyler.com/ai/</loc><lastmod>2025-11-30</lastmod></url>
+      <url><loc>https://www.bradoyler.com/sitemap.xml</loc><lastmod>2025-11-30</lastmod></url>
 </urlset>

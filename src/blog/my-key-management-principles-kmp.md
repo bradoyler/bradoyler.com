@@ -6,6 +6,7 @@ description: YAGNI, KISS, Occam’s razor & Agile are my best lessons learned.
 art: article.png
 layout: post.njk
 tags: ['blog']
+excludeFromSitemap: true
 ---
 
 ~~ re-post from Nov 2008 ~~

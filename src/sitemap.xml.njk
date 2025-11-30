@@ -1,0 +1,10 @@
+---
+permalink: /sitemap.xml   # forces exact file name, no folder/index.html
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% set sortedPages = collections.all | sort(false, true, "date") %}
+  {% for page in sortedPages %}{% if page.url and page.url != false %}
+      {% if not page.data.excludeFromSitemap %}<url><loc>https://www.bradoyler.com{{ page.url | replace('/index.html', '/') }}</loc>{% if page.date %}<lastmod>{{ page.date.toISOString().split('T')[0] }}</lastmod>{% endif %}</url>{% endif %}{% endif %}{% endfor %}
+</urlset>

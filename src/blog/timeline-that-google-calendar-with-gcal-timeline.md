@@ -6,6 +6,7 @@ description: easy way to display a google calendar in a timeline
 art: article.png
 layout: post.njk
 tags: ['blog']
+excludeFromSitemap: true
 ---
 
 Created a new github repo the other day to build out a simple jQuery plug-in that accepts a calendarId from a public google calendar and builds out a nice looking timeline of pasts events. That’s right, jQuery is still really useful.

@@ -6,6 +6,7 @@ description: how understanding 'exit intent' can optimize a news site
 art: exit_intent.png
 layout: post.njk
 tags: ['blog']
+excludeFromSitemap: true
 ---
 
 ### Understanding Bounce rate

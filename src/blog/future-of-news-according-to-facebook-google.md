@@ -6,6 +6,7 @@ description: how 'new media' is approaching the news industry
 art: googlenewslab.png
 layout: post.njk
 tags: ['blog']
+excludeFromSitemap: true
 ---
 
 Two of today’s largest “media giants”  have made some recent strides into the News world over the past month or so.
