@@ -11,7 +11,7 @@ on:
       target_path:
         description: 'Target path in repo (e.g. content/crypto-digest-december-2025.md)'
         required: false
-        default: 'content/new-from-gist.md'
+        default: 'src/blog/file-from-gist.md'
         type: string
 
 jobs:
