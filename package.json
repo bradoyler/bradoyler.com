@@ -1,6 +1,6 @@
 {
   "name": "bradoyler.com",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Static site for bradoyler.com",
   "main": "index.js",
   "scripts": {
