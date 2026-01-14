@@ -30,6 +30,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("formatDate", (dateObj) => {
   return dateObj.toLocaleDateString("en-US", {
     timeZone: "UTC",
+    // timeZoneName: "short",
     year: "numeric",
     month: "short",
     day: "numeric"

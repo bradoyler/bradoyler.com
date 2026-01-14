@@ -79,8 +79,7 @@
               class="text-sm text-gray-600 dark:text-gray-400"
               datetime="{{ item.date }}"
             >
-              {{ date_label }} {{ item.date.toLocaleDateString('en-US',
-              date_format) }}
+              {{ date_label }} {{ item.date | formatDate }}
             </time>
 
             {% if item.data.description %}
