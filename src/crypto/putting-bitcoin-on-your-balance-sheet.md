@@ -10,7 +10,7 @@ tags: ['blog', 'crypto']
 
 #### Why Businesses Should Consider Bitcoin on the Balance Sheet: A Hypothetical Roadmap
 
-In the relentless march of technological and financial evolution, one asset stands as a beacon of scarcity amid endless monetary expansion: Bitcoin. As the author of bradoyler.com, I've spent years analyzing trends in innovation, sovereignty, and value preservation. The evidence is compelling. Bitcoin is not mere speculation but digital property engineered for the long term, a superior store of value compared to cash, bonds, or even gold in an inflationary world. Inspired by Michael Saylor's unwavering advocacy and the accelerating wave of corporate adoption, this post explores why a forward-thinking business might allocate Bitcoin to its treasury. Hypothetically, if I were advising or leading such an entity, here's the reasoned case: how to implement it, the tax efficiencies that strengthen the strategy, the risks that demand caution, and the asymmetric upside that could redefine corporate resilience.
+In the relentless march of technological and financial evolution, one asset stands as a beacon of scarcity amid endless monetary expansion: Bitcoin. I've spent years analyzing trends in innovation, sovereignty, and value preservation. The evidence is compelling. Bitcoin is not mere speculation but digital property engineered for the long term, a superior store of value compared to cash, bonds, or even gold in an inflationary world. Inspired by Michael Saylor's unwavering advocacy and the accelerating wave of corporate adoption, this post explores why a forward-thinking business might allocate Bitcoin to its treasury. Hypothetically, if I were advising or leading such an entity, here's the reasoned case: how to implement it, the tax efficiencies that strengthen the strategy, the risks that demand caution, and the asymmetric upside that could redefine corporate resilience.
 
 ## How to Acquire and Hold Bitcoin on a Business Balance Sheet
 
@@ -44,6 +44,6 @@ For a hypothetical business, a strategic allocation positions the treasury to ap
 
 In the trajectory toward greater adoption, potentially nation-states, banks, and trillions in capital flows, businesses embracing Bitcoin early gain asymmetric advantage. Those without risk becoming relics in a shifting financial paradigm. Bitcoin isn't just an investment. It's verifiable, portable, sovereign money engineered for the digital age.
 
-As a blogger at bradoyler.com, I see this as one of the defining financial shifts of our time. Whether your business acts now or observes from the sidelines, the case grows stronger daily.
+As a blogger, I see this as one of the defining financial shifts of our time. Whether your business acts now or observes from the sidelines, the case grows stronger daily.
 
 What are your thoughts on corporate Bitcoin treasuries? Share in the comments. Let's discuss the possibilities.

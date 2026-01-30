@@ -2,7 +2,7 @@
 title: Crypto News Digest - December 2025
 date: 2025-12-26
 modified: null
-description: roundup of the most notable Crypto developments
+description: roundup of the most notable Crypto developments from December
 art: cryptonews-december2025.jpeg
 layout: post.njk
 tags: ['blog', 'crypto']
@@ -33,4 +33,4 @@ Despite the pullback, some positive undercurrents emerged:
 
 Overall, December felt like a "wait-and-see" period after 2025's earlier highs, with traders preparing for potential post-holiday momentum in 2026. The market remains resilient in its institutional foundations, but near-term caution prevails.
 
-Stay tuned for more updates, and happy holidays from bradoyler.com! What are your thoughts on the year-end dip?
+Stay tuned for more updates, and happy holidays! What are your thoughts on the year-end dip?

@@ -2,13 +2,13 @@
 title: AI News Digest - November 2025
 date: 2025-11-30
 modified: null
-description: roundup of the most notable AI developments
+description: roundup of the most notable AI developments from November
 art: nov2025_ai_news.jpg
 layout: post.njk
 tags: ['blog', 'ai']
 ---
 
-Welcome to the November 2025 edition of the AI Digest on bradoyler.com. This month marked a whirlwind of frontier model releases, massive infrastructure investments, regulatory pivots, and the milestone third anniversary of ChatGPT. From government-backed scientific AI initiatives to breakthroughs in agentic workflows and healthcare diagnostics, AI continued its rapid evolution. Adoption rates dipped slightly in workplaces, but hype around superintelligence investments showed no signs of slowing. Here's a curated roundup of the top stories.
+Welcome to the November 2025 edition of the AI Digest. This month marked a whirlwind of frontier model releases, massive infrastructure investments, regulatory pivots, and the milestone third anniversary of ChatGPT. From government-backed scientific AI initiatives to breakthroughs in agentic workflows and healthcare diagnostics, AI continued its rapid evolution. Adoption rates dipped slightly in workplaces, but hype around superintelligence investments showed no signs of slowing. Here's a curated roundup of the top stories.
 
 #### 1. ChatGPT Celebrates Third Anniversary: A Game-Changer Turns Three
 On November 30, OpenAI's ChatGPT marked three years since its launch on November 30, 2022, igniting the current AI boom. Experts hailed it as a "game changer" that shifted information access, reaching 100 million weekly users within months and becoming the "new front door to the internet." While it has amplified productivity and creativity, concerns linger over hallucinations, ethical misuse, and cognitive atrophy from over-reliance. On balance, observers like Carnegie Mellon professor Martial Hebert called it a net positive, opening "a box of opportunities" despite Pandora's box risks. Oversight is seen as inevitable, with calls for balanced regulation to harness its potential in work and daily life.
@@ -38,4 +38,4 @@ A U.S. Census Bureau survey on November 20 revealed AI use at work fell to 11%, 
 - **Hardware Surge**: MediaTek shares soared on Google TPU partnerships, rivaling Nvidia.
 - **Agentic Retail**: Google's Gemini agents handle shopping queries, stock checks, and purchases.
 
-November 2025 underscored AI's dual edge: explosive innovation meets sobering challenges like ethics and equity. As ChatGPT turns three, the field feels more mature yet unpredictable. Stay tuned for December's digest on bradoyler.com. What AI trend are you watching next? Share in the comments.
+November 2025 underscored AI's dual edge: explosive innovation meets sobering challenges like ethics and equity. As ChatGPT turns three, the field feels more mature yet unpredictable. Stay tuned for December's digest. What AI trend are you watching next? Share in the comments.

@@ -2,7 +2,7 @@
 title: AI News Digest - December 2025
 date: 2025-12-26
 modified: null
-description: roundup of the most notable AI developments
+description: roundup of the most notable AI developments from December
 art: ainews-dec2025.jpg
 layout: post.njk
 tags: ['blog', 'ai']
@@ -40,4 +40,4 @@ MIT Technology Review's "AI Wrapped" highlighted buzzwords like "superintelligen
 - **Job Market Impact**: AI contributes to record U.S. layoffs; entry-level hit hardest.
 - **Infrastructure Winners**: Memory/storage firms like Micron prioritize AI over consumer lines.
 
-December 2025 wrapped an extraordinary year of AI acceleration, with hardware empires consolidating, personal AI reflections going mainstream, and policy fights heating up. Innovation's rewards are clear, but so are the calls for balance on jobs, ethics, and equity. As we head into 2026, the race intensifies. Stay tuned for January's digest on bradoyler.com. What's your biggest AI takeaway from 2025? Share in the comments!
+December 2025 wrapped an extraordinary year of AI acceleration, with hardware empires consolidating, personal AI reflections going mainstream, and policy fights heating up. Innovation's rewards are clear, but so are the calls for balance on jobs, ethics, and equity. As we head into 2026, the race intensifies. Stay tuned for January's digest. What's your biggest AI takeaway from 2025? Share in the comments!
