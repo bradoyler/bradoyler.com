@@ -28,14 +28,14 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("truncate", (str, len) => str.length > len ? str.slice(0, len) + "…" : str);
 
   eleventyConfig.addFilter("formatDate", (dateObj) => {
-  return dateObj.toLocaleDateString("en-US", {
-    timeZone: "UTC",
-    // timeZoneName: "short",
-    year: "numeric",
-    month: "short",
-    day: "numeric"
+    return dateObj.toLocaleDateString("en-US", {
+      timeZone: "UTC",
+      // timeZoneName: "short",
+      year: "numeric",
+      month: "short",
+      day: "numeric"
+    });
   });
-});
 
   eleventyConfig.addFilter("date", function (dateObj, formatStr) {
     let date;
@@ -55,30 +55,29 @@ module.exports = function (eleventyConfig) {
     return collection.getAll().filter(item => item.data.tags);
   });
 
-
   eleventyConfig.addCollection('blog', collection => {
     return collection.getFilteredByTag('blog')
       .filter(item => !item.data.draft)
-      .sort((a, b) => new Date(b.date) - new Date(a.date));
+      //.sort((a, b) => new Date(b.date) - new Date(a.date));
   });
 
   eleventyConfig.addCollection('projects', collection => {
     return collection.getFilteredByTag('projects')
       .filter(item => !item.data.draft)
-      .sort((a, b) => new Date(b.date) - new Date(a.date));
+      .sort((a, b) => new Date(a.date) - new Date(b.date));
   });
 
   // Copy over misc crap for visualization
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/widgets");
   eleventyConfig.addPassthroughCopy("src/scripts");
-  
+
   // copy txt files
   eleventyConfig.addPassthroughCopy("src/*.txt");
 
   // needed for Github pages custom domain
   eleventyConfig.addPassthroughCopy("src/CNAME");
-  
+
   // used for static sitemaps
   eleventyConfig.addPassthroughCopy("src/*.xml");
 
