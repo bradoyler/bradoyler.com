@@ -2,7 +2,7 @@
 title: Development Is Now About Automation, Semantics & Context
 date: 2026-03-04
 modified: null
-description: The Shift Is Real, Software Development Is Now About Automation, Semantics & Context
+description: The Shift Is Real. Writing code is no longer the core skill, learn how automation, semantics, and context are redefining how we build software.
 art: mar03-social-image.jpg
 layout: post.njk
 tags: ['blog', 'ai']
