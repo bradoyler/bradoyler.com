@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Development Is Now About Automation, Semantics &amp; Context - Brad Oyler</title>
+    <meta name="description" content="The Shift Is Real, Software Development Is Now About Automation, Semantics &amp; Context" />
+    <link rel="canonical" href="https://www.bradoyler.com/ai/shift-in-software-development/">
+    <meta property="og:site_name" content="{ Brad Oyler }" />
+    <meta property="og:description" content="The Shift Is Real, Software Development Is Now About Automation, Semantics &amp; Context" />
+    <meta property="og:title" content="Development Is Now About Automation, Semantics &amp; Context - Brad Oyler" />
+    <meta property="og:url" content="https://www.bradoyler.com/ai/shift-in-software-development/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://www.bradoyler.com/assets/images/mar03-social-image.jpg"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bradoyler" />
+    <meta name="twitter:title" content="Development Is Now About Automation, Semantics &amp; Context - Brad Oyler" />
+    <meta name="twitter:description" content="The Shift Is Real, Software Development Is Now About Automation, Semantics &amp; Context" />
+    <meta name="twitter:creator" content="@bradoyler" />
+    <meta name="twitter:domain" content="https://www.bradoyler.com" />
+    <meta
+      name="twitter:image:src"
+      content="https://www.bradoyler.com/assets/images/mar03-social-image.jpg"
+    />
+<style>
+  div.prose {
+    overflow-x: auto; 
+  }
+</style>
+    
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://www.bradoyler.com/assets/style.css" />
+
+
+
+
+
+
+
+  </head>
+
+  <body class="bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans"
+  >
+    <header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900" x-data="{ open: false }">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        
+        <a href="/" class="text-xl md:text-2xl font-extrabold tracking-tight hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            { BRAD OYLER }
+        </a>
+
+        
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+            <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+            <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+            <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
+        </nav>
+        
+        
+        <button @click="open = !open" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation">
+            <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </div>
+
+    
+    <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden border-t border-gray-200 dark:border-gray-800">
+        <nav class="flex flex-col space-y-2 p-4 text-base font-medium">
+            <a href="/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Home</a>
+            <a href="/blog/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Blog</a>
+            <a href="/projects/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Projects</a>
+            <a href="/about/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">About</a>
+        </nav>
+    </div>
+</header>
+
+
+
+
+
+
+    <main class="flex-1">
+      <article class="max-w-4xl mx-auto md:my-16 p-4 md:p-12 bg-white dark:bg-gray-800 shadow-xl rounded-lg">
+        
+        <header class="mb-4 border-b border-gray-100 dark:border-gray-700 pb-4">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Development Is Now About Automation, Semantics &amp; Context
+          </h1>
+          <div
+            class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400"
+          >
+            
+            <time datetime="2026-03-04">
+              Published: Mar 4, 2026
+            </time>
+            
+            
+            <span class="text-gray-400 dark:text-gray-600">•</span>
+            
+            <div class="flex gap-2">
+               
+              <a href="/blog/"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 hover:underline capitalize">
+                #blog
+              </a>
+                
+              <a href="/ai/"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 hover:underline capitalize">
+                #ai
+              </a>
+               
+            </div>
+            
+          </div>
+        </header>
+
+        
+        <div 
+         class="prose prose-xl dark:prose-invert max-w-none prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:text-gray-50"
+        >
+          <p>For most of my career, writing software meant writing code. You opened a file, reasoned through a problem, typed out a solution line by line, and shipped it. The craft lived in the syntax — the careful construction of logic that a machine could execute.</p>
+<p>That era isn't over, but it's no longer the center of gravity.</p>
+<p>Something more fundamental has changed. The work of building software is increasingly about <em>what you mean</em>, <em>what the system knows</em>, and <em>what it can do without you</em>. Automation, semantics, and context have moved from supporting concepts to core competencies. If you're still optimizing primarily for how fast you can write code, you're optimizing for the wrong thing.</p>
+<h2>Automation Isn't a Feature Anymore — It's the Architecture</h2>
+<p>We used to talk about automation as something you bolt on: CI/CD pipelines, test runners, deployment scripts. Useful scaffolding around the real work. Now automation is baked into the tissue of development itself.</p>
+<p>Developers' roles are shifting away from writing code toward curating prompt libraries, setting AI policies, and providing high-level strategic oversight. That's a dramatic reframing. The person who once wrote the function is now the person who defines the intent, reviews the output, and makes the judgment call about whether it's right.</p>
+<p>AI-ready internal developer platforms now offer context-aware recommendations — which tests to run, which security rules apply — enforce policy-as-code, and integrate AI assistants directly into workflows. The pipeline has gotten smart. It's not just running your code; it's reasoning about it.</p>
+<p>But here's the tension: AI tends to amplify what already exists in your engineering system. If your foundations are strong, you get faster. If things are messy, you might ship faster… into more problems. Automation rewards discipline. It doesn't substitute for it.</p>
+<h2>Semantics: Meaning Is the New Interface</h2>
+<p>Here's what I think gets underappreciated in the conversation about AI and development: the bottleneck has shifted from <em>syntax</em> to <em>semantics</em>.</p>
+<p>Any competent model can write syntactically correct code. What's hard — what separates good output from bad — is whether the system understands what the code is <em>supposed to do</em> in context. Does &quot;revenue&quot; mean gross or net? Does &quot;active user&quot; mean logged in today, or in the last 30 days? These are semantic questions, not syntactic ones.</p>
+<p>A semantic layer is a part of data architecture that translates complex data into business-friendly terms, so words like &quot;revenue,&quot; &quot;active customer,&quot; or &quot;incident severity&quot; mean the same thing everywhere. That kind of shared meaning used to live in people's heads, passed around in Slack threads and tribal knowledge. Now it needs to be explicit, codified, and machine-readable.</p>
+<p>Modern AI systems understand not just syntax but the broader context of an entire project — analyzing codebases, coding patterns, and project architecture to provide suggestions that match the development style. That's a semantic operation. It's the system asking: <em>what does this codebase mean?</em> Not just: <em>what does this code say?</em></p>
+<p>Developers who thrive in this environment are the ones who can articulate meaning precisely. Writing a great prompt is an act of semantic clarity. Defining what done looks like for an AI agent is a semantic contract. The skill is less about knowing how to express logic in a programming language and more about knowing how to express <em>intent</em> in a way that can be reliably acted upon.</p>
+<h2>Context Is the New Currency</h2>
+<p>If semantics is about meaning, context is about <em>scope</em>. And in modern software development, context engineering has become one of the most important practices no one was trained for.</p>
+<p>Effectively communicating with AI models is the key to doing good work. The more background AI tools are given about a project, the better the code they generate will be. Developers have to understand both how to manage what the AI knows about their project — context engineering — and how to communicate it — prompt engineering.</p>
+<p>This is genuinely new territory. We've spent decades learning how to structure code so compilers can understand it. Now we're learning how to structure <em>information</em> so AI can act on it. That means thinking carefully about what's in the window, what's in the memory, what's in the retrieval system, and what's simply absent.</p>
+<p>Agentic AI systems demonstrate autonomous capabilities that include understanding project context, suggesting architectural improvements, and maintaining consistency with existing codebases. The better the context you provide, the better the agent performs. Garbage in, garbage out — but now the &quot;garbage&quot; is often incomplete or ambiguous framing rather than bad logic.</p>
+<h2>What This Means for How We Work</h2>
+<p>None of this makes developers obsolete. It makes the cognitive parts of the job more important, and the mechanical parts less so.</p>
+<p>The work is shifting toward: defining clear specifications, maintaining shared semantic layers, engineering context deliberately, reviewing AI output with judgment, and making architectural decisions that AI can't make alone. System architecture design, task planning, context-rich prompt engineering, and orchestration belong to the human; the mind-numbing drudgery belongs to AI.</p>
+<p>That's a reasonable division of labor. But it requires a different kind of developer fluency — one built on clarity of thought over speed of typing.</p>
+<p>The teams that are winning right now aren't the ones with the most engineers writing the most code. They're the ones who've gotten good at saying precisely what they want, building systems that encode shared meaning, and designing automation that can act on both.</p>
+<p>Syntax got us here. Semantics and context are what comes next.</p>
+
+        </div>
+
+        
+        <nav
+          class="mt-12 pt-4 border-t border-gray-200 dark:border-gray-800 grid grid-cols-2 gap-8 text-sm"
+        >
+          <div>
+            
+            <span class="block text-gray-500 dark:text-gray-400 mb-2"
+              >← Previous Post</span
+            >
+            <a
+              href="/crypto/january-2026-crypto-digest/"
+              class="block text-blue-600 dark:text-blue-400 hover:underline font-medium"
+            >
+              Crypto News Digest - January 2026
+            </a>
+            
+          </div>
+          <div class="text-right">
+            
+          </div>
+        </nav>
+
+<!-- Tiny X CTA — truly minimal -->
+<div class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center text-lg text-gray-500 dark:text-gray-500">
+  <a href="https://x.com/bradoyler" target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400">
+   Follow @bradoyler on X
+  </a>
+ ||
+  <a href="https://x.com/intent/post?text=Development%20Is%20Now%20About%20Automation%2C%20Semantics%20%26%20Context&url=https%3A%2F%2Fwww.bradoyler.com%2Fai%2Fshift-in-software-development%2F"
+     target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400">
+    Share this
+  </a>
+</div>
+
+      </article>
+
+    </main>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BS3MHXWW8Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BS3MHXWW8Q');
+</script>
+
+<footer class="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
+    <div class="max-w-5xl mx-auto px-6 py-12 text-center text-sm text-gray-600 dark:text-gray-400">
+        &copy; 2025 Brad Oyler
+    </div>
+</footer>
+  </body>
+</html>
