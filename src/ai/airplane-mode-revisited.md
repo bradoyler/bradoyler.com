@@ -31,7 +31,7 @@ None of that shows up in the final product. That is the point. If the performanc
 
 ## What the rebuild looks like
 
-The new version is about 600 lines of plain JavaScript. It uses ES modules and d3 v7, and it has no build step. Here is what it does:
+The new version is about 600 lines of plain JavaScript, and the [source is on GitHub](https://github.com/bradoyler/airtraffic). It uses ES modules and d3 v7, and it has no build step. Here is what it does:
 
 - **Data.** It uses nonstop routes between contiguous-US airports from [OpenFlights](https://github.com/jpatokal/openflights), weighted by how many airlines fly each route. The base map comes from us-atlas.
 - **Flights.** It generates about 24,000 flights in the browser with a seeded random number generator. Busy routes between big airports get more daily departures. Departure times follow a typical airline-day curve in each origin's local time, and flight duration comes from great-circle distance.
@@ -74,4 +74,4 @@ I have used AI tools on plenty of projects at this point, and most of the speedu
 
 An animation like the one in Airplane Mode used to need a newsroom graphics team and a few days on the calendar. Now one person can do one on a weeknight because they are curious. That is good news for anyone who likes making things on the web. The bar for building something delightful just dropped to roughly "have a good idea and know what good looks like."
 
-Go [watch the planes](https://airtraffic.bradoyler.com/). Try `#time=07:00&airport=ATL` and see how much of the country passes through one airport on a single morning.
+Go [watch the planes](https://airtraffic.bradoyler.com/), or jump to [Atlanta at 7 AM](https://airtraffic.bradoyler.com/#time=07:00&airport=ATL) to see the morning bank of departures fan out from the world's busiest airport. The code is at [github.com/bradoyler/airtraffic](https://github.com/bradoyler/airtraffic) if you want to see how it works.
