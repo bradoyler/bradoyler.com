@@ -48,7 +48,7 @@ tags: ['blog', 'ai']       # always include 'blog'; add 'ai' for AI posts
 
 ## Building
 
-- Requires Node 20+ (see `.nvmrc`). Run `npm install` first, because `node_modules` may be missing `@11ty/eleventy`.
+- Requires Node 24 (see `.nvmrc`). Run `npm install` first, because `node_modules` may be missing `@11ty/eleventy`.
 - Build with `npm run build` (Tailwind CSS plus Eleventy) or preview with `npm run dev`.
 - **Don't run `npx eleventy`.** It resolves to the old, unrelated `eleventy` npm package, which just throws an error. Use the npm scripts or `./node_modules/.bin/eleventy`.
 - `docs/` is committed. Past posts land as one commit that adds the Markdown file, followed by "Build site with ..." commits for the regenerated `docs/` files (blog index, home page, sitemap).

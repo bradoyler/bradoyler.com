@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airplane Mode, Revisited: Days of Work in 10 Minutes - Brad Oyler</title>
+    <meta name="description" content="In 2017 I spent days building the air traffic animation for NBC News&#39; Airplane Mode story. This week I rebuilt it with Claude Opus 5.5 in about 10 minutes and 78k tokens. Here is what changed, and what didn&#39;t." />
+    <link rel="canonical" href="https://www.bradoyler.com/ai/airplane-mode-revisited/">
+    <meta property="og:site_name" content="{ Brad Oyler }" />
+    <meta property="og:description" content="In 2017 I spent days building the air traffic animation for NBC News&#39; Airplane Mode story. This week I rebuilt it with Claude Opus 5.5 in about 10 minutes and 78k tokens. Here is what changed, and what didn&#39;t." />
+    <meta property="og:title" content="Airplane Mode, Revisited: Days of Work in 10 Minutes - Brad Oyler" />
+    <meta property="og:url" content="https://www.bradoyler.com/ai/airplane-mode-revisited/" />
+    <meta property="og:type" content="article" />
+    <meta property="og:image" content="https://www.bradoyler.com/assets/images/airtraffic-social.jpg"/>
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bradoyler" />
+    <meta name="twitter:title" content="Airplane Mode, Revisited: Days of Work in 10 Minutes - Brad Oyler" />
+    <meta name="twitter:description" content="In 2017 I spent days building the air traffic animation for NBC News&#39; Airplane Mode story. This week I rebuilt it with Claude Opus 5.5 in about 10 minutes and 78k tokens. Here is what changed, and what didn&#39;t." />
+    <meta name="twitter:creator" content="@bradoyler" />
+    <meta name="twitter:domain" content="https://www.bradoyler.com" />
+    <meta
+      name="twitter:image:src"
+      content="https://www.bradoyler.com/assets/images/airtraffic-social.jpg"
+    />
+<style>
+  div.prose {
+    overflow-x: auto; 
+  }
+</style>
+    
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://www.bradoyler.com/assets/style.css" />
+
+
+
+
+
+
+
+  </head>
+
+  <body class="bg-gray-100 dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col font-sans"
+  >
+    <header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900" x-data="{ open: false }">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        
+        <a href="/" class="text-xl md:text-2xl font-extrabold tracking-tight hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            { BRAD OYLER }
+        </a>
+
+        
+        <nav class="hidden md:flex space-x-6 text-lg font-medium">
+            <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
+            <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
+            <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
+            <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
+        </nav>
+        
+        
+        <button @click="open = !open" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation">
+            <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </div>
+
+    
+    <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden border-t border-gray-200 dark:border-gray-800">
+        <nav class="flex flex-col space-y-2 p-4 text-base font-medium">
+            <a href="/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Home</a>
+            <a href="/blog/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Blog</a>
+            <a href="/projects/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Projects</a>
+            <a href="/about/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">About</a>
+        </nav>
+    </div>
+</header>
+
+
+
+
+
+
+    <main class="flex-1">
+      <article class="max-w-4xl mx-auto md:my-16 p-4 md:p-12 bg-white dark:bg-gray-800 shadow-xl rounded-lg">
+        
+        <header class="mb-4 border-b border-gray-100 dark:border-gray-700 pb-4">
+          <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
+            Airplane Mode, Revisited: Days of Work in 10 Minutes
+          </h1>
+          <div
+            class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400"
+          >
+            
+            <time datetime="2026-10-22">
+              Published: Oct 22, 2026
+            </time>
+            
+            
+            <span class="text-gray-400 dark:text-gray-600">•</span>
+            
+            <div class="flex gap-2">
+               
+              <a href="/blog/"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 hover:underline capitalize">
+                #blog
+              </a>
+                
+              <a href="/ai/"
+                class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-200 hover:underline capitalize">
+                #ai
+              </a>
+               
+            </div>
+            
+          </div>
+        </header>
+
+        
+        <div 
+         class="prose prose-xl dark:prose-invert max-w-none prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:text-gray-50"
+        >
+          <p>In 2017, while I was on the NBC News Specials team, I worked on <a href="https://www.nbcnews.com/specials/airplane-mode/">Airplane Mode</a>, a long-form story. My piece of it was the animation of a day of US air traffic. Thousands of little planes leave glowing trails across a dark map of the country, the sky fills up in the morning, and it slowly empties out after midnight. It is one of those projects that looks simple, and it took me multiple days to get right.</p>
+<p>This week I rebuilt that animation from scratch as <a href="https://airtraffic.bradoyler.com/">Air Traffic</a>. With Claude Opus 5.5 doing the building, it took about 10 minutes and roughly 78,000 tokens.</p>
+<p>That number is worth dwelling on, because the interesting part is not that it was fast. It is <em>which</em> part got fast.</p>
+<h2>What was hard in 2017</h2>
+<p>The hard part of the Airplane Mode animation was never drawing a plane on a map. Any developer can do that in an afternoon. The hard part was drawing thousands of them, sixty times a second, with trails, on whatever device a reader happened to open the story on, without turning their browser into a space heater.</p>
+<p>A news site in 2017 could not pick its audience's hardware. A big chunk of readers came in on phones from social links. Some were on aging laptops. Internet Explorer still showed up in the analytics. Retina screens meant a canvas had to be drawn at two or three times its visible size to look sharp, which multiplies the pixel work. And a story page is not a dedicated app: the animation shared the main thread with ads, analytics, and everything else on the page.</p>
+<p>So most of my time went into the unglamorous work of making it <em>not</em> slow:</p>
+<ul>
+<li>Figuring out how many planes the animation could show before frame rates fell apart.</li>
+<li>Finding ways to draw trails without issuing a separate draw call for every segment of every plane.</li>
+<li>Keeping the static map out of the per-frame redraw.</li>
+<li>Testing across browsers and devices, then going back and doing it again when one of them fell over.</li>
+</ul>
+<p>None of that shows up in the final product. That is the point. If the performance work is done well, nobody notices it.</p>
+<h2>What the rebuild looks like</h2>
+<p>The new version is about 600 lines of plain JavaScript. It uses ES modules and d3 v7, and it has no build step. Here is what it does:</p>
+<ul>
+<li><strong>Data.</strong> It uses nonstop routes between contiguous-US airports from <a href="https://github.com/jpatokal/openflights">OpenFlights</a>, weighted by how many airlines fly each route. The base map comes from us-atlas.</li>
+<li><strong>Flights.</strong> It generates about 24,000 flights in the browser with a seeded random number generator. Busy routes between big airports get more daily departures. Departure times follow a typical airline-day curve in each origin's local time, and flight duration comes from great-circle distance.</li>
+<li><strong>Rendering.</strong> Two canvases are stacked. The base map is drawn once, and only the plane layer redraws each frame.</li>
+<li><strong>Trails.</strong> Each plane's trail is the last ~30 simulated minutes of its own path, split into ten segments that fade out. The key trick is that every segment at the same fade level, across <em>all</em> planes, goes into one batched <code>Path2D</code> and is drawn with a single stroke. So instead of hundreds of thousands of tiny draw calls per frame, there are about a dozen.</li>
+<li><strong>Interaction.</strong> A d3 area chart of planes in the air doubles as a timeline scrubber. Hovering an airport (found with a quadtree) highlights its outbound and inbound flights. Keyboard controls and a shareable URL like <code>#time=18:30&amp;airport=ATL</code> link straight to a moment.</li>
+<li><strong>Deploy.</strong> It is hosted on Cloudflare Pages.</li>
+</ul>
+<p>Look at that rendering section again. The batched-stroke approach, the split between the static layer and the dynamic one, and capping the device pixel ratio at 2 are exactly the problems I spent days on in 2017. This time they showed up in the first pass, already solved, alongside a working timeline, hover filtering, and a README.</p>
+<h2>Two things changed, not one</h2>
+<p>It would be easy to tell this as a pure AI story, but that is not quite honest. Two different things got better between 2017 and 2026.</p>
+<p><strong>The browsers got better.</strong> <code>Path2D</code> works everywhere now. Canvas rendering in every modern browser is far faster than it was. Internet Explorer is gone. Phones today have more graphics horsepower than the laptops I was testing on back then. A lot of the performance wall I hit in 2017 has simply been torn down by browser vendors and hardware makers. If I wrote this by hand today, it would still go much faster than it did then.</p>
+<p><strong>The model already knew the playbook.</strong> This is the part that still surprises me. The tricks I had to work out by trial, profiling, and a lot of reloading are now standard knowledge for a model like Opus. Batch your strokes by style, keep static layers static, don't render at 3x DPR when 2x looks the same, use a quadtree for hit testing instead of looping over every airport on every mouse move. None of it is secret. It was scattered across blog posts, Stack Overflow answers, and conference talks, and you had to find it and string it together yourself. Now it all comes back at once, applied to your specific problem.</p>
+<p>In 2017 I was the one who had to know all of that. In 2026 I mostly had to know <em>what I wanted</em>, and recognize good work when I saw it.</p>
+<h2>What I brought to the table</h2>
+<p>The 10 minutes is real, but it rests on a lot of context that was not in the prompt.</p>
+<p>I knew what this animation should look and feel like, because I had built it before. I knew the failure modes, starting with &quot;too many planes and the frame rate dies.&quot; So I could tell right away whether the output was right. I knew which details mattered to a reader (the morning rush, the overnight lull, the way the East Coast lights up first) and which ones nobody would notice.</p>
+<p>That is the same shift I wrote about in <a href="/ai/shift-in-software-development/">Development Is Now About Automation, Semantics &amp; Context</a>. The mechanical work of writing the code was the part that collapsed. The judgment about what to build, and whether the result is good, did not. If anything, that judgment is now the whole job.</p>
+<p>There is an uncomfortable flip side. Someone without that background could produce the same project in the same 10 minutes. They just would not know whether it was good. They would not know that the batched <code>Path2D</code> trick is the reason it runs smoothly on a phone, or what to check when it doesn't. Experience used to buy you speed. Now it mostly buys you the ability to evaluate.</p>
+<h2>The honest caveats</h2>
+<p>It is a simulation, not a feed. The flights are synthetic, built from route data and a realistic daily schedule curve, not real flight tracks. And OpenFlights stopped updating its route data in 2014, so the network itself is a snapshot from that era. The original animation had its own data behind it, and this version doesn't try to recreate that.</p>
+<p>And 10 minutes is the build time, not the whole effort. Writing this post took longer than writing the code. That is a strange sentence to type.</p>
+<h2>Why this one stuck with me</h2>
+<p>I have used AI tools on plenty of projects at this point, and most of the speedups feel incremental: a function here, a refactor there. This one landed differently because I have a direct before-and-after. Same idea, same person, nine years apart. Multiple days of profiling and cross-browser testing on one side, about 10 minutes and 78k tokens on the other.</p>
+<p>An animation like the one in Airplane Mode used to need a newsroom graphics team and a few days on the calendar. Now one person can do one on a weeknight because they are curious. That is good news for anyone who likes making things on the web. The bar for building something delightful just dropped to roughly &quot;have a good idea and know what good looks like.&quot;</p>
+<p>Go <a href="https://airtraffic.bradoyler.com/">watch the planes</a>. Try <code>#time=07:00&amp;airport=ATL</code> and see how much of the country passes through one airport on a single morning.</p>
+
+        </div>
+
+        
+        <nav
+          class="mt-12 pt-4 border-t border-gray-200 dark:border-gray-800 grid grid-cols-2 gap-8 text-sm"
+        >
+          <div>
+            
+            <span class="block text-gray-500 dark:text-gray-400 mb-2"
+              >← Previous Post</span
+            >
+            <a
+              href="/ai/ai-family-meal-plan/"
+              class="block text-blue-600 dark:text-blue-400 hover:underline font-medium"
+            >
+              I Put an AI Assistant in Charge of Family Meal Planning
+            </a>
+            
+          </div>
+          <div class="text-right">
+            
+          </div>
+        </nav>
+
+<!-- Tiny X CTA — truly minimal -->
+<div class="mt-12 pt-6 border-t border-gray-200 dark:border-gray-800 text-center text-lg text-gray-500 dark:text-gray-500">
+  <a href="https://x.com/bradoyler" target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400">
+   Follow @bradoyler on X
+  </a>
+ ||
+  <a href="https://x.com/intent/post?text=Airplane%20Mode%2C%20Revisited%3A%20Days%20of%20Work%20in%2010%20Minutes&url=https%3A%2F%2Fwww.bradoyler.com%2Fai%2Fairplane-mode-revisited%2F"
+     target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400">
+    Share this
+  </a>
+</div>
+
+      </article>
+
+    </main>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BS3MHXWW8Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BS3MHXWW8Q');
+</script>
+
+<footer class="bg-gray-100 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
+    <div class="max-w-5xl mx-auto px-6 py-12 text-center text-sm text-gray-600 dark:text-gray-400">
+        &copy; 2025 Brad Oyler
+    </div>
+</footer>
+  </body>
+</html>
