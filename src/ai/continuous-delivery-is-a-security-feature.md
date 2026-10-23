@@ -1,0 +1,107 @@
+---
+title: "Continuous Delivery Is a Security Feature Now"
+date: 2026-10-23
+modified: null
+description: "PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and a backdoored LiteLLM all landed within days of each other. AI is shrinking the time from disclosure to exploit, which makes the ability to ship a fix the same day more valuable than ever."
+art: continuous-delivery-social.jpg
+layout: post.njk
+tags: ['blog', 'ai']
+---
+
+![PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and LiteLLM: one week in October 2026](/assets/images/continuous-delivery-social.jpg)
+
+On October 21, TechCrunch ran a headline that pretty much summed up my week: [The internet is having a very bad cybersecurity day](https://techcrunch.com/2026/10/21/the-internet-is-having-a-very-bad-cybersecurity-day/). It wasn't really one day. It was a pile-up of critical issues landing within about a week of each other, across almost every layer of the stack that most companies quietly depend on.
+
+If you run anything on the internet, you probably spent part of this week reading advisories, checking versions, and asking teams "are we on that?" I did too. Once the dust settled a bit, what stuck with me was not any single bug. It was the speed, how often AI showed up in the story, and a slightly unexpected conclusion: the most useful security tool most teams have might be their deploy pipeline.
+
+## The week in one list
+
+- **PHP2Shell.** Two critical PHP core flaws (CVE-2026-109618 and CVE-2026-109619), both rated 9.2, allowing unauthenticated remote code execution. Fixes shipped October 21. TechCrunch reported the flaws were found by AI, and that some government sites went offline after the NSA told organizations to update PHP or take systems offline until they could. [watchTowr](https://watchtowr.com/intelligence/php-remote-code-execution-php2shell/) reports exploitation in the wild. PHP 5.4 through 7.3 is end-of-life and gets no fix from the PHP project.
+- **Node2Shell.** An out-of-bounds write in the Brotli decoder that ships inside Node.js (CVE-2026-111497). [Imperva showed](https://www.imperva.com/blog/node2shell-from-brotli-data-to-remote-code-execution/) remote code execution on an official Node 24 image. Fixed in 22.23.4, 24.22.1, and 26.12.1. Node 20, 23, and 25 are end-of-life and won't get a patch. Several write-ups credit researchers using OpenAI's Codex Security tool with the report, though the credit varies by source.
+- **eMudhra.** Eight intermediate keys from an Indian certificate authority turned out to be guessable from their public certificates. Per [CyberScoop](https://cyberscoop.com/emudhra-shuts-down-certificate-business-weak-private-keys/), each key was a whole number below 256, and one was literally the number 4. Scott Helme recovered all eight on his laptop in under a second, and an AI agent later repeated it from a single prompt. Browsers blocked the certificates within hours, and eMudhra is getting out of the TLS certificate business.
+- **Plex2Shell.** A chain of four Plex Media Server flaws. Plex had already shipped fixes on September 1. A write-up and proof of concept went public on October 16, and [attackers were using it by October 17](https://www.securityweek.com/plex2shell-exploit-chain-weaponized-against-plex-servers-hours-after-disclosure/), mostly to drop crypto miners on servers that never updated.
+- **LiteLLM.** Malicious releases of LiteLLM, a popular proxy for routing requests to LLM providers, were published to PyPI, Docker Hub, and GHCR, with an infostealer aimed at cloud, password, and AI service credentials.
+
+And all of that sat on top of a roughly 1,400-fix [Patch Tuesday](https://www.thezdi.com/blog/2026/10/13/the-october-2026-security-update-review) the week before, plus a year of npm worms like [ChainDrop](https://www.microsoft.com/en-us/security/blog/2026/08/04/chaindrop-supply-chain-compromise-anatomy-self-propagating-worm/) and the [axios compromise](https://www.cisa.gov/news-events/alerts/2026/04/20/supply-chain-compromise-impacts-axios-node-package-manager).
+
+## Every layer of trust, in one week
+
+What makes this week different is the spread. These aren't five bugs in five apps. They hit the layers we treat as bedrock:
+
+- **The certificate authorities** your browser trusts by default (eMudhra).
+- **The language runtimes** your code runs on (PHP, Node).
+- **The packages** you pull in without reading (LiteLLM, and npm all year).
+- **The servers and apps** sitting on your network (Plex, Exchange, everything in Patch Tuesday).
+
+Nobody on a typical engineering team wrote any of that code, and almost nobody reads it. We trust it because it's popular, because it's old, or because someone else is supposed to be watching. This week was a reminder of how much of a modern system is "someone else's code we've agreed not to think about."
+
+## Where AI shows up
+
+It's tempting to say "AI caused this," but the honest version is more specific. AI showed up in different ways in different incidents:
+
+- **Finding bugs.** PHP2Shell, and reportedly Node2Shell, came out of AI-assisted research. That fits the bigger trend: [FIRST expects about 66,000 CVEs in 2026](https://www.helpnetsecurity.com/2026/06/15/first-2026-cve-forecast/), up from about 48,000 last year, and credits AI-assisted discovery as a main driver. Mozilla says an AI harness on top of its fuzzing found and fixed 271 bugs for Firefox 150 alone.
+- **Turning a bug into an attack.** The eMudhra keys took a human researcher to spot, but once the weakness was known, an AI agent could recover them from one prompt. That's the part that worries me more than discovery. The gap between "a bug exists" and "anyone can exploit it" is shrinking toward zero.
+- **AI tooling as the target.** LiteLLM is infrastructure for AI apps, and the payload went after AI service credentials. The tools we're adding to our stacks to work faster are now one more layer of other people's code to trust.
+- **Not every time.** I couldn't find anything tying Plex2Shell to AI. That one is an older, simpler story: a patch shipped in September, the exploit went public in October, and the servers that never updated got hit within a day.
+
+Put those together and the shape is clear. Discovery and exploitation are speeding up. Patching mostly isn't. Finding a bug can now happen at machine speed, but rolling out a fix still means a ticket, a test run, a deploy window, and someone remembering the box under the desk running Plex.
+
+## The scanners never sleep
+
+This is the part I find a little daunting.
+
+Scanning the internet for unpatched servers isn't new. Botnets and search engines like Shodan have done it for years. What's new is that every step around the scan can now be automated too. An agent can read a fresh advisory, diff the patch to see what changed, write a working exploit, and start probing every exposed server that matches. None of those steps needs a skilled human anymore, and none of them needs to wait for business hours.
+
+So the bugs I worry about most aren't the zero-days. They're the one- or two-day vulns: the ones that are already public and already patched, and that you just haven't gotten to yet. Plex2Shell is the template. The fix had been out for six weeks, the proof of concept went public on a Friday, and by Saturday someone's automation was dropping crypto miners on whatever hadn't updated.
+
+That changes how I think about a patch window. A two-week rollout used to feel responsible. Now it feels like two weeks of standing in a hallway full of doorknob-turners that never get tired, never take weekends, and don't care that your company is small or boring. You don't have to be a target. You just have to be on the list of IPs running the vulnerable version.
+
+## The twist: deploy speed is now security
+
+Here's where I landed. If the attacker's side runs at machine speed, the question that matters most isn't "do we know about the bug?" Everyone knows within hours. It's "how fast can we safely ship the fix?"
+
+That makes continuous delivery a security feature, not just a productivity one. A team that can bump a Node or PHP version, run its tests, and roll it to production in an afternoon closes the window before most of the scanning starts. A team with a monthly release train, a manual change board, or a deploy that only one person knows how to run leaves that window open for weeks, and there's no clever security product that makes up for it.
+
+The capabilities that matter here are the boring ones the DevOps crowd has been pushing for a decade:
+
+- **Tests you actually trust**, so a runtime bump doesn't need a week of manual QA.
+- **Automated dependency PRs**, so the patch shows up as a ready-to-merge change instead of a ticket someone has to write.
+- **Small, frequent deploys**, so shipping one more change on a Friday isn't scary.
+- **Easy rollback**, so moving fast doesn't mean betting the business on every patch.
+
+For years, the pitch for all of that was speed of feature delivery. This week made a different case. The same pipeline that ships features fast is the one that ships fixes fast, and fixes are now on a clock you don't control.
+
+## The view from my own repos
+
+I maintain a couple of small open source Node libraries, [d3-node](https://github.com/d3-node/d3-node) and [route-cache](https://github.com/bradoyler/route-cache). So while writing this, I checked my own setup instead of just pointing at everyone else's. Here's what I found, and what I fixed:
+
+- My laptop was on Node 24.20.0, which is vulnerable to Node2Shell. It's now on 24.22.1, which took one `winget upgrade`.
+- route-cache's CI was still testing against Node 18, 20, and 22. Two of those are end-of-life, and Node 20 will never get the Brotli fix. It now tests on 22, 24, and 26.
+- d3-node's CI was already on 22, 24, and 26, but only because I happened to bump it on October 15, a week before Node2Shell landed. That was luck, not process.
+
+None of this was dramatic. A static blog build on an old Node isn't parsing hostile Brotli from strangers. But it's exactly the kind of quiet drift that turns into exposure, and I only found it because a headline made me look. The fixes took minutes. Noticing took a news cycle. I'd bet most teams have more of this than they think.
+
+And the fixes only took minutes because the pipeline was already there. Changing route-cache's test matrix was a one-line edit, and CI told me right away whether it still worked. If those repos had no CI, the same fix would have meant setting up three Node versions locally and hoping I didn't miss anything. On a small scale, that's the whole argument.
+
+## What I think changes
+
+A few things feel different to me now:
+
+- **"Patch eventually" is not a plan anymore.** Measure how long it takes you to ship a runtime patch, end to end, and treat that number like an uptime metric.
+- **End-of-life software is the real exposure.** PHP 7.3, Node 20, a Plex server nobody remembers. The fix exists for current versions. The risk lives in everything that can't take it.
+- **Defenders need the same tools.** If attackers use AI to find and weaponize bugs, we should be using it to find our own exposure, triage the flood of CVEs, and draft the upgrade PRs. The bottleneck has moved from "finding the bug" to "deciding what matters and shipping the fix," and that's where the help is needed most.
+- **Maintainers are part of the supply chain whether they like it or not.** Most of 2026's npm attacks came through hijacked maintainer accounts and release pipelines. Two-factor auth, trusted publishing, and not leaving long-lived tokens lying around are table stakes for anyone with a package people depend on, even a small one.
+
+## The honest caveats
+
+More CVEs doesn't automatically mean more risk. [Dark Reading points out](https://www.darkreading.com/application-security/ai-vulnerability-surge-manageable-than-first-feared) that a lot of AI-found bugs aren't vetted yet and often turn out less serious than first reported. Some of the count is also bookkeeping, as databases backfill old records. And the credit for who found what, and with which tools, is still messy for some of these incidents. I've tried to stick to what's reported, but details from a week this fresh may shift.
+
+Continuous delivery isn't a cure-all either. It doesn't help with the Plex box under the desk, end-of-life runtimes you can't upgrade, or vendor appliances you don't control. And there's a real tension in it: axios and LiteLLM were attacks *through* fast release pipelines. Ship your own fixes fast, but don't auto-deploy every third-party release the minute it's published. Pinned versions, lockfiles, and a short cooldown before adopting brand-new releases are part of doing this safely.
+
+It's also worth saying that AI is helping defenders too. Mozilla's 271 Firefox fixes are bugs that attackers no longer get to find first.
+
+## Closing thought
+
+The software we build on has always had bugs nobody had found yet. What's changing is how long "nobody has found it yet" lasts. The answer can't be to read every line of code we depend on. It has to be getting much faster at the boring part: knowing what we run, keeping it current, retiring what we can't, and being able to ship a fix the same day it's needed. That was always good practice. This week it started to look like the whole job.
+
+My own Node is patched. Go check yours.

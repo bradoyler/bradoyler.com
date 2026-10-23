@@ -24,15 +24,17 @@ tags: ['blog', 'ai']       # always include 'blog'; add 'ai' for AI posts
 ```
 
 - **Quote `title` and `description` whenever they contain a colon.** An unquoted colon has broken the YAML before (commit 3c12d9c).
-- Without `art`, the post has no social preview image. Suggest a screenshot when one makes sense.
+- **Every post gets a social image.** Without `art`, the post has no social preview. Make one by default, save it in `src/assets/images/`, and also put it at the top of the post body, as in [airplane-mode-revisited.md](src/ai/airplane-mode-revisited.md).
 - To make a social image for a post about a live web project, screenshot it at 1200x630 with headless Chrome and save it straight to JPG (no image library is installed):
   ```sh
-  "/c/Program Files/Google/Chrome/Application/chrome.exe" --headless=new --hide-scrollbars \
+  "<path to chrome>" --headless=new --hide-scrollbars \
     --window-size=1200,630 --virtual-time-budget=2500 \
-    --screenshot="C:\\projects\\bradoyler\\bradoyler.com\\src\\assets\\images\\<name>.jpg" "<url>"
+    --screenshot="<absolute path to repo>/src/assets/images/<name>.jpg" "<url>"
   ```
+  Chrome needs an absolute path for `--screenshot`. On Windows, give it a native path (backslashes).
   Don't pass `--disable-gpu`. With it, canvas animations come out blank. Always look at the image before using it.
 - For a composite, like a before/after side by side, write a small 1200x630 HTML page that lays out the screenshots and screenshot that page with the same command plus `--allow-file-access-from-files`. Use the CSS `object-view-box: inset(...)` property to crop each screenshot. If a site's on-screen text overlaps the area you want, capture it in a wider window (for example 2000x1000) so the content sits clear of the text.
+- For a post with no live project to screenshot (an essay or news roundup), make a title card: a 1200x630 HTML page with the post title, a few key facts, and "bradoyler.com" in a footer. Keep the page in a scratch directory, not the repo, and screenshot it the same way. `continuous-delivery-social.jpg` is an example.
 - `excludeFromSitemap: true` keeps a post out of the sitemap (used for old reposts). `draft: true` keeps a post out of the `blog` collection.
 
 ## Writing style
@@ -44,7 +46,15 @@ tags: ['blog', 'ai']       # always include 'blog'; add 'ai' for AI posts
 - Brad's background is useful context: NBC News / TODAY.com engineer from 2013, NBC News Specials team (Airplane Mode, 2017), ArchieML, and now Gopuff. See [src/about.md](src/about.md).
 - Describe Brad's past role precisely. For example, Airplane Mode was an NBC News long-form story, and Brad built its air traffic animation, not the whole story.
 - Don't invent details about past projects. If something is only known in general terms, write it generally and ask Brad to add specifics.
-- Related project repos are cloned next to this one in `c:\projects\bradoyler\` (for example `airtraffic/`). Read the code and README for accurate technical details.
+- Related project repos are cloned next to this one, in the parent directory (for example `../airtraffic/`). Read the code and README for accurate technical details.
+- Don't write about Gopuff internals (incidents, systems, team details). Leave a spot and let Brad decide what to share.
+
+## Posts about current events
+
+- Search before writing, and check every number, date, and credit against the primary source or a reputable outlet. Very recent stories change, and some secondary posts get details wrong.
+- Credit only what the reporting supports. If sources disagree (for example, who found a bug, or whether AI was involved), say so in the post with "reportedly" or by naming the source, and don't flatten different stories into one claim.
+- Link sources inline in the post.
+- Brad's own setup makes for stronger material than commentary. Check his repos and machine (Node versions, CI matrices, dependencies) and report what you actually find.
 
 ## Building
 
@@ -58,5 +68,6 @@ tags: ['blog', 'ai']       # always include 'blog'; add 'ai' for AI posts
 
 1. Create `src/ai/<slug>.md` or `src/blog/<slug>.md` with the frontmatter above.
 2. Check for colons in the YAML values and for em-dashes in the body.
-3. Run `npm run build` and confirm `docs/<section>/<slug>/index.html` exists.
-4. Commit only when asked: the source post first, then the `docs/` build.
+3. Make the social image, look at it, and set `art`.
+4. Run `npm run build` and confirm `docs/<section>/<slug>/index.html` exists and has the `og:image` tag.
+5. Commit only when asked: the source post and image first, then the `docs/` build.
