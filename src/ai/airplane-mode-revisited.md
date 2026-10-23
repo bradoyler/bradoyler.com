@@ -8,6 +8,8 @@ layout: post.njk
 tags: ['blog', 'ai']
 ---
 
+![The 2017 Airplane Mode air traffic map for NBC News next to the 2026 Air Traffic rebuild](/assets/images/airtraffic-social.jpg)
+
 In 2017, while I was on the NBC News Specials team, I worked on [Airplane Mode](https://www.nbcnews.com/specials/airplane-mode/), a long-form story. My piece of it was the animation of a day of US air traffic. Thousands of little planes leave glowing trails across a dark map of the country, the sky fills up in the morning, and it slowly empties out after midnight. It is one of those projects that looks simple, and it took me multiple days to get right.
 
 This week I rebuilt that animation from scratch as [Air Traffic](https://airtraffic.bradoyler.com/). With Claude Opus 5.5 doing the building, it took about 10 minutes and roughly 78,000 tokens.
