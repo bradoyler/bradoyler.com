@@ -1,5 +1,5 @@
 ---
-title: "AI Just Raised the Stakes on Continuous Delivery"
+title: "AI Has Raised the Stakes on Continuous Delivery"
 date: 2026-10-23
 modified: null
 description: "PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and a backdoored LiteLLM all landed within days of each other. AI is shrinking the time from disclosure to exploit, which makes the ability to ship a fix the same day more valuable than ever."
