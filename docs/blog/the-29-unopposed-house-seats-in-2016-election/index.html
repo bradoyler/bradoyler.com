@@ -120,19 +120,19 @@
         <div 
          class="prose prose-xl dark:prose-invert max-w-none prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:text-gray-50"
         >
-          <p>I'm somewhat new to the world of election data, but one piece of data I stumbled upon while working on <a href="http://www.nbcnews.com/politics/2016-election/house">the 2016 Elections for NBC News</a>, was that 29 house seats went unopposed. I thought this was pretty interesting and wanted to understand why this happens. After half a dozen ill-informed google searches, I came up with nothing.</p>
-<p>Logical next step (for me) was to create a static map using topojson from <a href="https://github.com/bradoyler/atlas-make/tree/master/us-congress-census">Atlas-Make</a>, the final House results from the <a href="https://developer.ap.org/ap-elections-api">AP Election API</a> and render all the data together using <a href="https://github.com/bradoyler/d3-node">D3Node</a></p>
+          <p>I'm fairly new to the world of election data, but while working on <a href="http://www.nbcnews.com/politics/2016-election/house">the 2016 elections for NBC News</a>, I stumbled on one interesting fact: 29 House seats went unopposed. I wanted to understand why that happens. Half a dozen ill-informed Google searches later, I had nothing.</p>
+<p>The logical next step (for me) was to make a static map. I used TopoJSON from <a href="https://github.com/bradoyler/atlas-make/tree/master/us-congress-census">Atlas-Make</a> and the final House results from the <a href="https://developer.ap.org/ap-elections-api">AP Elections API</a>, and rendered them together with <a href="https://github.com/bradoyler/d3-node">D3Node</a>.</p>
 <h2>The Data</h2>
 <ul>
-<li><a href="https://github.com/bradoyler/d3-node/blob/master/examples/data/unopposed-house-2016.csv">CSV of the 29 races that only have 1 candidate</a></li>
-<li><a href="https://github.com/bradoyler/d3-node/blob/master/examples/data/congress-115-states.json">115th Congressional Districts with US States Topojson</a></li>
+<li><a href="https://github.com/bradoyler/d3-node/blob/master/examples/data/unopposed-house-2016.csv">CSV of the 29 races with only one candidate</a></li>
+<li><a href="https://github.com/bradoyler/d3-node/blob/master/examples/data/congress-115-states.json">TopoJSON of the 115th Congressional Districts with US states</a></li>
 </ul>
 <h2>The Map</h2>
-<img alt='house map' src='https://cloud.githubusercontent.com/assets/425966/21755664/572f8a96-d5e5-11e6-889a-584e3369aaa9.jpg' />
+<img alt='Map of the 29 unopposed House seats in 2016' src='https://cloud.githubusercontent.com/assets/425966/21755664/572f8a96-d5e5-11e6-889a-584e3369aaa9.jpg' />
 <h2>The Code</h2>
 <p><a href='https://github.com/bradoyler/d3-node/blob/master/examples/map-congress-unopposed.js' target='blank'>github.com/bradoyler/d3-node/examples/map-congress-unopposed.js</a></p>
 <h2>Lesson learned</h2>
-<p>Well, it turns out every single unopposed race was the incumbent so this was actually the most telling piece of data that sort of answered my initial question. But still, thought this map might serve someone well or even inspire someone to run for office!?!</p>
+<p>It turns out every single unopposed race had an incumbent running, which was the most telling piece of data and more or less answered my original question. Still, I thought this map might be useful to someone, or even inspire someone to run for office!</p>
 
         </div>
 

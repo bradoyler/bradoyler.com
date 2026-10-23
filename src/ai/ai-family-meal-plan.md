@@ -3,6 +3,7 @@ title: I Put an AI Assistant in Charge of Family Meal Planning
 date: 2026-10-03
 modified: null
 description: "How I used Muse to turn a chaotic pile of family dinner ideas into a real system - a recipe library, a weekly planner, a freezer inventory, and a log of what we actually liked."
+art: ai-family-meal-plan.jpg
 layout: post.njk
 tags: ['blog', 'ai']
 ---

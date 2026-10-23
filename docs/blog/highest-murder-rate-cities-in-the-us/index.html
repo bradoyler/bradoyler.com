@@ -120,16 +120,16 @@
         <div 
          class="prose prose-xl dark:prose-invert max-w-none prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:text-gray-50"
         >
-          <p>By using the number of murders in large cities (over 250k) combined with their population, we can determine the murder rate (per 100k residents) in those cities.</p>
-<p>I realized that geography doesn't give a great representation so I added a scatterplot below to show how the murder rates are clustered. Of course, murder rate alone doesn't give the full picture of crime in a city, but I'm saving that for another post.</p>
+          <p>By combining the number of murders in large cities (over 250k people) with their populations, we can calculate each city's murder rate per 100k residents.</p>
+<p>A map alone doesn't show the pattern very well, so I added scatterplots below that show how murder rates cluster. Of course, murder rate alone doesn't give the full picture of crime in a city, but I'm saving that for another post.</p>
 <h2>Data</h2>
-<p>The FBI releases a yearly <a href="https://ucr.fbi.gov/crime-in-the-u.s">Crime in the US</a> report which gives a breakdown of crimes for each city.</p>
-<p>Murder rate is determined by murders per 100k residents.</p>
-<h4>data sources:</h4>
+<p>The FBI releases a yearly <a href="https://ucr.fbi.gov/crime-in-the-u.s">Crime in the US</a> report with a breakdown of crimes for each city.</p>
+<p>Murder rate is the number of murders per 100k residents.</p>
+<h4>Data sources:</h4>
 <ul>
 <li><a href="https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/tables/table-6/table-6.xls/view">Offenses known to law enforcement (2016)</a> - FBI.gov Uniform Crime Reporting (UCR) database.</li>
 <li><a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-8/table_8_offenses_known_to_law_enforcement_by_state_by_city_2015.xls/view">Offenses known to law enforcement (2015)</a> - FBI.gov (UCR)</li>
-<li>US States (Topojson) via <a href="https://github.com/bradoyler/atlas-make/tree/master/us-states">Atlas-Make/us-states</a></li>
+<li>US States (TopoJSON) via <a href="https://github.com/bradoyler/atlas-make/tree/master/us-states">Atlas-Make/us-states</a></li>
 <li>US Cities via <a href="https://github.com/bradoyler/atlas-make/tree/master/us-cities">Atlas-Make/us-cities</a></li>
 </ul>
 <h2>Map - US Cities by Murder Rate</h2>
@@ -160,16 +160,16 @@
 <h2>Lessons learned</h2>
 <ol>
 <li>
-<p>There seems to be an interesting correlation between violent crime rate and shrinking cities. If you look at past populations in Detroit, Baltimore, New Orleans, and St. Louis you'll notice those cities have shrunk dramatically in the past 20-30 years. Hoping to dig more into that soon.</p>
+<p>There seems to be an interesting correlation between violent crime and shrinking cities. Detroit, Baltimore, New Orleans, and St. Louis have all lost a dramatic share of their population over the past 20-30 years. I'm hoping to dig into that soon.</p>
 </li>
 <li>
-<p>The FBI report, for the previous year, is released pretty late (September), so I want to have these charts handy for that time next year. 538 has also collected partial data for 2016</p>
+<p>The FBI releases each year's report pretty late (in September), so I want these charts ready to update when next year's comes out. FiveThirtyEight has also collected partial data for 2016.</p>
 </li>
 <li>
-<p><a href="http://fivethirtyeight.com/features/murders-rose-at-their-fastest-pace-in-a-quarter-century-last-year/">FiveThirtyEight</a>, <a href="https://www.washingtonpost.com/graphics/national/2015-homicides/">Washington Post</a> and <a href="http://www.nytimes.com/interactive/2016/09/08/us/us-murder-rates.html">NYTimes</a> have all posted some great insights on recent crime and homicide trends.</p>
+<p><a href="http://fivethirtyeight.com/features/murders-rose-at-their-fastest-pace-in-a-quarter-century-last-year/">FiveThirtyEight</a>, <a href="https://www.washingtonpost.com/graphics/national/2015-homicides/">The Washington Post</a>, and <a href="http://www.nytimes.com/interactive/2016/09/08/us/us-murder-rates.html">The New York Times</a> have all published great insights on recent crime and homicide trends.</p>
 </li>
 <li>
-<p>FBI also publishes a report on the weapons used in reported homicides, but that only seems to be available by state. This state data is also often reported as 'Limited supplemental homicide data received.' so the numbers can be completely incorrect. <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-20">See example with Alabama</a></p>
+<p>The FBI also publishes a report on the weapons used in homicides, but it only seems to be available by state. The state data is also often marked &quot;Limited supplemental homicide data received,&quot; so the numbers can be way off. <a href="https://ucr.fbi.gov/crime-in-the-u.s/2015/crime-in-the-u.s.-2015/tables/table-20">See Alabama, for example</a>.</p>
 </li>
 </ol>
 

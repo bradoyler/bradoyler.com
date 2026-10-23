@@ -8,13 +8,13 @@ layout: post.njk
 tags: ['blog']
 ---
 
-Recent news related to the Dakota Access Pipeline [(DAPL)](http://www.nbcnews.com/storyline/dakota-pipeline-protests/) persuaded me to look into the public data around Crude Oil Pipelines in the US, which lead me to the [Energy Information Administration (EIA.gov)](https://www.eia.gov). They have a bunch of [interesting maps](https://www.eia.gov/maps/), but couldn't find a map specific to Crude Oil pipelines.
+Recent news about the Dakota Access Pipeline [(DAPL)](http://www.nbcnews.com/storyline/dakota-pipeline-protests/) got me looking into the public data on crude oil pipelines in the US, which led me to the [Energy Information Administration (EIA.gov)](https://www.eia.gov). They have a bunch of [interesting maps](https://www.eia.gov/maps/), but I couldn't find one specific to crude oil pipelines, so I made one.
 
-There are, however, a [handful of great maps focused on the recent DAPL events](http://www.nytimes.com/interactive/2016/11/23/us/dakota-access-pipeline-protest-map.html) so go check them out too.
+There are also a [handful of great maps focused on the recent DAPL events](http://www.nytimes.com/interactive/2016/11/23/us/dakota-access-pipeline-protest-map.html), so go check those out too.
 
 ## Data
 - [Pipeline data from EIA.gov](https://www.eia.gov/maps/layer_info-m.php)
-- [US States & Cities via Atlas-Make](https://github.com/bradoyler/atlas-make)
+- [US states and cities via Atlas-Make](https://github.com/bradoyler/atlas-make)
 
 ## Interactive Map
 <figure class="media-full">
@@ -35,7 +35,7 @@ There are, however, a [handful of great maps focused on the recent DAPL events](
 <a href='https://gist.github.com/bradoyler/1f0807a636d5159ce60bb7e90dad2714' target='blank'>gist.github.com/bradoyler/crude-oil</a>
 
 ## Lessons learned
-#### 1) Top 12 Pipeline Operators in the U.S. (by number of pipelines):
+#### 1) Top 12 pipeline operators in the U.S. (by number of pipelines):
 
 - ENBRIDGE (27)
 -	PLAINS PIPELINE (25)
@@ -50,9 +50,9 @@ There are, however, a [handful of great maps focused on the recent DAPL events](
 -	HUNT CRUDE OIL SUPPLY (6)
 -	EXXONMOBIL (6)
 
-(Note: still working on a list by mileage.)
+(Note: I'm still working on a list by mileage.)
 
-#### 2) <a href='http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp'>48% of Crude Oil pipelines where installed before 1970 (PHMSA)</a>
-These pipelines have a vulnerability to 'seam quality issues' (leakage).
+#### 2) <a href='http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp'>48% of crude oil pipelines were installed before 1970 (PHMSA)</a>
+These older pipelines are vulnerable to seam quality issues, which can lead to leaks.
 
-*source: [phmsa.dot.gov/pipelines](http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp)*
+*Source: [phmsa.dot.gov/pipelines](http://opsweb.phmsa.dot.gov/pipeline_replacement/by_decade_installation.asp)*

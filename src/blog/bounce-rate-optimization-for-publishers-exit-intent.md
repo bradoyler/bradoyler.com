@@ -2,40 +2,44 @@
 title: Bounce Rate optimization for publishers (exit intent)
 date: 2014-10-05
 modified: null
-description: how understanding 'exit intent' can optimize a news site
+description: How understanding 'exit intent' can help a news site lower its bounce rate.
 art: exit_intent.png
 layout: post.njk
 tags: ['blog']
 excludeFromSitemap: true
 ---
 
-### Understanding Bounce rate
+### Understanding bounce rate
 
 First off, [according to Google Analytics](https://support.google.com/analytics/answer/1009409):
 > "Bounce Rate is the percentage of single-page sessions (i.e. sessions in which the person left your site from the entrance page without interacting with the page)."
 
-Important caveat: Bounce rate in GA is actually calculated as a single "pixel download" (_utm.gif) per session. So if you trigger a subsequent custom event, you could be inadvertently disguising an actual bounce since events also trigger pixel downloads by default. You can override this behavior by using ["non-interaction" events](https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#non-interaction).
+An important caveat: GA actually counts a bounce as a session with a single "pixel download" (`__utm.gif`). Events also trigger pixel downloads by default, so firing a custom event after the pageview can disguise a real bounce. You can avoid that by using ["non-interaction" events](https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#non-interaction).
 
-On a news site, blog, or any site where Ad impressions are a revenue producing goal, Bounce Rate can be a key indicator. If you haven't really dug into how Exit Rates differ, you should give [Exit Rate vs Bounce Rate](https://support.google.com/analytics/answer/2525491) a read.
-Why do we care? Because by simply reducing bounce rate (without decreasing user sessions) we would directly increase overall [Pageviews](https://support.google.com/analytics/answer/2525491). Yay Goals!
+On a news site, a blog, or any site where ad impressions drive revenue, bounce rate can be a key indicator. If you haven't dug into how exit rate differs, give [Exit Rate vs Bounce Rate](https://support.google.com/analytics/answer/2525491) a read.
 
-### What is Exit Intent?
-![img](http://68.media.tumblr.com/6b5e8097ed06bd4d268f2f872e5015b8/tumblr_inline_ncy78dFXy41qzitrw.png)
+Why do we care? Because simply reducing bounce rate (without losing sessions) directly increases overall [pageviews](https://support.google.com/analytics/answer/2525491). Yay, goals!
 
-Exit Intent is just a way to detect a user navigating towards the top of the browser in a way that suggests they are about to leave your website. Pretty simple actually.
+### What is exit intent?
 
-Targeting users with "Exit Intent"
+![Exit intent illustration](http://68.media.tumblr.com/6b5e8097ed06bd4d268f2f872e5015b8/tumblr_inline_ncy78dFXy41qzitrw.png)
 
-"Exit Intent Targeting" is definitely not a new concept… a lot of e-commerce sites have been using this tactic for many years by displaying a popup or overlay window to offer some discount right before you "bounce". More info at http://exitintentpopup.com
+Exit intent is a way to detect a user moving their mouse toward the top of the browser in a way that suggests they are about to leave your site. Pretty simple, actually.
 
-There are even quite a few services on how to implement this concept on your site, like [OptKit](http://optkit.com), [OptiMonk](http://www.optimonk.com), [Bounce Exchange](http://bounceexchange.com) & [ExitIntent](http://exitintent.io)
+### Targeting users with exit intent
 
-Personally, I like having control/understanding of the javascript, so a really nice implementation is available on GitHub @ https://github.com/carlsednaoui/ouibounce
+Exit intent targeting is definitely not a new concept. Many e-commerce sites have used it for years, showing a popup or overlay with a discount right before you "bounce." More info at [exitintentpopup.com](http://exitintentpopup.com).
 
-DEMO:
-![demo](http://68.media.tumblr.com/0a37f5226af2b2a12ce7c2ac5ff61ba3/tumblr_inline_nczh2yCg1a1qzitrw.gif)
+There are even a few services that will implement it on your site for you, like [OptKit](http://optkit.com), [OptiMonk](http://www.optimonk.com), [Bounce Exchange](http://bounceexchange.com), and [ExitIntent](http://exitintent.io).
+
+Personally, I like to control and understand the JavaScript, and there's a really nice open-source implementation on GitHub: [ouibounce](https://github.com/carlsednaoui/ouibounce).
+
+Demo:
+
+![ouibounce demo](http://68.media.tumblr.com/0a37f5226af2b2a12ce7c2ac5ff61ba3/tumblr_inline_nczh2yCg1a1qzitrw.gif)
 
 ### Good idea for publishers?
-So this is all cool stuff that COULD be easily tested on your site in a non-invasive way, but the real question (for me) is how this tactic should be used on a news site or blog and whether the impact would be worth the effort.
 
-Either way, I plan to test out this technique in a few different ways to entice visitors to click "one more time". Possible techniques could use: 'Breaking News', related stories, or a targeted newsletter signup.
+This could all be tested on a site easily and without being invasive. The real question (for me) is how a news site or blog should use the tactic, and whether the impact would be worth the effort.
+
+Either way, I plan to test a few different ways to entice visitors to click "one more time." Some options: breaking news, related stories, or a targeted newsletter signup.

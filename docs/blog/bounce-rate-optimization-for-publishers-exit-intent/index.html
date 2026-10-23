@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bounce Rate optimization for publishers (exit intent) - Brad Oyler</title>
-    <meta name="description" content="how understanding &#39;exit intent&#39; can optimize a news site" />
+    <meta name="description" content="How understanding &#39;exit intent&#39; can help a news site lower its bounce rate." />
     <link rel="canonical" href="https://www.bradoyler.com/blog/bounce-rate-optimization-for-publishers-exit-intent/">
     <meta property="og:site_name" content="{ Brad Oyler }" />
-    <meta property="og:description" content="how understanding &#39;exit intent&#39; can optimize a news site" />
+    <meta property="og:description" content="How understanding &#39;exit intent&#39; can help a news site lower its bounce rate." />
     <meta property="og:title" content="Bounce Rate optimization for publishers (exit intent) - Brad Oyler" />
     <meta property="og:url" content="https://www.bradoyler.com/blog/bounce-rate-optimization-for-publishers-exit-intent/" />
     <meta property="og:type" content="article" />
@@ -15,7 +15,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@bradoyler" />
     <meta name="twitter:title" content="Bounce Rate optimization for publishers (exit intent) - Brad Oyler" />
-    <meta name="twitter:description" content="how understanding &#39;exit intent&#39; can optimize a news site" />
+    <meta name="twitter:description" content="How understanding &#39;exit intent&#39; can help a news site lower its bounce rate." />
     <meta name="twitter:creator" content="@bradoyler" />
     <meta name="twitter:domain" content="https://www.bradoyler.com" />
     <meta
@@ -120,26 +120,26 @@
         <div 
          class="prose prose-xl dark:prose-invert max-w-none prose-a:text-blue-600 dark:prose-a:text-blue-400 prose-img:rounded-lg prose-img:shadow-md prose-pre:bg-gray-900 prose-pre:text-gray-50"
         >
-          <h3>Understanding Bounce rate</h3>
+          <h3>Understanding bounce rate</h3>
 <p>First off, <a href="https://support.google.com/analytics/answer/1009409">according to Google Analytics</a>:</p>
 <blockquote>
 <p>&quot;Bounce Rate is the percentage of single-page sessions (i.e. sessions in which the person left your site from the entrance page without interacting with the page).&quot;</p>
 </blockquote>
-<p>Important caveat: Bounce rate in GA is actually calculated as a single &quot;pixel download&quot; (_utm.gif) per session. So if you trigger a subsequent custom event, you could be inadvertently disguising an actual bounce since events also trigger pixel downloads by default. You can override this behavior by using <a href="https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#non-interaction">&quot;non-interaction&quot; events</a>.</p>
-<p>On a news site, blog, or any site where Ad impressions are a revenue producing goal, Bounce Rate can be a key indicator. If you haven't really dug into how Exit Rates differ, you should give <a href="https://support.google.com/analytics/answer/2525491">Exit Rate vs Bounce Rate</a> a read.
-Why do we care? Because by simply reducing bounce rate (without decreasing user sessions) we would directly increase overall <a href="https://support.google.com/analytics/answer/2525491">Pageviews</a>. Yay Goals!</p>
-<h3>What is Exit Intent?</h3>
-<p><img src="http://68.media.tumblr.com/6b5e8097ed06bd4d268f2f872e5015b8/tumblr_inline_ncy78dFXy41qzitrw.png" alt="img"></p>
-<p>Exit Intent is just a way to detect a user navigating towards the top of the browser in a way that suggests they are about to leave your website. Pretty simple actually.</p>
-<p>Targeting users with &quot;Exit Intent&quot;</p>
-<p>&quot;Exit Intent Targeting&quot; is definitely not a new concept… a lot of e-commerce sites have been using this tactic for many years by displaying a popup or overlay window to offer some discount right before you &quot;bounce&quot;. More info at http://exitintentpopup.com</p>
-<p>There are even quite a few services on how to implement this concept on your site, like <a href="http://optkit.com">OptKit</a>, <a href="http://www.optimonk.com">OptiMonk</a>, <a href="http://bounceexchange.com">Bounce Exchange</a> &amp; <a href="http://exitintent.io">ExitIntent</a></p>
-<p>Personally, I like having control/understanding of the javascript, so a really nice implementation is available on GitHub @ https://github.com/carlsednaoui/ouibounce</p>
-<p>DEMO:
-<img src="http://68.media.tumblr.com/0a37f5226af2b2a12ce7c2ac5ff61ba3/tumblr_inline_nczh2yCg1a1qzitrw.gif" alt="demo"></p>
+<p>An important caveat: GA actually counts a bounce as a session with a single &quot;pixel download&quot; (<code>__utm.gif</code>). Events also trigger pixel downloads by default, so firing a custom event after the pageview can disguise a real bounce. You can avoid that by using <a href="https://developers.google.com/analytics/devguides/collection/gajs/eventTrackerGuide#non-interaction">&quot;non-interaction&quot; events</a>.</p>
+<p>On a news site, a blog, or any site where ad impressions drive revenue, bounce rate can be a key indicator. If you haven't dug into how exit rate differs, give <a href="https://support.google.com/analytics/answer/2525491">Exit Rate vs Bounce Rate</a> a read.</p>
+<p>Why do we care? Because simply reducing bounce rate (without losing sessions) directly increases overall <a href="https://support.google.com/analytics/answer/2525491">pageviews</a>. Yay, goals!</p>
+<h3>What is exit intent?</h3>
+<p><img src="http://68.media.tumblr.com/6b5e8097ed06bd4d268f2f872e5015b8/tumblr_inline_ncy78dFXy41qzitrw.png" alt="Exit intent illustration"></p>
+<p>Exit intent is a way to detect a user moving their mouse toward the top of the browser in a way that suggests they are about to leave your site. Pretty simple, actually.</p>
+<h3>Targeting users with exit intent</h3>
+<p>Exit intent targeting is definitely not a new concept. Many e-commerce sites have used it for years, showing a popup or overlay with a discount right before you &quot;bounce.&quot; More info at <a href="http://exitintentpopup.com">exitintentpopup.com</a>.</p>
+<p>There are even a few services that will implement it on your site for you, like <a href="http://optkit.com">OptKit</a>, <a href="http://www.optimonk.com">OptiMonk</a>, <a href="http://bounceexchange.com">Bounce Exchange</a>, and <a href="http://exitintent.io">ExitIntent</a>.</p>
+<p>Personally, I like to control and understand the JavaScript, and there's a really nice open-source implementation on GitHub: <a href="https://github.com/carlsednaoui/ouibounce">ouibounce</a>.</p>
+<p>Demo:</p>
+<p><img src="http://68.media.tumblr.com/0a37f5226af2b2a12ce7c2ac5ff61ba3/tumblr_inline_nczh2yCg1a1qzitrw.gif" alt="ouibounce demo"></p>
 <h3>Good idea for publishers?</h3>
-<p>So this is all cool stuff that COULD be easily tested on your site in a non-invasive way, but the real question (for me) is how this tactic should be used on a news site or blog and whether the impact would be worth the effort.</p>
-<p>Either way, I plan to test out this technique in a few different ways to entice visitors to click &quot;one more time&quot;. Possible techniques could use: 'Breaking News', related stories, or a targeted newsletter signup.</p>
+<p>This could all be tested on a site easily and without being invasive. The real question (for me) is how a news site or blog should use the tactic, and whether the impact would be worth the effort.</p>
+<p>Either way, I plan to test a few different ways to entice visitors to click &quot;one more time.&quot; Some options: breaking news, related stories, or a targeted newsletter signup.</p>
 
         </div>
 
