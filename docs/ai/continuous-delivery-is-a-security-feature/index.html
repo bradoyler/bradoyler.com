@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Continuous Delivery Is a Security Feature Now - Brad Oyler</title>
+    <title>AI Just Raised the Stakes on Continuous Delivery - Brad Oyler</title>
     <meta name="description" content="PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and a backdoored LiteLLM all landed within days of each other. AI is shrinking the time from disclosure to exploit, which makes the ability to ship a fix the same day more valuable than ever." />
     <link rel="canonical" href="https://www.bradoyler.com/ai/continuous-delivery-is-a-security-feature/">
     <meta property="og:site_name" content="{ Brad Oyler }" />
     <meta property="og:description" content="PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and a backdoored LiteLLM all landed within days of each other. AI is shrinking the time from disclosure to exploit, which makes the ability to ship a fix the same day more valuable than ever." />
-    <meta property="og:title" content="Continuous Delivery Is a Security Feature Now - Brad Oyler" />
+    <meta property="og:title" content="AI Just Raised the Stakes on Continuous Delivery - Brad Oyler" />
     <meta property="og:url" content="https://www.bradoyler.com/ai/continuous-delivery-is-a-security-feature/" />
     <meta property="og:type" content="article" />
     <meta property="og:image" content="https://www.bradoyler.com/assets/images/continuous-delivery-social.jpg"/>
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@bradoyler" />
-    <meta name="twitter:title" content="Continuous Delivery Is a Security Feature Now - Brad Oyler" />
+    <meta name="twitter:title" content="AI Just Raised the Stakes on Continuous Delivery - Brad Oyler" />
     <meta name="twitter:description" content="PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and a backdoored LiteLLM all landed within days of each other. AI is shrinking the time from disclosure to exploit, which makes the ability to ship a fix the same day more valuable than ever." />
     <meta name="twitter:creator" content="@bradoyler" />
     <meta name="twitter:domain" content="https://www.bradoyler.com" />
@@ -91,7 +91,7 @@
         
         <header class="mb-4 border-b border-gray-100 dark:border-gray-700 pb-4">
           <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">
-            Continuous Delivery Is a Security Feature Now
+            AI Just Raised the Stakes on Continuous Delivery
           </h1>
           <div
             class="flex flex-wrap items-center gap-4 text-sm text-gray-600 dark:text-gray-400"
@@ -127,7 +127,7 @@
         >
           <p><img src="/assets/images/continuous-delivery-social.jpg" alt="PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and LiteLLM: one week in October 2026"></p>
 <p>On October 21, TechCrunch ran a headline that pretty much summed up my week: <a href="https://techcrunch.com/2026/10/21/the-internet-is-having-a-very-bad-cybersecurity-day/">The internet is having a very bad cybersecurity day</a>. It wasn't really one day. It was a pile-up of critical issues landing within about a week of each other, across almost every layer of the stack that most companies quietly depend on.</p>
-<p>If you run anything on the internet, you probably spent part of this week reading advisories, checking versions, and asking teams &quot;are we on that?&quot; I did too. Once the dust settled a bit, what stuck with me was not any single bug. It was the speed, how often AI showed up in the story, and a slightly unexpected conclusion: the most useful security tool most teams have might be their deploy pipeline.</p>
+<p>If you run anything on the internet, you probably spent part of this week reading advisories, checking versions, and asking teams &quot;are we on that?&quot; I did too. Once the dust settled a bit, what stuck with me was not any single bug. It was the speed, how often AI showed up in the story, and an old idea that suddenly feels urgent: the most useful security tool most teams have might be their deploy pipeline.</p>
 <h2>The week in one list</h2>
 <ul>
 <li><strong>PHP2Shell.</strong> Two critical PHP core flaws (CVE-2026-109618 and CVE-2026-109619), both rated 9.2, allowing unauthenticated remote code execution. Fixes shipped October 21. TechCrunch reported the flaws were found by AI, and that some government sites went offline after the NSA told organizations to update PHP or take systems offline until they could. <a href="https://watchtowr.com/intelligence/php-remote-code-execution-php2shell/">watchTowr</a> reports exploitation in the wild. PHP 5.4 through 7.3 is end-of-life and gets no fix from the PHP project.</li>
@@ -162,6 +162,7 @@
 <p>That changes how I think about a patch window. A two-week rollout used to feel responsible. Now it feels like two weeks of standing in a hallway full of doorknob-turners that never get tired, never take weekends, and don't care that your company is small or boring. You don't have to be a target. You just have to be on the list of IPs running the vulnerable version.</p>
 <h2>The twist: deploy speed is now security</h2>
 <p>Here's where I landed. If the attacker's side runs at machine speed, the question that matters most isn't &quot;do we know about the bug?&quot; Everyone knows within hours. It's &quot;how fast can we safely ship the fix?&quot;</p>
+<p>None of this is a new idea. The DevSecOps crowd has argued for years that fast, reliable delivery is a security capability. What's changed is the clock. When an AI agent can turn an advisory into a working exploit over a weekend, &quot;we'll get to it in the next release&quot; stops being a scheduling decision and becomes a risk decision.</p>
 <p>That makes continuous delivery a security feature, not just a productivity one. A team that can bump a Node or PHP version, run its tests, and roll it to production in an afternoon closes the window before most of the scanning starts. A team with a monthly release train, a manual change board, or a deploy that only one person knows how to run leaves that window open for weeks, and there's no clever security product that makes up for it.</p>
 <p>The capabilities that matter here are the boring ones the DevOps crowd has been pushing for a decade:</p>
 <ul>
@@ -171,6 +172,7 @@
 <li><strong>Easy rollback</strong>, so moving fast doesn't mean betting the business on every patch.</li>
 </ul>
 <p>For years, the pitch for all of that was speed of feature delivery. This week made a different case. The same pipeline that ships features fast is the one that ships fixes fast, and fixes are now on a clock you don't control.</p>
+<p>If this sounds like DevSecOps, it is, just with the emphasis flipped. A lot of DevSecOps in practice has meant adding gates: more scanners, more checks, more ways for a build to fail. Some of that is worth it. But when the threat is a two-day vuln, every gate that slows down a patch is part of your exposure. The security value of a pipeline isn't how many things it can block. It's how quickly it can get a fix to production when it counts.</p>
 <h2>The view from my own repos</h2>
 <p>I maintain a couple of small open source Node libraries, <a href="https://github.com/d3-node/d3-node">d3-node</a> and <a href="https://github.com/bradoyler/route-cache">route-cache</a>. So while writing this, I checked my own setup instead of just pointing at everyone else's. Here's what I found, and what I fixed:</p>
 <ul>
@@ -226,7 +228,7 @@
    Follow @bradoyler on X
   </a>
  ||
-  <a href="https://x.com/intent/post?text=Continuous%20Delivery%20Is%20a%20Security%20Feature%20Now&url=https%3A%2F%2Fwww.bradoyler.com%2Fai%2Fcontinuous-delivery-is-a-security-feature%2F"
+  <a href="https://x.com/intent/post?text=AI%20Just%20Raised%20the%20Stakes%20on%20Continuous%20Delivery&url=https%3A%2F%2Fwww.bradoyler.com%2Fai%2Fcontinuous-delivery-is-a-security-feature%2F"
      target="_blank" rel="noopener" class="hover:text-blue-600 dark:hover:text-blue-400">
     Share this
   </a>

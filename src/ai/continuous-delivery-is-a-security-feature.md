@@ -1,5 +1,5 @@
 ---
-title: "Continuous Delivery Is a Security Feature Now"
+title: "AI Just Raised the Stakes on Continuous Delivery"
 date: 2026-10-23
 modified: null
 description: "PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and a backdoored LiteLLM all landed within days of each other. AI is shrinking the time from disclosure to exploit, which makes the ability to ship a fix the same day more valuable than ever."
@@ -12,7 +12,7 @@ tags: ['blog', 'ai']
 
 On October 21, TechCrunch ran a headline that pretty much summed up my week: [The internet is having a very bad cybersecurity day](https://techcrunch.com/2026/10/21/the-internet-is-having-a-very-bad-cybersecurity-day/). It wasn't really one day. It was a pile-up of critical issues landing within about a week of each other, across almost every layer of the stack that most companies quietly depend on.
 
-If you run anything on the internet, you probably spent part of this week reading advisories, checking versions, and asking teams "are we on that?" I did too. Once the dust settled a bit, what stuck with me was not any single bug. It was the speed, how often AI showed up in the story, and a slightly unexpected conclusion: the most useful security tool most teams have might be their deploy pipeline.
+If you run anything on the internet, you probably spent part of this week reading advisories, checking versions, and asking teams "are we on that?" I did too. Once the dust settled a bit, what stuck with me was not any single bug. It was the speed, how often AI showed up in the story, and an old idea that suddenly feels urgent: the most useful security tool most teams have might be their deploy pipeline.
 
 ## The week in one list
 
@@ -60,6 +60,8 @@ That changes how I think about a patch window. A two-week rollout used to feel r
 
 Here's where I landed. If the attacker's side runs at machine speed, the question that matters most isn't "do we know about the bug?" Everyone knows within hours. It's "how fast can we safely ship the fix?"
 
+None of this is a new idea. The DevSecOps crowd has argued for years that fast, reliable delivery is a security capability. What's changed is the clock. When an AI agent can turn an advisory into a working exploit over a weekend, "we'll get to it in the next release" stops being a scheduling decision and becomes a risk decision.
+
 That makes continuous delivery a security feature, not just a productivity one. A team that can bump a Node or PHP version, run its tests, and roll it to production in an afternoon closes the window before most of the scanning starts. A team with a monthly release train, a manual change board, or a deploy that only one person knows how to run leaves that window open for weeks, and there's no clever security product that makes up for it.
 
 The capabilities that matter here are the boring ones the DevOps crowd has been pushing for a decade:
@@ -70,6 +72,8 @@ The capabilities that matter here are the boring ones the DevOps crowd has been 
 - **Easy rollback**, so moving fast doesn't mean betting the business on every patch.
 
 For years, the pitch for all of that was speed of feature delivery. This week made a different case. The same pipeline that ships features fast is the one that ships fixes fast, and fixes are now on a clock you don't control.
+
+If this sounds like DevSecOps, it is, just with the emphasis flipped. A lot of DevSecOps in practice has meant adding gates: more scanners, more checks, more ways for a build to fail. Some of that is worth it. But when the threat is a two-day vuln, every gate that slows down a patch is part of your exposure. The security value of a pipeline isn't how many things it can block. It's how quickly it can get a fix to production when it counts.
 
 ## The view from my own repos
 
