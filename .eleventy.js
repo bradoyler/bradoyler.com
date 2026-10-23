@@ -8,7 +8,8 @@ module.exports = function (eleventyConfig) {
     slogan: "Musings about tech, finance & data. Build, measure, learn...",
     version: '0.0.1',
     domain: 'bradoyler.com',
-    url: 'https://www.bradoyler.com'
+    url: 'https://www.bradoyler.com',
+    year: new Date().getFullYear() // set at build time, used in the footer
   });
 
   eleventyConfig.addFilter("htmlDateString", (dateObj) => {
