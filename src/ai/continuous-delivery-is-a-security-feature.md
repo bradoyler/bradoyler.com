@@ -91,7 +91,7 @@ And the fixes only took minutes because the pipeline was already there. Changing
 
 A few things feel different to me now:
 
-- **"Patch eventually" is not a plan anymore.** Measure how long it takes you to ship a runtime patch, end to end, and treat that number like an uptime metric.
+- **"Patch eventually" is not a plan anymore.** Executives care about minimizing Mean Time to Remediate (MTTR) and reducing exposure windows, and they should. But those numbers don't move because of a dashboard or a policy. They move when your delivery pipeline can get a fix to production quickly and safely. Measure how long it takes you to ship a runtime patch, end to end, and treat that number like an uptime metric. It's also the easiest way I know to make the case for investing in CI/CD to people who don't think about deploys.
 - **End-of-life software is the real exposure.** PHP 7.3, Node 20, a Plex server nobody remembers. The fix exists for current versions. The risk lives in everything that can't take it.
 - **Defenders need the same tools.** If attackers use AI to find and weaponize bugs, we should be using it to find our own exposure, triage the flood of CVEs, and draft the upgrade PRs. The bottleneck has moved from "finding the bug" to "deciding what matters and shipping the fix," and that's where the help is needed most.
 - **Maintainers are part of the supply chain whether they like it or not.** Most of 2026's npm attacks came through hijacked maintainer accounts and release pipelines. Two-factor auth, trusted publishing, and not leaving long-lived tokens lying around are table stakes for anyone with a package people depend on, even a small one.
