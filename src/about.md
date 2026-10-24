@@ -21,7 +21,7 @@ Chronolog of work/projects:
 
 [2015] Launched Newsblock.io mainly as a way to experiment with news aggregation, curation via social trends and automated posting to social platforms. Also experimenting with Google Cloud and AWS for a “serverless” architecture.
 
-[2013 - Present] NBCUniversal (Engineer for TODAY.com & NBCNews.com):
+[2013] NBCUniversal (Engineer for TODAY.com & NBCNews.com):
 Transitioned the ASP.Net platform over to NodeJs (Gulp, Express & Redis)
 
 [2012] Worked on startup weekend projects like Mealtik.com, StagFund.co and PitchSwap that “failed quietly”, but learned a lot.
