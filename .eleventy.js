@@ -76,6 +76,10 @@ module.exports = function (eleventyConfig) {
   // copy txt files
   eleventyConfig.addPassthroughCopy("src/*.txt");
 
+  // favicons
+  eleventyConfig.addPassthroughCopy("src/favicon.*");
+  eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
+
   // needed for Github pages custom domain
   eleventyConfig.addPassthroughCopy("src/CNAME");
 
