@@ -1,13 +1,14 @@
 ---
-title: The AI Agent Land Grab - Muse, Dot, Claude Code, Copilot, and Gemini Compared
-date: 2026-10-04
+title: The AI Agent Land Grab - Muse, Dot, Claude Code, Copilot, Gemini, and Grok Bot Compared
+date: 2026-10-27
 modified: null
-description: "Five AI agents, five different bets on who you are and what you'll pay for. Traction, architecture, pricing, and target customer for the biggest names in agentic AI - plus the money behind them."
+description: "Six AI agents, six different bets on who you are and what you'll pay for. Traction, architecture, pricing, and target customer for the biggest names in agentic AI - plus the money behind them."
+art: ai-agents-social.png
 layout: post.njk
 tags: ['blog', 'ai']
 ---
 
-Everyone is shipping an AI agent in 2026. But they're not shipping the same product. After watching this space all year, here's how I see the five serious contenders breaking down: what traction they actually have, how their agents work under the hood, what they charge, and who they're really built for.
+Everyone is shipping an AI agent in 2026. But they're not shipping the same product. After watching this space all year, here's how I see the six serious contenders breaking down: what traction they actually have, how their agents work under the hood, what they charge, and who they're really built for.
 
 ## The money behind the agents
 
@@ -16,10 +17,11 @@ Before the products, the balance sheets. The agent race is being funded at a sca
 | Company | Revenue run rate | Valuation | Status |
 | --- | --- | --- | --- |
 | OpenAI | ~$70B (Sept 2026) | $1.4T (seeking $30B round) | IPO delayed to 2027 |
-| Anthropic | $65B (Jul 2026), heading to $100B | ~$2T (IPO prep) | Potentially largest IPO ever |
+| Anthropic | $16.3B in H1 2026 (S-1) | ~$1.5T reported (down from ~$2T floated); seeking up to $100B raise | S-1 filed Oct 26, 2026; Nasdaq: ANT |
 | Meta | - | $1.9T+ market cap | Muse launch added ~$192B in a day |
 | Microsoft | - | - | 30M+ paid Copilot seats |
 | Google | - | - | Gemini bundled into Workspace/Android |
+| xAI | - | - | Grok Bot in public beta since Aug 2026 |
 
 OpenAI's revenue run rate nearly doubled in a single quarter this summer, driven by enterprise sales. Anthropic went from $9 billion at the start of 2026 to a $65 billion pace by July. Both are burning staggering amounts of cash on compute - OpenAI's projected 2026-2030 compute bill alone is $856 billion. The agent products below are how they plan to earn it back.
 
@@ -57,7 +59,7 @@ The Slack and Teams integration is the tell: OpenAI wants Dot inside the workday
 
 **Traction:** This is the revenue story of the year. Generally available since May 2025, Claude Code passed $2.5 billion in run-rate revenue by early 2026, roughly a year after launch, up from $1 billion in November 2025. Weekly active users doubled in the first months of 2026; business subscriptions quadrupled. Enterprise customers generate more than half of Claude Code revenue. Claude holds an estimated 54% of the enterprise coding-model market versus OpenAI's 21%, and Anthropic counts 8 of the Fortune 10 as customers, with over 1,000 customers spending more than $1 million a year.
 
-The broader context: Anthropic as a whole went from a $9 billion run rate at the start of 2026 to $65 billion by July, heading toward $100 billion, with 40% of enterprise LLM spend. It's preparing what could be the largest IPO in history.
+The broader context: Anthropic as a whole went from a $9 billion run rate at the start of 2026 to $65 billion by July, heading toward $100 billion, with 40% of enterprise LLM spend. On October 26, 2026, it filed its S-1 to list Class A shares on Nasdaq under the ticker ANT, with Goldman Sachs and Morgan Stanley leading a group of 22 underwriters. The filing shows $16.3 billion in revenue for the first half of 2026 (versus $4.6 billion for all of 2025), a first quarterly operating profit of $974 million in Q2 2026, and an $80.7 billion first-half net loss that is mostly non-cash fair-value accounting on convertible notes and SAFEs. The price range and share count are still blank, so the filing itself sets no valuation; reports put the raise at up to $100 billion at a valuation around $1.5 trillion, down from the $2 trillion floated earlier. One governance detail worth noting: the seven co-founders hold a single Class F share fixed at 50.1% of every stockholder vote.
 
 **Approach:** Terminal-based agentic coding. Claude Code reads your codebase, plans a sequence of actions, executes them using real development tools, evaluates the result, and adjusts its approach. The developer sets the objective and retains control over what gets committed, but the execution loop runs independently. The average user now spends about 20 hours a week working with it.
 
@@ -93,15 +95,29 @@ The honest caveat: Google's consumer data posture is the weakest of the group. D
 
 **Target customer:** Google Workspace organizations and Android consumers. If Copilot is for Microsoft houses, Gemini is for Google houses.
 
+## Grok Bot (xAI)
+
+**Traction:** The newest agent on this list. xAI launched Grok Bot into early public beta on August 11, 2026, and has been expanding access since, including to SuperGrok Plus subscribers. It arrives with a distribution advantage the other startups would kill for: a direct line into X's user base and a deal through Cursor that puts it in front of developers who already pay for AI tooling.
+
+**Approach:** Grok Bot is the most literal version of the "agent with its own computer" idea. Each Bot is a named agent running on a persistent cloud computer with a browser, file system, and terminal. It signs into your websites and apps with your credentials and operates them directly, without needing a clean API or MCP integration, and it keeps working after you close the app. Multiple Bots can communicate with each other, share context, and delegate to specialist Bots, and a Bot can watch you perform a workflow, save it as a routine, and repeat it later, incorporating corrections.
+
+That credential-bearing approach is the bet and the risk in one package: it broadens the range of software a Bot can act on far beyond what API integrations cover, but it also means handing your logins to an agent running on someone else's computer. The supervision question here is sharper than anywhere else on this list.
+
+xAI has also been building adjacent agent surfaces around the same brand: a Grok sidebar agent inside Outlook for inbox triage and drafting, and a voice agent builder for phone calls. Grok Bot is the flagship, but xAI clearly sees agents as a platform, not a single product.
+
+**Pricing:** Tiered subscriptions. Access started with the top tiers and has expanded to SuperGrok Plus at $100/month, with a limited free trial for regular users.
+
+**Target customer:** Consumers who live on X, and developers through the Cursor channel. The pitch is a roster of coworkers you assign work to rather than a chat window you prompt - an interface regular people can operate on day one, aimed at an audience that already pays for AI tools.
+
 ## Head to head
 
-| | Muse | Dot | Claude Code | Copilot | Gemini |
-| --- | --- | --- | --- | --- | --- |
-| Traction signal | 2.8M downloads in 2 weeks | 1.2B ChatGPT weekly users | $2.5B run-rate revenue | 30M+ paid seats | Workspace + Android footprint |
-| Approach | Secure VM + app connectors | Always-on, permissioned | Terminal-based coding agent | Graph-grounded, M365-native | Workspace-native agents |
-| Pricing | Free / $20 / $100 | Up to $500/mo tiers | Usage + enterprise contracts | $30/user/mo | $14-30/user/mo |
-| Target customer | Consumers, small business | Consumers, enterprise | Developers, enterprise eng | Microsoft enterprises | Google orgs, Android users |
-| Maturity | Weeks old | Days old (3rd attempt) | 1+ year, profitable shape | 2+ years, scaling | Feature of ecosystem |
+| | Muse | Dot | Claude Code | Copilot | Gemini | Grok Bot |
+| --- | --- | --- | --- | --- | --- | --- |
+| Traction signal | 2.8M downloads in 2 weeks | 1.2B ChatGPT weekly users | $2.5B run-rate revenue | 30M+ paid seats | Workspace + Android footprint | Public beta since Aug 2026 |
+| Approach | Secure VM + app connectors | Always-on, permissioned | Terminal-based coding agent | Graph-grounded, M365-native | Workspace-native agents | Persistent cloud agents, credential-bearing |
+| Pricing | Free / $20 / $100 | Up to $500/mo tiers | Usage + enterprise contracts | $30/user/mo | $14-30/user/mo | Tiered subs, SuperGrok Plus $100/mo |
+| Target customer | Consumers, small business | Consumers, enterprise | Developers, enterprise eng | Microsoft enterprises | Google orgs, Android users | Consumers, developers via Cursor |
+| Maturity | Weeks old | Days old (3rd attempt) | 1+ year, profitable shape | 2+ years, scaling | Feature of ecosystem | Beta, months old |
 
 ## The pattern
 
