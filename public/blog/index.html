@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog - Brad Oyler</title>
+    <meta name="description" content="Planning to change the world with software built for humans." />
+    <meta property="og:site_name" content="{ Brad Oyler }" />
+    <meta property="og:description" content="Planning to change the world with software built for humans." />
+    <meta property="og:title" content="Blog - Brad Oyler" />
+    <meta property="og:url" content="https://www.bradoyler.com/blog/" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:image"
+      content="https://www.bradoyler.com/assets/images/article.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@bradoyler" />
+    <meta name="twitter:title" content="Blog - Brad Oyler" />
+    <meta name="twitter:description" content="Planning to change the world with software built for humans." />
+    <meta name="twitter:creator" content="@bradoyler" />
+    <meta name="twitter:domain" content="https://www.bradoyler.com" />
+    <meta
+      name="twitter:image:src"
+      content="https://www.bradoyler.com/assets/images/article.jpg"
+    />
+
+    
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://www.bradoyler.com/assets/style.css" />
+
+
+
+
+
+
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+  </head>
+
+  <body
+    class="bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100 min-h-screen flex flex-col"
+  >
+    <header class="sticky top-0 z-20 border-b border-gray-200/80 dark:border-gray-800/80 bg-white/90 dark:bg-gray-900/90 backdrop-blur" x-data="{ open: false }">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        
+        
+        <a href="/" class="text-xl md:text-2xl font-extrabold tracking-tight hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+            { BRAD OYLER }
+        </a>
+
+        
+        <nav class="hidden md:flex space-x-6 text-base font-medium text-gray-600 dark:text-gray-300">
+            <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+            <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blog</a>
+            <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+            <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
+        </nav>
+        
+        
+        <button @click="open = !open" class="md:hidden p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500" aria-label="Toggle navigation">
+            <svg x-show="!open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+            <svg x-show="open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+    </div>
+
+    
+    <div x-show="open" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="md:hidden border-t border-gray-200 dark:border-gray-800">
+        <nav class="flex flex-col space-y-2 p-4 text-base font-medium">
+            <a href="/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Home</a>
+            <a href="/blog/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Blog</a>
+            <a href="/projects/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">Projects</a>
+            <a href="/about/" class="block p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-md">About</a>
+        </nav>
+    </div>
+</header>
+
+    <main class="w-full max-w-5xl mx-auto px-6 py-10 flex-1">
+      <h1
+        class="text-3xl font-extrabold tracking-tight mb-8 border-b border-gray-200 dark:border-gray-800 pb-4"
+      >
+        Blog
+      </h1>
+
+      <section class="grid gap-8 md:grid-cols-2">
+         
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/ai/continuous-delivery-is-a-security-feature/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/continuous-delivery-social.jpg"
+              alt="Featured image for AI Has Raised the Stakes on Continuous Delivery"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/ai/continuous-delivery-is-a-security-feature/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >AI Has Raised the Stakes on Continuous Delivery</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Thu Oct 22 2026 20:00:00 GMT-0400 (Eastern Daylight Time)"
+            >
+              Published on Oct 23, 2026
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              PHP2Shell, Node2Shell, eMudhra, Plex2Shell, and a backdoored LiteLLM all landed within days of each other. AI is shrinki…
+            </p>
+            
+
+            <a
+              href="/ai/continuous-delivery-is-a-security-feature/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/ai/airplane-mode-revisited/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/airtraffic-social.jpg"
+              alt="Featured image for Airplane Mode, Revisited: Days of Work in 10 Minutes"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/ai/airplane-mode-revisited/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Airplane Mode, Revisited: Days of Work in 10 Minutes</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Wed Oct 21 2026 20:00:00 GMT-0400 (Eastern Daylight Time)"
+            >
+              Published on Oct 22, 2026
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              In 2017 I spent days building the air traffic animation for NBC News&#39; Airplane Mode story. This week I rebuilt it with C…
+            </p>
+            
+
+            <a
+              href="/ai/airplane-mode-revisited/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/ai/ai-family-meal-plan/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/ai-family-meal-plan.jpg"
+              alt="Featured image for I Put an AI Assistant in Charge of Family Meal Planning"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/ai/ai-family-meal-plan/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >I Put an AI Assistant in Charge of Family Meal Planning</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Fri Oct 02 2026 20:00:00 GMT-0400 (Eastern Daylight Time)"
+            >
+              Published on Oct 3, 2026
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              How I used Muse to turn a chaotic pile of family dinner ideas into a real system - a recipe library, a weekly planner, a…
+            </p>
+            
+
+            <a
+              href="/ai/ai-family-meal-plan/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/ai/shift-in-software-development/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/mar03-social-image.jpg"
+              alt="Featured image for Development Is Now About Automation, Semantics &amp; Context"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/ai/shift-in-software-development/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Development Is Now About Automation, Semantics &amp; Context</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Tue Mar 03 2026 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Mar 4, 2026
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              The Shift Is Real. Writing code is no longer the core skill, learn how automation, semantics, and context are redefining…
+            </p>
+            
+
+            <a
+              href="/ai/shift-in-software-development/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/crypto/january-2026-crypto-digest/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/monthlycrypto.jpg"
+              alt="Featured image for Crypto News Digest - January 2026"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/crypto/january-2026-crypto-digest/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Crypto News Digest - January 2026</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Fri Jan 30 2026 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Jan 31, 2026
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              roundup of the most notable Crypto developments from January
+            </p>
+            
+
+            <a
+              href="/crypto/january-2026-crypto-digest/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/ai/ai-news-digest-2026-jan/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/monthlyai.jpg"
+              alt="Featured image for AI News Digest - January 2026"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/ai/ai-news-digest-2026-jan/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >AI News Digest - January 2026</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Thu Jan 29 2026 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Jan 30, 2026
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              roundup of the most notable AI developments from January
+            </p>
+            
+
+            <a
+              href="/ai/ai-news-digest-2026-jan/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/crypto/putting-bitcoin-on-your-balance-sheet/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/bitcoin_skyline.jpg"
+              alt="Featured image for Bitcoin on your Balance Sheet"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/crypto/putting-bitcoin-on-your-balance-sheet/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Bitcoin on your Balance Sheet</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Tue Jan 13 2026 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Jan 14, 2026
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              Why Businesses Should Consider Bitcoin on the Balance Sheet
+            </p>
+            
+
+            <a
+              href="/crypto/putting-bitcoin-on-your-balance-sheet/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/crypto/december-2025-crypto-digest/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/cryptonews-december2025.jpeg"
+              alt="Featured image for Crypto News Digest - December 2025"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/crypto/december-2025-crypto-digest/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Crypto News Digest - December 2025</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Thu Dec 25 2025 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Dec 26, 2025
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              roundup of the most notable Crypto developments from December
+            </p>
+            
+
+            <a
+              href="/crypto/december-2025-crypto-digest/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/ai/ai-news-digest-dec-2025/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/ainews-dec2025.jpg"
+              alt="Featured image for AI News Digest - December 2025"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/ai/ai-news-digest-dec-2025/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >AI News Digest - December 2025</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Thu Dec 25 2025 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Dec 26, 2025
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              roundup of the most notable AI developments from December
+            </p>
+            
+
+            <a
+              href="/ai/ai-news-digest-dec-2025/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/crypto-as-a-lifeline/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/nyc_crypto.jpg"
+              alt="Featured image for Low-Income New Yorkers Are Receiving $12,000 in USDC"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/crypto-as-a-lifeline/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Low-Income New Yorkers Are Receiving $12,000 in USDC</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Sat Nov 29 2025 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Nov 30, 2025
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              Charitable Giving with Crypto
+            </p>
+            
+
+            <a
+              href="/blog/crypto-as-a-lifeline/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/ai/ai-news-digest-nov-2025/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/nov2025_ai_news.jpg"
+              alt="Featured image for AI News Digest - November 2025"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/ai/ai-news-digest-nov-2025/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >AI News Digest - November 2025</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Sat Nov 29 2025 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Nov 30, 2025
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              roundup of the most notable AI developments from November
+            </p>
+            
+
+            <a
+              href="/ai/ai-news-digest-nov-2025/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/tech/snowflake-cost-control-guide/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/snowflake_logo.jpg"
+              alt="Featured image for The Snowflake Cost Control Guide"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/tech/snowflake-cost-control-guide/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >The Snowflake Cost Control Guide</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Thu Nov 27 2025 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Nov 28, 2025
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              The Pragmatic Engineer&#39;s Guide to Keeping Snowflake Costs Under Control in 2025
+            </p>
+            
+
+            <a
+              href="/tech/snowflake-cost-control-guide/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/municipal-bitcoin-funds/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/municipal-bitcoin-funds.jpg.webp"
+              alt="Featured image for Municipal Bitcoin funds"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/municipal-bitcoin-funds/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Municipal Bitcoin funds</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Tue Nov 18 2025 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Nov 19, 2025
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              Unlocking Fiscal Freedom
+            </p>
+            
+
+            <a
+              href="/blog/municipal-bitcoin-funds/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/finance/50-year-mortgages/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/50-year-mortgage.jpg"
+              alt="Featured image for 50 year mortgages are a leveraged short"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/finance/50-year-mortgages/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >50 year mortgages are a leveraged short</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Fri Nov 14 2025 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Nov 15, 2025
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              ...against the US Dollar
+            </p>
+            
+
+            <a
+              href="/finance/50-year-mortgages/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/highest-murder-rate-cities-in-the-us/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/crime-in-us-cities.jpg"
+              alt="Featured image for Highest Murder Rate Cities in the US"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/highest-murder-rate-cities-in-the-us/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Highest Murder Rate Cities in the US</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Wed Nov 15 2017 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Nov 16, 2017
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              A look at homicide across cities in America
+            </p>
+            
+
+            <a
+              href="/blog/highest-murder-rate-cities-in-the-us/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/crude-oil-pipelines/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/map-pipelines-v2.jpg"
+              alt="Featured image for Crude Oil Pipelines"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/crude-oil-pipelines/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Crude Oil Pipelines</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Fri Dec 16 2016 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Dec 17, 2016
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              U.S. Map of Crude Oil Pipelines
+            </p>
+            
+
+            <a
+              href="/blog/crude-oil-pipelines/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/the-29-unopposed-house-seats-in-2016-election/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/map-unopposed.jpg"
+              alt="Featured image for The 29 Unopposed House seats in 2016 Election"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/the-29-unopposed-house-seats-in-2016-election/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >The 29 Unopposed House seats in 2016 Election</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Sun Dec 04 2016 19:00:00 GMT-0500 (Eastern Standard Time)"
+            >
+              Published on Dec 5, 2016
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              U.S. Map of the 115th Congress
+            </p>
+            
+
+            <a
+              href="/blog/the-29-unopposed-house-seats-in-2016-election/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/bounce-rate-optimization-for-publishers-exit-intent/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/exit_intent.png"
+              alt="Featured image for Bounce Rate optimization for publishers (exit intent)"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/bounce-rate-optimization-for-publishers-exit-intent/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Bounce Rate optimization for publishers (exit intent)</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Sat Oct 04 2014 20:00:00 GMT-0400 (Eastern Daylight Time)"
+            >
+              Published on Oct 5, 2014
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              How understanding &#39;exit intent&#39; can help a news site lower its bounce rate.
+            </p>
+            
+
+            <a
+              href="/blog/bounce-rate-optimization-for-publishers-exit-intent/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/timeline-that-google-calendar-with-gcal-timeline/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/gcal-timeline-social.jpg"
+              alt="Featured image for Timeline that Google Calendar with gcal-timeline"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/timeline-that-google-calendar-with-gcal-timeline/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Timeline that Google Calendar with gcal-timeline</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Wed Sep 03 2014 20:00:00 GMT-0400 (Eastern Daylight Time)"
+            >
+              Published on Sep 4, 2014
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              An easy way to display a Google Calendar as a timeline.
+            </p>
+            
+
+            <a
+              href="/blog/timeline-that-google-calendar-with-gcal-timeline/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/future-of-news-according-to-facebook-google/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/googlenewslab.png"
+              alt="Featured image for Future of News, according to Facebook &amp; Google"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/future-of-news-according-to-facebook-google/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >Future of News, according to Facebook &amp; Google</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Sun Jun 22 2014 20:00:00 GMT-0400 (Eastern Daylight Time)"
+            >
+              Published on Jun 23, 2014
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              How &#39;new media&#39; giants are approaching the news industry.
+            </p>
+            
+
+            <a
+              href="/blog/future-of-news-according-to-facebook-google/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+        <article
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
+        >
+           
+          <a href="/blog/my-key-management-principles-kmp/" class="block overflow-hidden h-44">
+            <img
+              src="/assets/images/kmp-social.jpg"
+              alt="Featured image for My “Key Management Principles” (KMP)"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
+            />
+          </a>
+           
+          <div class="p-6 flex flex-col flex-grow">
+            <h2 class="text-xl font-semibold mb-2">
+              <a
+                href="/blog/my-key-management-principles-kmp/"
+                class="hover:text-blue-600 dark:hover:text-blue-400"
+                >My “Key Management Principles” (KMP)</a
+              >
+            </h2>
+
+                  
+
+            <time
+              class="text-sm text-gray-600 dark:text-gray-400"
+              datetime="Mon Jul 22 2013 20:00:00 GMT-0400 (Eastern Daylight Time)"
+            >
+              Published on Jul 23, 2013
+            </time>
+
+            
+            <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+              YAGNI, KISS, Occam’s razor &amp; Agile are my best lessons learned.
+            </p>
+            
+
+            <a
+              href="/blog/my-key-management-principles-kmp/"
+              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
+            >
+              Read Post →
+            </a>
+          </div>
+        </article>
+        
+      </section>
+    </main>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-BS3MHXWW8Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-BS3MHXWW8Q');
+</script>
+
+<footer class="bg-gray-50 dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 mt-auto">
+    <div class="max-w-5xl mx-auto px-6 py-8 text-center text-sm text-gray-600 dark:text-gray-400">
+        &copy; 2026 Brad Oyler
+    </div>
+</footer>
+  </body>
+</html>

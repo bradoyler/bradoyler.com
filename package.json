@@ -4,12 +4,18 @@
   "description": "Static site for bradoyler.com",
   "main": "index.js",
   "scripts": {
-    "build-css": "npx tailwindcss -i ./src/assets/input.css -o ./docs/assets/style.css --minify",
-    "watch-css": "npx tailwindcss -i ./src/assets/input.css -o ./docs/assets/style.css --watch",
+    "build-css": "npx @tailwindcss/cli -i ./src/assets/input.css -o ./public/assets/style.css --minify",
+    "watch-css": "npx @tailwindcss/cli -i ./src/assets/input.css -o ./public/assets/style.css --watch",
     "build": "npm run build-css && eleventy",
     "start": "concurrently \"eleventy --serve --watch\"",
+    "start:elect": "npx --yes http-server@14.1.1 -c-1 -p 8081 sites/elect",
+    "start:airtraffic": "npx --yes http-server@14.1.1 -c-1 -p 8082 sites/airtraffic",
+    "start:all": "concurrently \"eleventy --serve --watch\" \"npm run start:elect\" \"npm run start:airtraffic\"",
     "start:withcss": "concurrently \"npm run watch-css\" \"eleventy --serve --watch\"",
-    "dev": "npm run start"
+    "dev": "npm run start",
+    "deploy:elect": "npx --yes wrangler@4 pages deploy sites/elect --project-name electbradoylerv2 --branch main",
+    "deploy:airtraffic": "npx --yes wrangler@4 pages deploy sites/airtraffic --project-name airtraffic --branch main",
+    "deploy:bradoyler": "npx --yes wrangler@4 pages deploy public --project-name bradoyler --branch main"
   },
   "keywords": [],
   "author": "Brad Oyler <bradoyler@gmail.com> (github.com/bradoyler)",
@@ -17,9 +23,9 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.2",
+    "@tailwindcss/cli": "^4.3.5",
     "@tailwindcss/typography": "^0.5.19",
-    "concurrently": "^9.2.1",
-    "tailwindcss": "^3.4.18"
-  },
-  "dependencies": {}
+    "concurrently": "^10.0.7",
+    "tailwindcss": "^4.3.5"
+  }
 }

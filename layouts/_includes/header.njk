@@ -1,4 +1,4 @@
-<header class="border-b border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900" x-data="{ open: false }">
+<header class="sticky top-0 z-20 border-b border-gray-200/80 dark:border-gray-800/80 bg-white/90 dark:bg-gray-900/90 backdrop-blur" x-data="{ open: false }">
     <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
         
         {# --- Branding (Always visible) --- #}
@@ -7,11 +7,11 @@
         </a>
 
         {# --- Desktop Nav (Visible on screens >= md) --- #}
-        <nav class="hidden md:flex space-x-6 text-lg font-medium">
-            <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400">Home</a>
-            <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">Blog</a>
-            <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a>
-            <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400">About</a>
+        <nav class="hidden md:flex space-x-6 text-base font-medium text-gray-600 dark:text-gray-300">
+            <a href="/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Home</a>
+            <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Blog</a>
+            <a href="/projects/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">Projects</a>
+            <a href="/about/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">About</a>
         </nav>
         
         {# --- Mobile Hamburger Button (Visible only on screens < md) --- #}

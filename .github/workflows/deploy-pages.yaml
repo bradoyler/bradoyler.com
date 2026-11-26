@@ -1,0 +1,69 @@
+name: Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      www: ${{ steps.filter.outputs.www }}
+      elect: ${{ steps.filter.outputs.elect }}
+      airtraffic: ${{ steps.filter.outputs.airtraffic }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dorny/paths-filter@v3
+        id: filter
+        with:
+          filters: |
+            www:
+              - 'public/**'
+            elect:
+              - 'sites/elect/**'
+            airtraffic:
+              - 'sites/airtraffic/**'
+
+  deploy-www:
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.www == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy www.bradoyler.com
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy public --project-name=bradoyler --branch=main
+
+  deploy-elect:
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.elect == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy elect.bradoyler.com
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy sites/elect --project-name=electbradoylerv2 --branch=main
+
+  deploy-airtraffic:
+    needs: changes
+    if: github.event_name == 'workflow_dispatch' || needs.changes.outputs.airtraffic == 'true'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy airtraffic.bradoyler.com
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy sites/airtraffic --project-name=airtraffic --branch=main

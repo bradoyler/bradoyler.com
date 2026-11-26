@@ -80,16 +80,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/favicon.*");
   eleventyConfig.addPassthroughCopy("src/apple-touch-icon.png");
 
-  // needed for Github pages custom domain
-  eleventyConfig.addPassthroughCopy("src/CNAME");
-
   // used for static sitemaps
   eleventyConfig.addPassthroughCopy("src/*.xml");
 
   return {
     dir: {
       input: 'src',     // Matches your source
-      output: 'docs',   // Matches your dest
+      output: 'public', // Matches your dest
       layouts: '../layouts',  // Relative to input
     },
     templateFormats: ['md', 'njk', 'html'],  // Handlebars support

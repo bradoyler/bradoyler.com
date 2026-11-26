@@ -33,87 +33,89 @@
   >
     {% include "layouts/_includes/header.njk" %}
 
-    <main class="max-w-5xl mx-auto p-2 pt-6 flex-1">
+    <main class="w-full max-w-5xl mx-auto px-6 py-10 flex-1">
       <h1 class="sr-only">Home</h1>
-      <p class="text-xl font-bold text-center mb-8">
+      <p class="text-lg md:text-xl font-medium text-gray-600 dark:text-gray-300 text-center mb-10">
         {{ site.slogan or "Insert slogan here..." }}
       </p>
 
       {# --- LATEST BLOG POSTS SECTION --- #}
       <section class="mb-20">
         <h2
-          class="text-3xl font-extrabold mb-4 border-b border-gray-200 dark:border-gray-800 pb-4"
+          class="text-2xl md:text-3xl font-extrabold tracking-tight mb-6 border-b border-gray-200 dark:border-gray-800 pb-3"
         >
-          <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400">
+          <a href="/blog/" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
             Latest posts
           </a>
         </h2>
         <div class="grid gap-8 md:grid-cols-2">
         {% for post in collections.blog | reverse | slice(0, 6) %}
-          <article class="border border-gray-200 dark:border-gray-800 rounded-lg p-6 hover:shadow-xl transition-shadow bg-white dark:bg-gray-900">
+          <article class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col">
             {# Image Display #} {% if post.data.art %}
             <a
               href="{{ post.url }}"
-              class="block mb-4 overflow-hidden rounded-lg"
+              class="block overflow-hidden h-44"
             >
               {# Assuming images are located in a folder like /assets/images/ #}
               <img
                 src="/assets/images/{{ post.data.art }}"
                 alt="Featured image for {{ post.data.title }}"
-                class="w-full h-40 object-cover transition-transform duration-300 hover:scale-[1.03]"
+                class="w-full h-full object-cover transition-transform duration-300 hover:scale-[1.03]"
               />
             </a>
             {% endif %}
 
-            <h3 class="text-xl font-semibold mb-2">
+            <div class="p-6 flex flex-col flex-grow">
+              <h3 class="text-xl font-semibold leading-snug mb-2">
+                <a
+                  href="{{ post.url }}"
+                  class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                  >{{ post.data.title }}</a
+                >
+              </h3>
+
+              <time
+                class="text-sm text-gray-500 dark:text-gray-400"
+                datetime="{{ post.date | htmlDateString }}"
+              >
+                {{ post.date | formatDate }}
+              </time>
+
+              {% if post.data.description %}
+              <p class="mt-3 text-gray-700 dark:text-gray-300 flex-grow">
+                {{ post.data.description | truncate(120) }}
+              </p>
+              {% endif %}
+
               <a
                 href="{{ post.url }}"
-                class="hover:text-blue-600 dark:hover:text-blue-400"
-                >{{ post.data.title }}</a
+                class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium self-start"
               >
-            </h3>
-
-            <time
-              class="text-sm text-gray-600 dark:text-gray-400"
-              datetime="{{ post.date | htmlDateString }}"
-            >
-              {{ post.date | formatDate }}
-            </time>
-
-            {% if post.data.description %}
-            <p class="mt-3 text-gray-700 dark:text-gray-300">
-              {{ post.data.description | truncate(120) }}
-            </p>
-            {% endif %}
-
-            <a
-              href="{{ post.url }}"
-              class="inline-block mt-4 text-blue-600 dark:text-blue-400 hover:underline text-sm font-medium"
-            >
-              Read Post →
-            </a>
+                Read Post →
+              </a>
+            </div>
           </article>
           {% endfor %}
         </div>
 
-        <div class="text-center mt-12">
+        <div class="text-center mt-10">
           <a
             href="/blog/"
-            class="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline"
+            class="text-base font-medium text-blue-600 dark:text-blue-400 hover:underline"
           >
-            View All Blog Posts
+            View All Blog Posts →
           </a>
         </div>
       </section>
 
       {# --- PROJECTS SECTION--- #}
-      <section class="mb-20">
+      <section class="mb-12">
         <h2
-          class="text-3xl font-extrabold mb-10 border-b border-gray-200 dark:border-gray-800 pb-4"
+          class="text-2xl md:text-3xl font-extrabold tracking-tight mb-6 border-b border-gray-200 dark:border-gray-800 pb-3"
         >
           <a
             href="/projects/"
-            class="hover:text-blue-600 dark:hover:text-blue-400"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
           >
             Projects
           </a>
@@ -121,11 +123,11 @@
         <div class="grid gap-8 md:grid-cols-2">
           {% for project in collections.projects | reverse | slice(0, 4) %}
           <article
-            class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition-shadow bg-white dark:bg-gray-900 flex flex-col"
+            class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
           >
-            {# Image Display Section - Using the same height (h-40) as the blog
+            {# Image Display Section - Using the same height (h-44) as the blog
             card for consistency #} {% if project.data.art %}
-            <a href="{{ project.url }}" class="block overflow-hidden h-40">
+            <a href="{{ project.url }}" class="block overflow-hidden h-44">
               <img
                 src="/assets/images/{{ project.data.art }}"
                 alt="Featured image for {{ project.data.title }}"
@@ -134,17 +136,17 @@
             </a>
             {% endif %} {# Project Details (Padded content) #}
             <div class="p-6 flex flex-col flex-grow">
-              <h3 class="text-xl font-semibold mb-2">
+              <h3 class="text-xl font-semibold leading-snug mb-2">
                 <a
                   href="{{ project.url }}"
-                  class="hover:text-blue-600 dark:hover:text-blue-400"
+                  class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
                   >{{ project.data.title }}</a
                 >
               </h3>
 
               {% if project.date %}
               <time
-                class="text-sm text-gray-600 dark:text-gray-400"
+                class="text-sm text-gray-500 dark:text-gray-400"
                 datetime="{{ project.date | htmlDateString }}"
               >
                 Last updated: {{ project.date.toLocaleDateString('en-US', {
@@ -152,7 +154,7 @@
               </time>
               {% endif %} {% if project.data.project.url %}
               <p
-                class="text-xs font-mono text-gray-500 dark:text-gray-400 mb-3 truncate"
+                class="text-xs font-mono text-gray-500 dark:text-gray-400 mt-1 mb-2 truncate"
               >
                 {{ project.data.project.url | replace('https://', '') |
                 replace('http://', '') }}
@@ -174,12 +176,12 @@
           {% endfor %}
         </div>
 
-        <div class="text-center mt-12">
+        <div class="text-center mt-10">
           <a
             href="/projects/"
-            class="text-lg font-medium text-blue-600 dark:text-blue-400 hover:underline"
+            class="text-base font-medium text-blue-600 dark:text-blue-400 hover:underline"
           >
-            View All Projects
+            View All Projects →
           </a>
         </div>
       </section>

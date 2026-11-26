@@ -35,9 +35,9 @@
   >
     {% include "layouts/_includes/header.njk" %}
 
-    <main class="max-w-5xl mx-auto pt-6 p-2 flex-1">
+    <main class="w-full max-w-5xl mx-auto px-6 py-10 flex-1">
       <h1
-        class="text-3xl font-extrabold mb-4 border-b border-gray-200 dark:border-gray-800 pb-4"
+        class="text-3xl font-extrabold tracking-tight mb-8 border-b border-gray-200 dark:border-gray-800 pb-4"
       >
         {{ title | capitalize }}
       </h1>
@@ -46,11 +46,11 @@
         {# Loop uses page.fileSlug (e.g., 'blog' or 'projects') to dynamically fetch the collection #} 
         {% for item in collections[page.fileSlug] | reverse %}
         <article
-          class="border border-gray-200 dark:border-gray-800 rounded-lg overflow-hidden hover:shadow-xl transition-shadow bg-white dark:bg-gray-900 flex flex-col"
+          class="border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200 bg-white dark:bg-gray-900 flex flex-col"
         >
           {# --- Image Display Section (Copied from home.njk Project/Blog card)
           --- #} {% if item.data.art %}
-          <a href="{{ item.url }}" class="block overflow-hidden h-40">
+          <a href="{{ item.url }}" class="block overflow-hidden h-44">
             <img
               src="/assets/images/{{ item.data.art }}"
               alt="Featured image for {{ item.data.title }}"

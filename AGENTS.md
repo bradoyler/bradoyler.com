@@ -4,7 +4,7 @@ Notes for AI agents writing or publishing posts on bradoyler.com. See [README.md
 
 ## Site layout
 
-- Eleventy 3 static site. Config is in [.eleventy.js](.eleventy.js). Source is `src/`, layouts are in `layouts/`, and build output goes to `docs/` (served by GitHub Pages).
+- Eleventy 3 static site. Config is in [.eleventy.js](.eleventy.js). Source is `src/`, layouts are in `layouts/`, and build output goes to `public/` (deployed to Cloudflare Pages).
 - Posts are Markdown. Put AI posts in `src/ai/` and everything else in `src/blog/`. The URL comes from the path, so `src/ai/my-post.md` becomes `/ai/my-post/`.
 - The site's posts are the `blog` tag collection. `ai` is a second tag for the AI section.
 - Images go in `src/assets/images/` and are copied to the build as-is.
@@ -61,7 +61,7 @@ tags: ['blog', 'ai']       # always include 'blog'; add 'ai' for AI posts
 - Requires Node 24 (see `.nvmrc`). Run `npm install` first, because `node_modules` may be missing `@11ty/eleventy`.
 - Build with `npm run build` (Tailwind CSS plus Eleventy) or preview with `npm run dev`.
 - **Don't run `npx eleventy`.** It resolves to the old, unrelated `eleventy` npm package, which just throws an error. Use the npm scripts or `./node_modules/.bin/eleventy`.
-- `docs/` is committed. Past posts land as one commit that adds the Markdown file, followed by "Build site with ..." commits for the regenerated `docs/` files (blog index, home page, sitemap).
+- `public/` is committed. Past posts land as one commit that adds the Markdown file, followed by "Build site with ..." commits for the regenerated `public/` files (blog index, home page, sitemap).
 - The GitHub Actions workflow [manual-build-and-commit.yaml](.github/workflows/manual-build-and-commit.yaml) can also import a post from a raw gist URL, build, and commit it.
 
 ## Checklist for a new post
@@ -69,5 +69,5 @@ tags: ['blog', 'ai']       # always include 'blog'; add 'ai' for AI posts
 1. Create `src/ai/<slug>.md` or `src/blog/<slug>.md` with the frontmatter above.
 2. Check for colons in the YAML values and for em-dashes in the body.
 3. Make the social image, look at it, and set `art`.
-4. Run `npm run build` and confirm `docs/<section>/<slug>/index.html` exists and has the `og:image` tag.
-5. Commit only when asked: the source post and image first, then the `docs/` build.
+4. Run `npm run build` and confirm `public/<section>/<slug>/index.html` exists and has the `og:image` tag.
+5. Commit only when asked: the source post and image first, then the `public/` build.

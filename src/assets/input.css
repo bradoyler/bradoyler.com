@@ -1,9 +1,7 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* This line is REQUIRED for @tailwindcss/typography in v3 */
-@import "tailwindcss/typography";
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@source "../../layouts";
+@source "../../src";
 
 /* Your custom stuff */
 body {
